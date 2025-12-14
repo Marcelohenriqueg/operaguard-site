@@ -25,20 +25,6 @@
       line-height: 1.6;
     }
 
-    h1, h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: #ff8c00;
-    }
-
-    section {
-      padding: 80px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -46,11 +32,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 20px;
 
       background:
         linear-gradient(
-          rgba(2, 6, 23, 0.85),
-          rgba(2, 6, 23, 0.85)
+          rgba(2, 6, 23, 0.90),
+          rgba(2, 6, 23, 0.90)
         ),
         url("assets/images/hero.jpg");
 
@@ -59,106 +46,90 @@
       background-repeat: no-repeat;
     }
 
+    .hero-content {
+      max-width: 900px;
+    }
+
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #ff8a00;
+      letter-spacing: 2px;
       margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 900px;
-      margin: 0 auto 35px;
-      font-size: 1.1rem;
-      color: #d1d5db;
+      font-size: 1.15rem;
+      margin-bottom: 35px;
+      color: #e5e7eb;
     }
 
-    .btn {
+    .cta-button {
       display: inline-block;
-      background-color: #ff8c00;
-      color: #020617;
       padding: 14px 32px;
-      border-radius: 8px;
+      background-color: #ff8a00;
+      color: #020617;
       font-weight: 600;
       text-decoration: none;
+      border-radius: 8px;
       transition: all 0.3s ease;
     }
 
-    .btn:hover {
+    .cta-button:hover {
       background-color: #ffa733;
       transform: translateY(-2px);
     }
 
-    /* PROBLEMA */
-    .problem {
-      background-color: #020617;
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .problem h2 {
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.2rem;
+      color: #ff8a00;
       margin-bottom: 20px;
     }
 
-    .problem p {
-      font-size: 1.05rem;
-      color: #cbd5f5;
-      max-width: 900px;
-    }
-
-    /* SOLUÇÃO */
-    .solution {
-      background-color: #030a1a;
-    }
-
-    .solution h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .solution p {
-      font-size: 1.05rem;
-      color: #cbd5f5;
-      max-width: 900px;
+    section p {
+      font-size: 1rem;
+      color: #e5e7eb;
     }
 
     /* BENEFÍCIOS */
-    .benefits {
-      background-color: #020617;
-    }
-
-    .benefits h2 {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-    }
-
     .benefits ul {
       list-style: none;
-      max-width: 900px;
+      margin-top: 25px;
     }
 
     .benefits li {
       margin-bottom: 14px;
-      font-size: 1.05rem;
-      color: #e5e7eb;
+      font-size: 1rem;
     }
 
     .benefits li::before {
-      content: "✔ ";
-      color: #ff8c00;
+      content: "✓ ";
+      color: #ff8a00;
       font-weight: bold;
     }
 
     /* FOOTER */
     footer {
-      background-color: #020617;
       text-align: center;
-      padding: 25px 10px;
-      font-size: 0.9rem;
+      padding: 25px 15px;
+      font-size: 0.85rem;
+      background-color: #020617;
       color: #9ca3af;
     }
 
     /* RESPONSIVO */
     @media (max-width: 768px) {
-      section {
-        padding: 60px 16px;
+      .hero h1 {
+        font-size: 2.4rem;
       }
 
       .hero p {
@@ -171,53 +142,47 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
+  <header class="hero">
+    <div class="hero-content">
       <h1>OPERA GUARD</h1>
       <p>
         Monitoramento inteligente de operações industriais por visão computacional,
         garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
       </p>
-      <a href="#" class="btn">Solicitar Demonstração</a>
+      <a href="#contato" class="cta-button">Solicitar Demonstração</a>
     </div>
-  </section>
+  </header>
 
   <!-- PROBLEMA -->
-  <section class="problem">
-    <div class="container">
-      <h2>O Problema na Indústria</h2>
-      <p>
-        Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
-        ausência de rastreabilidade e perdas financeiras relevantes.
-        Auditorias tradicionais são reativas, custosas e pouco escaláveis.
-      </p>
-    </div>
+  <section>
+    <h2>O Problema na Indústria</h2>
+    <p>
+      Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
+      ausência de rastreabilidade e perdas financeiras relevantes.
+      Auditorias tradicionais são reativas, custosas e pouco escaláveis.
+    </p>
   </section>
 
   <!-- SOLUÇÃO -->
-  <section class="solution">
-    <div class="container">
-      <h2>A Solução OPERA GUARD</h2>
-      <p>
-        O OPERA GUARD utiliza visão computacional e inteligência artificial para
-        monitorar operações em tempo real, validar a sequência correta de atividades
-        e garantir conformidade operacional sem interferir no fluxo produtivo.
-      </p>
-    </div>
+  <section>
+    <h2>A Solução OPERA GUARD</h2>
+    <p>
+      O OPERA GUARD utiliza visão computacional e inteligência artificial para
+      monitorar operações em tempo real, validar a sequência correta de atividades
+      e garantir conformidade operacional sem interferir no fluxo produtivo.
+    </p>
   </section>
 
   <!-- BENEFÍCIOS -->
   <section class="benefits">
-    <div class="container">
-      <h2>Benefícios para a Indústria</h2>
-      <ul>
-        <li>Redução de falhas humanas e retrabalhos</li>
-        <li>Rastreabilidade operacional automática</li>
-        <li>Padronização da execução dos processos</li>
-        <li>Aumento da qualidade e confiabilidade</li>
-        <li>Base de dados para melhoria contínua</li>
-      </ul>
-    </div>
+    <h2>Benefícios para a Indústria</h2>
+    <ul>
+      <li>Redução de falhas humanas e retrabalhos</li>
+      <li>Rastreabilidade operacional automática</li>
+      <li>Padronização da execução dos processos</li>
+      <li>Aumento de qualidade e confiabilidade</li>
+      <li>Base de dados para melhoria contínua</li>
+    </ul>
   </section>
 
   <!-- FOOTER -->
@@ -227,5 +192,3 @@
 
 </body>
 </html>
-
- 
