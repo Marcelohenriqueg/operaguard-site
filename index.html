@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>OPERA GUARD | Monitoramento Inteligente de Operações</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,8 +36,8 @@
 
       background:
         linear-gradient(
-          rgba(2, 6, 23, 0.90),
-          rgba(2, 6, 23, 0.90)
+          rgba(2, 6, 23, 0.85),
+          rgba(2, 6, 23, 0.85)
         ),
         url("assets/images/hero.jpg");
 
@@ -47,93 +47,107 @@
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 1000px;
     }
 
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
+      font-size: 72px; /* AUMENTADO */
       font-weight: 800;
-      color: #ff8a00;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      color: #FFE45B; /* RGB(255, 228, 91) */
+      letter-spacing: 3px;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 1.15rem;
-      margin-bottom: 35px;
+      font-size: 20px;
+      max-width: 900px;
+      margin: 0 auto 40px;
       color: #e5e7eb;
     }
 
-    .cta-button {
+    .btn-primary {
       display: inline-block;
-      padding: 14px 32px;
-      background-color: #ff8a00;
+      background-color: #ff8c00;
       color: #020617;
+      padding: 16px 36px;
+      font-size: 18px;
       font-weight: 600;
-      text-decoration: none;
       border-radius: 8px;
+      text-decoration: none;
       transition: all 0.3s ease;
     }
 
-    .cta-button:hover {
+    .btn-primary:hover {
       background-color: #ffa733;
       transform: translateY(-2px);
     }
 
     /* SECTIONS */
     section {
-      padding: 80px 20px;
+      padding: 100px 20px;
+    }
+
+    .container {
       max-width: 1100px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     section h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
-      color: #ff8a00;
-      margin-bottom: 20px;
+      font-size: 42px;
+      color: #ff8c00;
+      margin-bottom: 24px;
     }
 
     section p {
-      font-size: 1rem;
-      color: #e5e7eb;
+      font-size: 18px;
+      color: #d1d5db;
+      max-width: 900px;
+    }
+
+    .dark {
+      background-color: #020617;
+    }
+
+    .darker {
+      background-color: #020b1f;
     }
 
     /* BENEFÍCIOS */
     .benefits ul {
       list-style: none;
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
     .benefits li {
+      font-size: 18px;
       margin-bottom: 14px;
-      font-size: 1rem;
+      color: #e5e7eb;
     }
 
     .benefits li::before {
       content: "✓ ";
-      color: #ff8a00;
+      color: #ff8c00;
       font-weight: bold;
     }
 
     /* FOOTER */
     footer {
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 0.85rem;
       background-color: #020617;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
       color: #9ca3af;
     }
 
-    /* RESPONSIVO */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.4rem;
+        font-size: 48px;
       }
 
-      .hero p {
-        font-size: 1rem;
+      section h2 {
+        font-size: 32px;
       }
     }
   </style>
@@ -142,47 +156,53 @@
 <body>
 
   <!-- HERO -->
-  <header class="hero">
+  <section class="hero">
     <div class="hero-content">
       <h1>OPERA GUARD</h1>
       <p>
         Monitoramento inteligente de operações industriais por visão computacional,
         garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
       </p>
-      <a href="#contato" class="cta-button">Solicitar Demonstração</a>
+      <a href="#contato" class="btn-primary">Solicitar Demonstração</a>
     </div>
-  </header>
+  </section>
 
   <!-- PROBLEMA -->
-  <section>
-    <h2>O Problema na Indústria</h2>
-    <p>
-      Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
-      ausência de rastreabilidade e perdas financeiras relevantes.
-      Auditorias tradicionais são reativas, custosas e pouco escaláveis.
-    </p>
+  <section class="dark">
+    <div class="container">
+      <h2>O Problema na Indústria</h2>
+      <p>
+        Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
+        ausência de rastreabilidade e perdas financeiras relevantes.
+        Auditorias tradicionais são reativas, custosas e pouco escaláveis.
+      </p>
+    </div>
   </section>
 
   <!-- SOLUÇÃO -->
-  <section>
-    <h2>A Solução OPERA GUARD</h2>
-    <p>
-      O OPERA GUARD utiliza visão computacional e inteligência artificial para
-      monitorar operações em tempo real, validar a sequência correta de atividades
-      e garantir conformidade operacional sem interferir no fluxo produtivo.
-    </p>
+  <section class="darker">
+    <div class="container">
+      <h2>A Solução OPERA GUARD</h2>
+      <p>
+        O OPERA GUARD utiliza visão computacional e inteligência artificial para
+        monitorar operações em tempo real, validar a sequência correta de atividades
+        e garantir conformidade operacional sem interferir no fluxo produtivo.
+      </p>
+    </div>
   </section>
 
   <!-- BENEFÍCIOS -->
-  <section class="benefits">
-    <h2>Benefícios para a Indústria</h2>
-    <ul>
-      <li>Redução de falhas humanas e retrabalhos</li>
-      <li>Rastreabilidade operacional automática</li>
-      <li>Padronização da execução dos processos</li>
-      <li>Aumento de qualidade e confiabilidade</li>
-      <li>Base de dados para melhoria contínua</li>
-    </ul>
+  <section class="dark benefits">
+    <div class="container">
+      <h2>Benefícios para a Indústria</h2>
+      <ul>
+        <li>Redução de falhas humanas e retrabalhos</li>
+        <li>Rastreabilidade operacional automática</li>
+        <li>Padronização da execução dos processos</li>
+        <li>Aumento de qualidade e confiabilidade</li>
+        <li>Base de dados para melhoria contínua</li>
+      </ul>
+    </div>
   </section>
 
   <!-- FOOTER -->
