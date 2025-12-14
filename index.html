@@ -2,18 +2,16 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-
   <title>OPERA GUARD | Monitoramento Inteligente de Operações</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts: Inter + Montserrat -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
+    /* RESET BÁSICO */
     * {
       margin: 0;
       padding: 0;
@@ -22,32 +20,24 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0f172a;
+      background-color: #020617;
       color: #e5e7eb;
       line-height: 1.6;
     }
 
     /* HERO */
     .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-
-  background:
-    linear-gradient(
-      rgba(2, 6, 23, 0.75),
-      rgba(2, 6, 23, 0.9)
-    ),
-    url("https://images.unsplash.com/photo-1581091870627-3c1a7c1f5b47?auto=format&fit=crop&w=1920&q=80");
-
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(
+        rgba(2, 6, 23, 0.88),
+        rgba(2, 6, 23, 0.88)
+      );
+    }
 
     .hero-content {
       max-width: 900px;
@@ -55,117 +45,105 @@
 
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 64px;
       font-weight: 800;
-      letter-spacing: 2px;
+      font-size: 3.2rem;
+      letter-spacing: 1px;
       color: #ff8c00;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 20px;
-      font-weight: 400;
-      max-width: 760px;
-      margin: 0 auto 40px;
-      color: #e5e7eb;
+      font-size: 1.2rem;
+      color: #d1d5db;
+      margin-bottom: 40px;
     }
 
     .btn-primary {
       display: inline-block;
-      padding: 16px 36px;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      color: #000;
+      padding: 14px 32px;
       background-color: #ff8c00;
-      border-radius: 8px;
+      color: #020617;
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.3s ease;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn-primary:hover {
-      background-color: #ffa733;
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 140, 0, 0.35);
     }
 
-    /* SECTIONS */
+    /* SEÇÕES */
     section {
       padding: 100px 20px;
     }
 
-    .section-container {
+    .section-dark {
+      background-color: #020617;
+    }
+
+    .section-soft {
+      background-color: #020617;
+      border-top: 1px solid #020617;
+    }
+
+    .container {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    section h2 {
+    h2 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 42px;
+      font-size: 2.4rem;
       font-weight: 700;
-      margin-bottom: 30px;
       color: #ff8c00;
+      margin-bottom: 30px;
     }
 
-    section p {
-      font-size: 18px;
-      max-width: 900px;
+    p {
+      font-size: 1.05rem;
       color: #d1d5db;
     }
 
-    /* PROBLEM */
-    .problem {
-      background-color: #020617;
-    }
-
-    /* SOLUTION */
-    .solution {
-      background-color: #0f172a;
-    }
-
-    /* BENEFITS */
-    .benefits {
-      background-color: #020617;
-    }
-
-    .benefits ul {
+    /* BENEFÍCIOS */
+    .benefits-list {
       margin-top: 30px;
       list-style: none;
     }
 
-    .benefits li {
-      font-size: 18px;
-      margin-bottom: 14px;
-      padding-left: 20px;
+    .benefits-list li {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
       position: relative;
+      padding-left: 26px;
     }
 
-    .benefits li::before {
-      content: "✔";
+    .benefits-list li::before {
+      content: "✓";
       position: absolute;
       left: 0;
       color: #ff8c00;
+      font-weight: bold;
     }
 
     /* FOOTER */
     footer {
-      background-color: #020617;
       padding: 40px 20px;
       text-align: center;
-      font-size: 14px;
+      background-color: #020617;
       color: #9ca3af;
+      font-size: 0.9rem;
     }
 
+    /* RESPONSIVO */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 44px;
+        font-size: 2.4rem;
       }
 
-      .hero p {
-        font-size: 18px;
-      }
-
-      section h2 {
-        font-size: 32px;
+      h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -181,13 +159,13 @@
         Monitoramento inteligente de operações industriais por visão computacional,
         garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
       </p>
-      <a href="#contato" class="btn-primary">Solicitar Demonstração</a>
+      <a href="#" class="btn-primary">Solicitar Demonstração</a>
     </div>
   </section>
 
   <!-- PROBLEMA -->
-  <section class="problem">
-    <div class="section-container">
+  <section class="section-dark">
+    <div class="container">
       <h2>O Problema na Indústria</h2>
       <p>
         Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
@@ -198,23 +176,22 @@
   </section>
 
   <!-- SOLUÇÃO -->
-  <section class="solution">
-    <div class="section-container">
+  <section class="section-soft">
+    <div class="container">
       <h2>A Solução OPERA GUARD</h2>
       <p>
-        O OPERA GUARD utiliza visão computacional e inteligência artificial
-        para monitorar operações em tempo real, validar a sequência correta
-        de atividades e garantir conformidade operacional sem interferir
-        no fluxo produtivo.
+        O OPERA GUARD utiliza visão computacional e inteligência artificial para
+        monitorar operações em tempo real, validar a sequência correta de atividades
+        e garantir conformidade operacional sem interferir no fluxo produtivo.
       </p>
     </div>
   </section>
 
   <!-- BENEFÍCIOS -->
-  <section class="benefits">
-    <div class="section-container">
+  <section class="section-dark">
+    <div class="container">
       <h2>Benefícios para a Indústria</h2>
-      <ul>
+      <ul class="benefits-list">
         <li>Redução de falhas humanas e retrabalhos</li>
         <li>Rastreabilidade operacional automática</li>
         <li>Padronização da execução dos processos</li>
@@ -225,7 +202,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer id="contato">
+  <footer>
     © 2025 OPERA GUARD — Desenvolvido por MAXPROD Soluções Empresariais
   </footer>
 
