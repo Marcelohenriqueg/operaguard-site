@@ -2,94 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>OPERA GUARD | Monitoramento Inteligente de Operações</title>
+  <title>OPERA GUARD | Monitoramento Inteligente Industrial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      background-color: #0b1324;
+      color: #ffffff;
     }
 
-    header {
-      background: linear-gradient(90deg, #020617, #0f172a);
-      padding: 80px 20px;
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(5,10,30,0.75), rgba(5,10,30,0.85)),
+        url("assets/img/hero-industria.jpg");
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 40px 20px;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #f97316;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-      color: #cbd5f5;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: #f97316;
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #ff7a00;
       margin-bottom: 20px;
-      font-size: 2rem;
+      letter-spacing: 2px;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .hero p {
+      max-width: 800px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 0 auto 30px;
+      color: #dce3ff;
     }
 
-    .card {
-      background: #020617;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #1e293b;
-    }
-
-    footer {
-      background: #020617;
-      padding: 30px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    .cta {
-      background: #f97316;
-      color: #020617;
+    .btn {
+      background-color: #ff7a00;
+      color: #000;
       padding: 15px 30px;
-      display: inline-block;
-      margin-top: 20px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff9a33;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>OPERA GUARD</h1>
-  <p>
-    Monitoramento inteligente de operações industriais por visão computacional,
-    garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
-  </p>
-  <a class="cta" href="#contato">Solicitar Demonstração</a>
-</header>
+  <section class="hero">
+    <div>
+      <h1>OPERA GUARD</h1>
+      <p>
+        Monitoramento inteligente de operações industriais por visão computacional,
+        garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
+      </p>
+      <a href="#contato" class="btn">Solicitar Demonstração</a>
+    </div>
+  </section>
 
-<section>
-  <h2>O Problema</h2>
-  <p
+</body>
+</html>
