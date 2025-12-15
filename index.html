@@ -2,9 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>OPERA GUARD</title>
+<title>OPERA GUARD | Monitoramento Inteligente</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -13,6 +15,7 @@ body{
   font-family:'Inter',sans-serif;
   background:#020617;
   color:#fff;
+  overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
@@ -21,7 +24,7 @@ header{
   top:0;
   width:100%;
   height:76px;
-  background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.75));
+  background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.7));
   backdrop-filter:blur(6px);
   z-index:1000;
 }
@@ -34,7 +37,7 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-.logo-og img{height:45px}
+.logo-og img{height:44px}
 nav{
   display:flex;
   gap:34px;
@@ -44,6 +47,7 @@ nav a{
   text-decoration:none;
   font-weight:500;
 }
+nav a:hover{color:#fde047}
 .btn-contato{
   background:#ff9f1a;
   color:#000;
@@ -57,26 +61,27 @@ nav a{
 .hero{
   height:100vh;
   background:
-    linear-gradient(rgba(5,20,45,.85),rgba(5,20,45,.85)),
+    linear-gradient(to bottom,rgba(5,20,45,.85),rgba(5,20,45,.9)),
     url("assets/images/hero2.png") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
 }
 .hero-content{
+  text-align:center;
   max-width:980px;
 }
 .hero h1{
   font-size:64px;
   font-weight:800;
   color:#fde047;
-  margin-bottom:22px;
+  margin-bottom:20px;
 }
 .hero p{
   font-size:18px;
-  color:#cbd5f5;
-  margin-bottom:40px;
+  line-height:1.6;
+  color:#e5e7eb;
+  margin-bottom:36px;
 }
 .btn-demo{
   background:#ff9f1a;
@@ -84,116 +89,129 @@ nav a{
   padding:18px 44px;
   border-radius:14px;
   font-weight:800;
+  font-size:18px;
   text-decoration:none;
 }
 
 /* ================= SOLUÇÃO ================= */
 #solucao{
   position:relative;
-  min-height:100vh;
-  padding:140px 0 160px;
-  overflow:visible;
+  min-height:110vh;
   background:
-    linear-gradient(to right,
-      rgba(2,6,23,.95) 0%,
-      rgba(2,6,23,.85) 40%,
-      rgba(2,6,23,.45) 70%,
-      rgba(2,6,23,.15) 100%
-    ),
+    linear-gradient(to right,rgba(2,6,23,.95),rgba(2,6,23,.65)),
     url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
+  padding:140px 0;
 }
-
 .solucao-container{
   max-width:1320px;
   margin:0 auto;
   padding:0 32px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+  grid-template-columns:1.1fr .9fr;
+  gap:80px;
 }
-
-/* Texto */
-.solucao-left h2{
-  font-size:56px;
+.solucao-text h2{
+  font-size:54px;
   color:#fde047;
-  margin-bottom:28px;
+  margin-bottom:20px;
 }
-.solucao-left p{
+.solucao-text p{
   font-size:18px;
-  color:#cbd5f5;
-  max-width:520px;
+  line-height:1.7;
+  color:#e5e7eb;
 }
 
-/* Cards */
-.solucao-right{
-  position:relative;
+/* Cards empilhados */
+.solucao-cards{
   display:flex;
   flex-direction:column;
-  gap:18px;
-  padding-left:14px;
-  padding-bottom:80px; /* evita corte */
+  gap:22px;
 }
-
-.feature-card{
-  background:rgba(15,23,42,.85);
-  border-radius:18px;
-  padding:26px 28px;
-  position:relative;
+.solucao-card{
+  background:rgba(15,23,42,.88);
+  border-left:4px solid #fde047;
+  border-radius:16px;
+  padding:26px 30px;
   opacity:0;
-  transform:translateX(60px);
-  transition:all .6s cubic-bezier(.4,0,.2,1);
+  transform:translateX(40px);
+  transition:.5s ease;
 }
-
-.feature-card::before{
-  content:'';
-  position:absolute;
-  left:0;
-  top:18px;
-  width:4px;
-  height:70%;
-  background:#fde047;
-  border-radius:2px;
-}
-
-.feature-card h3{
+.solucao-card h3{
   color:#fde047;
-  font-size:20px;
   margin-bottom:10px;
 }
-.feature-card p{
+.solucao-card p{
   color:#e5e7eb;
-  font-size:15px;
   line-height:1.5;
 }
-
-/* Empilhamento elegante */
-.feature-card:nth-child(1){transform:translateX(26px)}
-.feature-card:nth-child(2){transform:translateX(26px) translateY(6px)}
-.feature-card:nth-child(3){transform:translateX(26px) translateY(12px)}
-.feature-card:nth-child(4){transform:translateX(26px) translateY(18px)}
-
-/* Reveal */
-.reveal.in-view .feature-card{
+.solucao-card.active{
   opacity:1;
-  transform:translateX(0) translateY(0);
+  transform:translateX(0);
 }
-
-/* Hover inteligente */
-.solucao-right:hover .feature-card{
+.solucao-cards:hover .solucao-card{
   opacity:.4;
 }
-.solucao-right .feature-card:hover{
+.solucao-cards:hover .solucao-card:hover{
   opacity:1;
-  transform:translateX(-6px);
-  z-index:10;
 }
 
-/* ================= RESPONSIVO ================= */
-@media(max-width:900px){
-  .solucao-container{
-    grid-template-columns:1fr;
-  }
+/* ================= COMO FUNCIONA ================= */
+#como-funciona{
+  padding:140px 0;
+  background:#020617;
 }
+.como-container{
+  max-width:1320px;
+  margin:0 auto;
+  padding:0 32px;
+}
+.como-container h2{
+  font-size:52px;
+  color:#fde047;
+  margin-bottom:18px;
+}
+.como-container p{
+  font-size:18px;
+  color:#e5e7eb;
+  margin-bottom:60px;
+}
+
+.etapas{
+  display:flex;
+  gap:28px;
+}
+.etapa{
+  flex:1;
+  background:rgba(15,23,42,.9);
+  border-top:4px solid #fde047;
+  border-radius:18px;
+  padding:30px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s ease;
+}
+.etapa h4{
+  color:#fde047;
+  margin-bottom:12px;
+}
+.etapa p{
+  color:#e5e7eb;
+  line-height:1.5;
+}
+.etapa.active{
+  opacity:1;
+  transform:translateY(0);
+}
+.etapas:hover .etapa{opacity:.4}
+.etapas:hover .etapa:hover{opacity:1}
+
+.como-footnote{
+  margin-top:40px;
+  font-size:13px;
+  color:#94a3b8;
+}
+
+/* ================= JS ================= */
 </style>
 </head>
 
@@ -207,65 +225,63 @@ nav a{
     <nav>
       <a href="#solucao">Solução</a>
       <a href="#como-funciona">Como Funciona</a>
-      <a href="#aplicacoes">Aplicações</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#tecnologia">Tecnologia</a>
+      <a href="#">Aplicações</a>
+      <a href="#">Diferenciais</a>
+      <a href="#">Tecnologia</a>
     </nav>
-    <a class="btn-contato" href="#contato">Contato</a>
+    <a class="btn-contato" href="#">Contato</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-content">
     <h1>OPERA GUARD</h1>
-    <p>Inteligência Artificial para garantir que cada operação seja executada corretamente.</p>
-    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
+    <p>O OPERA GUARD atua como um guardião digital das operações industriais, monitorando cada etapa do processo para garantir conformidade, rastreabilidade e execução correta.</p>
+    <a class="btn-demo" href="#">Solicitar Demonstração</a>
   </div>
 </section>
 
-<section id="solucao" class="reveal">
+<section id="solucao">
   <div class="solucao-container">
+    <div class="solucao-text">
+      <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
+      <p>Inteligência aplicada diretamente sobre o processo existente, sem interferir no ritmo produtivo ou na dinâmica do operador.</p>
+    </div>
+    <div class="solucao-cards">
+      <div class="solucao-card"> <h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p></div>
+      <div class="solucao-card"> <h3>Validação da Sequência Correta</h3><p>Garante execução conforme padrão definido pela engenharia.</p></div>
+      <div class="solucao-card"> <h3>Rastreabilidade Inteligente</h3><p>Evidências visuais confiáveis para auditorias.</p></div>
+      <div class="solucao-card"> <h3>Prevenção de Falhas Humanas</h3><p>Atua antes que desvios se tornem defeitos.</p></div>
+    </div>
+  </div>
+</section>
 
-    <div class="solucao-left">
-      <h2>Uma nova camada de inteligência<br>sobre o processo produtivo</h2>
-      <p>
-        O OPERA GUARD atua como um guardião digital das operações industriais,
-        monitorando em tempo real cada etapa do processo para garantir
-        conformidade, rastreabilidade e execução correta.
-      </p>
+<section id="como-funciona">
+  <div class="como-container">
+    <h2>Como o OPERA GUARD funciona na prática</h2>
+    <p>Uma camada de inteligência aplicada sobre o processo existente, sem contato físico e sem interferir na operação.</p>
+
+    <div class="etapas">
+      <div class="etapa"><h4>Etapa 01</h4><p>Captura da operação em tempo real.</p></div>
+      <div class="etapa"><h4>Etapa 02</h4><p>Definição do padrão operacional.</p></div>
+      <div class="etapa"><h4>Etapa 03</h4><p>Análise por visão computacional e IA.</p></div>
+      <div class="etapa"><h4>Etapa 04</h4><p>Decisão e alertas preventivos.</p></div>
+      <div class="etapa"><h4>Etapa 05</h4><p>Registro e evidências operacionais.*</p></div>
     </div>
 
-    <div class="solucao-right">
-      <div class="feature-card">
-        <h3>Detecção de Bypass Operacional</h3>
-        <p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Validação da Sequência Correta</h3>
-        <p>Garante execução conforme o padrão definido pela engenharia.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Rastreabilidade Inteligente</h3>
-        <p>Registra evidências visuais confiáveis para auditorias.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Prevenção de Falhas Humanas</h3>
-        <p>Atua preventivamente antes que desvios se tornem defeitos.</p>
-      </div>
+    <div class="como-footnote">
+      * O nível de retenção, armazenamento e histórico de dados pode variar conforme a arquitetura contratada. Armazenamento em nuvem e histórico estendido podem ser contratados como módulos adicionais.
     </div>
-
   </div>
 </section>
 
 <script>
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('in-view');
-    }
-  });
-},{threshold:.25});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.solucao-card').forEach((c,i)=>{
+  setTimeout(()=>c.classList.add('active'),i*180)
+});
+document.querySelectorAll('.etapa').forEach((e,i)=>{
+  setTimeout(()=>e.classList.add('active'),i*200)
+});
 </script>
 
 </body>
