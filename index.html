@@ -60,7 +60,7 @@
 
     nav {
       display: flex;
-      gap: 34px;
+      gap: 32px;
     }
 
     nav a {
@@ -91,14 +91,14 @@
     }
 
     .logo-maxprod img {
-      height: 56px;
+      height: 58px;
     }
 
     /* ================= HERO ================= */
     .hero {
       height: 100vh;
       background:
-        linear-gradient(rgba(5,20,45,.82), rgba(5,20,45,.88)),
+        linear-gradient(rgba(5,20,45,0.82), rgba(5,20,45,0.88)),
         url("assets/images/hero2.png") center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -121,8 +121,8 @@
 
     .hero .subtitle {
       font-size: 22px;
-      margin-bottom: 18px;
       color: #e5e7eb;
+      margin-bottom: 18px;
     }
 
     .hero .description {
@@ -141,96 +141,94 @@
       font-size: 18px;
       font-weight: 800;
       text-decoration: none;
-      display: inline-block;
+    }
+
+    /* ===== TRANSIÇÃO SUAVE HERO → SOLUÇÃO ===== */
+    .hero-solution-fade {
+      height: 140px;
+      background: linear-gradient(
+        to bottom,
+        rgba(2,6,23,0) 0%,
+        rgba(2,6,23,0.7) 45%,
+        rgba(2,6,23,1) 100%
+      );
     }
 
     /* ================= SOLUÇÃO ================= */
-    .solucao-visual {
+    #solucao {
       position: relative;
-      min-height: 100vh;
-      padding: 140px 32px;
-      overflow: hidden;
-    }
-
-    .solucao-bg {
-      position: absolute;
-      inset: 0;
+      padding: 120px 32px 140px;
       background:
-        linear-gradient(
-          to right,
-          rgba(2,6,23,.95) 25%,
-          rgba(2,6,23,.75) 55%,
-          rgba(2,6,23,.4)
-        ),
+        linear-gradient(rgba(2,6,23,0.92), rgba(2,6,23,0.96)),
         url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
-      z-index: 1;
     }
 
-    .solucao-wrapper {
-      position: relative;
-      z-index: 2;
+    .solution-container {
       max-width: 1320px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .solucao-texto h2 {
-      font-size: 48px;
+    .solution-text h2 {
+      font-size: 46px;
       font-weight: 800;
       color: #fde047;
       margin-bottom: 22px;
+      line-height: 1.15;
     }
 
-    .solucao-texto p {
+    .solution-text p {
       font-size: 18px;
+      color: #cbd5f5;
       line-height: 1.6;
-      color: #e5e7eb;
       max-width: 520px;
     }
 
-    .solucao-cards {
+    .solution-cards {
       display: grid;
-      gap: 22px;
+      gap: 26px;
     }
 
-    .solucao-card {
-      background: rgba(15,23,42,.65);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
+    .solution-card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 18px;
       padding: 26px 28px;
-      border-left: 4px solid #334155;
+      border-left: 4px solid #fde047; /* PADRÃO AMARELO */
+      backdrop-filter: blur(6px);
     }
 
-    .solucao-card h3 {
-      font-size: 18px;
-      font-weight: 700;
+    .solution-card h3 {
       color: #fde047;
+      font-size: 18px;
       margin-bottom: 10px;
+      font-weight: 700;
     }
 
-    .solucao-card p {
-      font-size: 14.5px;
-      line-height: 1.6;
+    .solution-card p {
+      font-size: 15px;
       color: #e5e7eb;
+      line-height: 1.55;
     }
 
-    .solucao-card.destaque {
-      border-left-color: #ff9f1a;
-    }
+    /* ================= RESPONSIVO ================= */
+    @media (max-width: 1000px) {
+      .solution-container {
+        grid-template-columns: 1fr;
+      }
 
-    @media (max-width: 980px) {
-      nav { display: none; }
-      .hero h1 { font-size: 44px; }
-      .solucao-wrapper { grid-template-columns: 1fr; }
+      .solution-text h2 {
+        font-size: 36px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-container">
     <div class="logo-og">
@@ -256,6 +254,7 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>OPERA GUARD</h1>
@@ -270,11 +269,14 @@
   </div>
 </section>
 
-<section id="solucao" class="solucao-visual">
-  <div class="solucao-bg"></div>
+<!-- FADE -->
+<div class="hero-solution-fade"></div>
 
-  <div class="solucao-wrapper">
-    <div class="solucao-texto">
+<!-- SOLUÇÃO -->
+<section id="solucao">
+  <div class="solution-container">
+
+    <div class="solution-text">
       <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
       <p>
         O OPERA GUARD atua como um guardião digital das operações industriais,
@@ -283,27 +285,28 @@
       </p>
     </div>
 
-    <div class="solucao-cards">
-      <div class="solucao-card">
+    <div class="solution-cards">
+      <div class="solution-card">
         <h3>Detecção de Bypass Operacional</h3>
         <p>Identifica automaticamente etapas ignoradas, reduzindo riscos e retrabalho.</p>
       </div>
 
-      <div class="solucao-card">
+      <div class="solution-card">
         <h3>Validação da Sequência Correta</h3>
         <p>Garante execução conforme o padrão definido pela engenharia de processo.</p>
       </div>
 
-      <div class="solucao-card">
+      <div class="solution-card">
         <h3>Rastreabilidade Inteligente</h3>
         <p>Registra evidências visuais e eventos para auditorias e análises.</p>
       </div>
 
-      <div class="solucao-card destaque">
+      <div class="solution-card">
         <h3>Prevenção de Falhas Humanas</h3>
         <p>Atua de forma preventiva, protegendo qualidade, custo e reputação.</p>
       </div>
     </div>
+
   </div>
 </section>
 
