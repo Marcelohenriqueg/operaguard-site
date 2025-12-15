@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     /* RESET */
@@ -36,8 +36,8 @@
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(8, 14, 32, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(8, 14, 32, 0.88);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
@@ -48,16 +48,19 @@
       align-items: center;
     }
 
-    .logo-main img {
-      height: 48px;
+    /* LOGO OPERA */
+    .logo-opera img {
+      height: 54px;
+      display: block;
     }
 
+    /* MENU */
     nav {
       margin-left: auto;
       display: flex;
       align-items: center;
-      gap: 36px;
-      margin-right: 40px;
+      gap: 40px;
+      margin-right: 48px;
     }
 
     nav a {
@@ -67,23 +70,25 @@
     }
 
     .nav-cta {
-      padding: 10px 22px;
+      padding: 10px 26px;
       background: #ff9f1c;
       color: #0b1020;
-      border-radius: 10px;
+      border-radius: 12px;
       font-weight: 700;
     }
 
-    .logo-company {
+    /* LOGO MAXPROD */
+    .logo-maxprod {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 0.75rem;
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
-    .logo-company img {
-      height: 26px;
+    .logo-maxprod img {
+      height: 34px; /* AUMENTADA */
+      display: block;
     }
 
     /* HERO */
@@ -92,7 +97,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 120px 24px 80px;
+      padding: 140px 24px 90px;
       text-align: center;
       background:
         linear-gradient(
@@ -108,42 +113,42 @@
 
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 4rem;
+      font-size: 3.6rem;
       font-weight: 800;
       letter-spacing: 1px;
       color: #ffe45c;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .hero .subtitle {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 500;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .hero .description {
       font-size: 1.05rem;
       opacity: 0.95;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
     }
 
     .hero .cta {
       display: inline-block;
-      padding: 18px 48px;
+      padding: 20px 52px; /* BOTÃO MAIOR */
       background: #ff9f1c;
       color: #0b1020;
       font-size: 1.1rem;
       font-weight: 700;
-      border-radius: 14px;
+      border-radius: 16px;
     }
 
     /* FOOTER */
     footer {
       background: #060b1a;
-      padding: 24px;
+      padding: 26px;
       text-align: center;
       font-size: 0.85rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     @media (max-width: 900px) {
@@ -152,7 +157,7 @@
       }
 
       .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
       }
 
       .hero .subtitle {
@@ -168,10 +173,12 @@
   <header>
     <div class="header-inner">
 
-      <div class="logo-main">
-        <img src="assets/images/LOGO OPERA GUARD.png" alt="Opera Guard">
+      <!-- LOGO OPERA GUARD -->
+      <div class="logo-opera">
+        <img src="assets/images/LOGO_OPERA_GUARD.png" alt="Opera Guard">
       </div>
 
+      <!-- MENU -->
       <nav>
         <a href="#solucao">Solução</a>
         <a href="#como-funciona">Como Funciona</a>
@@ -180,7 +187,8 @@
         <a href="#contato" class="nav-cta">Contato</a>
       </nav>
 
-      <div class="logo-company">
+      <!-- LOGO MAXPROD -->
+      <div class="logo-maxprod">
         <span>by</span>
         <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
       </div>
