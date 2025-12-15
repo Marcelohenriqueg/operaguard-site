@@ -6,14 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       RESET BÁSICO
-    ========================= */
     * {
       margin: 0;
       padding: 0;
@@ -22,114 +17,181 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #061228;
-      color: #e5eaf1;
-      line-height: 1.6;
+      background-color: #0b1020;
+      color: #ffffff;
     }
 
-    /* =========================
-       HERO – OPERA GUARD
-    ========================= */
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 20, 45, 0.6);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 14px 32px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+    }
+
+    .logo-main img {
+      height: 36px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      padding: 8px 18px;
+      background: #FF9F1C;
+      color: #0b1020;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .logo-company {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      opacity: 0.75;
+    }
+
+    .logo-company img {
+      height: 22px;
+    }
+
+    /* ================= HERO ================= */
     .hero {
       min-height: 100vh;
+      padding-top: 120px;
+      background:
+        linear-gradient(
+          rgba(6, 18, 45, 0.75),
+          rgba(6, 18, 45, 0.85)
+        ),
+        url("assets/images/hero2.png") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 24px;
-
-      background:
-        linear-gradient(
-          rgba(6, 18, 40, 0.88),
-          rgba(6, 18, 40, 0.88)
-        ),
-url("assets/images/hero2.png");
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
 
     .hero-content {
-      max-width: 980px;
+      max-width: 900px;
+      padding: 0 24px;
     }
 
     .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(3.2rem, 6vw, 4.4rem);
+      font-size: 3.6rem;
       font-weight: 800;
+      color: #FFE36E;
+      margin-bottom: 24px;
       letter-spacing: 1px;
-      color: #FFE45B;
-      margin-bottom: 22px;
     }
 
-    .hero .subtitle-main {
-      font-size: 1.4rem;
+    .hero .subtitle {
+      font-size: 1.3rem;
       font-weight: 500;
-      color: #ffffff;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
+      line-height: 1.5;
     }
 
-    .hero .subtitle-secondary {
+    .hero .description {
       font-size: 1.05rem;
-      font-weight: 400;
-      color: #cfd6e0;
+      opacity: 0.9;
       line-height: 1.6;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
     }
 
-    .hero .cta-btn {
-      display: inline-block;
-      padding: 18px 48px;
+    .hero button {
+      background: #FF9F1C;
+      color: #0b1020;
+      border: none;
+      padding: 18px 46px;
       font-size: 1.05rem;
-      font-weight: 600;
-      color: #000;
-      background-color: #FF9F1C;
+      font-weight: 700;
       border-radius: 10px;
-      text-decoration: none;
-      transition: all 0.25s ease;
+      cursor: pointer;
     }
 
-    .hero .cta-btn:hover {
-      background-color: #ffb347;
-      transform: translateY(-2px);
+    .hero button:hover {
+      background: #ffb84d;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* ================= FOOTER ================= */
     footer {
-      background-color: #040b1a;
+      background: #070c1a;
       text-align: center;
-      padding: 24px 16px;
-      font-size: 0.9rem;
-      color: #9aa4b2;
+      padding: 28px 16px;
+      font-size: 0.85rem;
+      opacity: 0.85;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+
+      <div class="logo-main">
+        <img src="assets/images/LOGO_OPERA_GUARD.png" alt="Opera Guard">
+      </div>
+
+      <nav>
+        <a href="#solucao">Solução</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#contato" class="nav-cta">Contato</a>
+      </nav>
+
+      <div class="logo-company">
+        <span>by</span>
+        <img src="assets/images/LOGO_MAXPROD_Transparente.png" alt="Maxprod">
+      </div>
+
+    </div>
+  </header>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-
       <h1>OPERA GUARD</h1>
 
-      <div class="subtitle-main">
+      <p class="subtitle">
         Inteligência Artificial para garantir que cada operação seja executada corretamente.
-      </div>
+      </p>
 
-      <div class="subtitle-secondary">
-        Sistema de monitoramento inteligente por visão computacional e IA,
-        capaz de detectar bypass operacional, validar a sequência correta
-        das atividades e prevenir falhas humanas em tempo real.
-      </div>
+      <p class="description">
+        Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
+        validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+      </p>
 
-      <a href="#contato" class="cta-btn">
-        Solicitar Demonstração
-      </a>
-
+      <button>Solicitar Demonstração</button>
     </div>
   </section>
 
