@@ -1,195 +1,252 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>OPERA GUARD | Monitoramento Inteligente</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>OPERA GUARD | Monitoramento Inteligente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Inter',sans-serif;
-  background:#020617;
-  color:#fff;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:76px;
-  background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.75));
-  backdrop-filter:blur(6px);
-  z-index:1000;
-}
-.header-container{
-  max-width:1320px;
-  height:100%;
-  margin:0 auto;
-  padding:0 32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo-og img{height:46px}
-.nav-area{display:flex;align-items:center;gap:36px}
-nav{display:flex;gap:32px}
-nav a{
-  color:#e5e7eb;
-  text-decoration:none;
-  font-size:15px;
-  font-weight:500;
-}
-nav a:hover{color:#fde047}
-.header-right{display:flex;align-items:center;gap:18px}
-.btn-contato{
-  background:#ff9f1a;
-  color:#000;
-  padding:10px 22px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-}
-.logo-maxprod img{height:62px}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #ffffff;
+    }
 
-/* ================= HERO (OK FINAL) ================= */
-.hero{
-  height:100vh;
-  background:
-    linear-gradient(rgba(5,20,45,.82),rgba(5,20,45,.88)),
-    url("assets/images/hero2.png") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 24px;
-  position:relative;
-}
-.hero-content{
-  max-width:980px;
-  text-align:center;
-  margin-top:40px;
-}
-.hero h1{
-  font-size:64px;
-  font-weight:800;
-  color:#fde047;
-  margin-bottom:22px;
-}
-.subtitle{
-  font-size:22px;
-  margin-bottom:18px;
-}
-.description{
-  font-size:17px;
-  color:#cbd5f5;
-  max-width:860px;
-  margin:0 auto 42px;
-}
-.btn-demo{
-  background:#ff9f1a;
-  color:#000;
-  padding:18px 44px;
-  border-radius:14px;
-  font-size:18px;
-  font-weight:800;
-  text-decoration:none;
-}
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 76px;
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.75)
+      );
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
 
-/* ===== FADE DE TRANSIÇÃO HERO → SOLUÇÃO ===== */
-.hero::after{
-  content:"";
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:140px;
-  background:linear-gradient(
-    to bottom,
-    rgba(2,6,23,0),
-    rgba(2,6,23,0.6),
-    rgba(2,6,23,1)
-  );
-}
+    .header-container {
+      max-width: 1320px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* ================= SOLUÇÃO ================= */
-.solucao{
-  position:relative;
-  padding:160px 32px 140px;
-  background:
-    linear-gradient(
-      to right,
-      rgba(2,6,23,.95) 0%,
-      rgba(2,6,23,.75) 45%,
-      rgba(2,6,23,.35) 70%,
-      rgba(2,6,23,.1) 100%
-    ),
-    url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
-}
+    .logo-og img {
+      height: 48px;
+    }
 
-.solucao-container{
-  max-width:1320px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:80px;
-  align-items:center;
-}
+    .nav-area {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
 
-/* Texto */
-.solucao-text h2{
-  font-size:48px;
-  font-weight:800;
-  color:#fde047;
-  margin-bottom:28px;
-}
-.solucao-text p{
-  font-size:18px;
-  color:#cbd5f5;
-  line-height:1.7;
-  max-width:520px;
-}
+    nav {
+      display: flex;
+      gap: 34px;
+    }
 
-/* Cards */
-.solucao-cards{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+    }
 
-.card{
-  background:rgba(15,23,42,.92);
-  border-radius:18px;
-  padding:26px 28px;
-  border-left:5px solid #ff9f1a; /* AMARELO EM TODOS */
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
-}
+    nav a:hover {
+      color: #fde047;
+    }
 
-.card h3{
-  color:#fde047;
-  font-size:18px;
-  margin-bottom:10px;
-}
-.card p{
-  color:#e5e7eb;
-  font-size:15px;
-  line-height:1.6;
-}
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-/* ================= RESPONSIVO ================= */
-@media(max-width:1024px){
-  .solucao-container{
-    grid-template-columns:1fr;
-  }
-  .solucao{
-    background:
-      linear-gradient(rgba(2,6,23,.92),rgba(2,6,23,.92)),
-      url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
-  }
-}
-</style>
+    .btn-contato {
+      background-color: #ff9f1a;
+      color: #000;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .logo-maxprod img {
+      height: 58px;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(
+          rgba(5, 20, 45, 0.85),
+          rgba(5, 20, 45, 0.9)
+        ),
+        url("assets/images/hero2.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .hero-content {
+      max-width: 980px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 800;
+      color: #fde047;
+      margin-bottom: 22px;
+    }
+
+    .hero .subtitle {
+      font-size: 22px;
+      margin-bottom: 18px;
+      color: #e5e7eb;
+    }
+
+    .hero .description {
+      font-size: 17px;
+      color: #cbd5f5;
+      max-width: 860px;
+      margin: 0 auto 42px;
+      line-height: 1.6;
+    }
+
+    .btn-demo {
+      background-color: #ff9f1a;
+      color: #000;
+      padding: 18px 44px;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* ===== TRANSIÇÃO HERO → SOLUÇÃO ===== */
+    .section-transition {
+      height: 120px;
+      background: linear-gradient(
+        to bottom,
+        rgba(5,20,45,0.9),
+        rgba(2,6,23,1)
+      );
+    }
+
+    /* ================= SOLUÇÃO ================= */
+    .solution {
+      position: relative;
+      padding: 120px 0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(2,6,23,0.95) 0%,
+          rgba(2,6,23,0.85) 45%,
+          rgba(2,6,23,0.55) 100%
+        ),
+        url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
+    }
+
+    .solution-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .solution-text h2 {
+      font-size: 48px;
+      color: #fde047;
+      margin-bottom: 22px;
+    }
+
+    .solution-text p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e5e7eb;
+      max-width: 520px;
+    }
+
+    .solution-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .solution-card {
+      background: rgba(15,23,42,0.85);
+      border-radius: 16px;
+      padding: 26px 28px;
+      border-left: 4px solid #fde047;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .solution-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .solution-card h3 {
+      color: #fde047;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .solution-card p {
+      color: #e5e7eb;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .solution-card:nth-child(1) { transition-delay: 0.1s; }
+    .solution-card:nth-child(2) { transition-delay: 0.2s; }
+    .solution-card:nth-child(3) { transition-delay: 0.3s; }
+    .solution-card:nth-child(4) { transition-delay: 0.4s; }
+
+    /* ================= RESPONSIVO ================= */
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .solution-container {
+        grid-template-columns: 1fr;
+      }
+
+      .solution-text h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -197,7 +254,7 @@ nav a:hover{color:#fde047}
 <header>
   <div class="header-container">
     <div class="logo-og">
-      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
+      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="Opera Guard">
     </div>
 
     <div class="nav-area">
@@ -208,10 +265,11 @@ nav a:hover{color:#fde047}
         <a href="#diferenciais">Diferenciais</a>
         <a href="#tecnologia">Tecnologia</a>
       </nav>
+
       <div class="header-right">
         <a href="#contato" class="btn-contato">Contato</a>
         <div class="logo-maxprod">
-          <img src="assets/images/LOGO - MAXPROD.png">
+          <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
         </div>
       </div>
     </div>
@@ -232,10 +290,12 @@ nav a:hover{color:#fde047}
   </div>
 </section>
 
-<section id="solucao" class="solucao">
-  <div class="solucao-container">
+<div class="section-transition"></div>
 
-    <div class="solucao-text">
+<section class="solution" id="solucao">
+  <div class="solution-container">
+
+    <div class="solution-text">
       <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
       <p>
         O OPERA GUARD atua como um guardião digital das operações industriais,
@@ -244,23 +304,23 @@ nav a:hover{color:#fde047}
       </p>
     </div>
 
-    <div class="solucao-cards">
-      <div class="card">
+    <div class="solution-cards">
+      <div class="solution-card">
         <h3>Detecção de Bypass Operacional</h3>
         <p>Identifica automaticamente etapas ignoradas, reduzindo riscos e retrabalho.</p>
       </div>
 
-      <div class="card">
+      <div class="solution-card">
         <h3>Validação da Sequência Correta</h3>
         <p>Garante execução conforme o padrão definido pela engenharia de processo.</p>
       </div>
 
-      <div class="card">
+      <div class="solution-card">
         <h3>Rastreabilidade Inteligente</h3>
         <p>Registra evidências visuais e eventos para auditorias e análises.</p>
       </div>
 
-      <div class="card">
+      <div class="solution-card">
         <h3>Prevenção de Falhas Humanas</h3>
         <p>Atua de forma preventiva, protegendo qualidade, custo e reputação.</p>
       </div>
@@ -268,6 +328,21 @@ nav a:hover{color:#fde047}
 
   </div>
 </section>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.solution-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
 
 </body>
 </html>
