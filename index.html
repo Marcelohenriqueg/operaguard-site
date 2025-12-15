@@ -34,20 +34,18 @@
         rgba(2, 6, 23, 0.95),
         rgba(2, 6, 23, 0.75)
       );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
       backdrop-filter: blur(6px);
+      z-index: 1000;
     }
 
     .header-container {
-      width: 100%;
       max-width: 1320px;
+      height: 100%;
+      margin: 0 auto;
       padding: 0 32px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     /* Logo Opera Guard */
@@ -55,11 +53,16 @@
       height: 44px;
     }
 
-    /* Menu */
+    /* Menu + CTA agrupados à direita */
+    .nav-area {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
     nav {
       display: flex;
-      justify-content: center;
-      gap: 36px;
+      gap: 34px;
     }
 
     nav a {
@@ -71,14 +74,14 @@
     }
 
     nav a:hover {
-      color: #fbbf24;
+      color: #fde047;
     }
 
     /* CTA + Maxprod */
     .header-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
 
     .btn-contato {
@@ -93,12 +96,12 @@
     }
 
     .btn-contato:hover {
-      transform: translateY(-1px);
       background-color: #ffb347;
+      transform: translateY(-1px);
     }
 
     .logo-maxprod img {
-      height: 38px;
+      height: 45px;
       opacity: 0.95;
     }
 
@@ -196,20 +199,21 @@
         <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="Opera Guard">
       </div>
 
-      <!-- Menu -->
-      <nav>
-        <a href="#solucao">Solução</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#aplicacoes">Aplicações</a>
-        <a href="#diferenciais">Diferenciais</a>
-        <a href="#tecnologia">Tecnologia</a>
-      </nav>
+      <!-- Menu + CTA à direita -->
+      <div class="nav-area">
+        <nav>
+          <a href="#solucao">Solução</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#aplicacoes">Aplicações</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#tecnologia">Tecnologia</a>
+        </nav>
 
-      <!-- CTA + Maxprod -->
-      <div class="header-right">
-        <a href="#contato" class="btn-contato">Contato</a>
-        <div class="logo-maxprod">
-          <img src="assets/images/LOGO_MAXPROD_Transparente.png" alt="Maxprod">
+        <div class="header-right">
+          <a href="#contato" class="btn-contato">Contato</a>
+          <div class="logo-maxprod">
+            <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
+          </div>
         </div>
       </div>
 
