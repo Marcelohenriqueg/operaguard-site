@@ -5,348 +5,711 @@
   <title>OPERA GUARD | Monitoramento Inteligente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --bg:#020617;
+      --panel:#0b1220;
+      --panel2:rgba(12, 20, 38, 0.78);
+      --text:#e5e7eb;
+      --muted:#cbd5f5;
+      --muted2:#aab4d6;
+      --gold:#fde047;
+      --cta:#ff9f1a;
+      --cta2:#ffb347;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 18px 45px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+      --headerH:76px;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #020617;
-      color: #fff;
-      scroll-behavior: smooth;
+    *{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:#fff;
+      overflow-x:hidden;
     }
 
     /* ================= HEADER ================= */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 76px;
-      background: linear-gradient(to bottom, rgba(2,6,23,.95), rgba(2,6,23,.75));
-      backdrop-filter: blur(6px);
-      z-index: 1000;
+    header{
+      position:fixed;
+      top:0; left:0; right:0;
+      height:var(--headerH);
+      background:linear-gradient(to bottom, rgba(2,6,23,.96), rgba(2,6,23,.72));
+      backdrop-filter: blur(7px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .header-container {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 32px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .header-container{
+      max-width:1320px;
+      height:100%;
+      margin:0 auto;
+      padding:0 32px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
     }
 
-    .logo img {
-      height: 44px;
+    .logo-og{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:220px;
     }
 
-    nav {
-      display: flex;
-      gap: 34px;
-      margin-left: auto;
-      align-items: center;
+    .logo-og img{ height:45px; display:block; }
+
+    /* menu mais à direita (empurra) */
+    .nav-area{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap:30px;
     }
 
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
+    nav{
+      display:flex;
+      gap:30px;
+      align-items:center;
     }
 
-    nav a:hover {
-      color: #fde047;
+    nav a{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+      letter-spacing:.2px;
+      opacity:.92;
+      transition:opacity .18s ease, color .18s ease, transform .18s ease;
     }
 
-    .btn-contato {
-      margin-left: 28px;
-      background: #ff9f1a;
-      color: #000;
-      padding: 10px 22px;
-      border-radius: 10px;
-      font-weight: 800;
-      text-decoration: none;
+    nav a:hover{
+      color:var(--gold);
+      opacity:1;
+      transform:translateY(-1px);
     }
+
+    .btn-contato{
+      background:var(--cta);
+      color:#000;
+      padding:10px 22px;
+      border-radius:12px;
+      font-weight:800;
+      font-size:14px;
+      text-decoration:none;
+      transition:transform .22s ease, background .22s ease;
+      box-shadow:0 10px 25px rgba(255,159,26,.25);
+      white-space:nowrap;
+    }
+    .btn-contato:hover{ background:var(--cta2); transform:translateY(-1px); }
 
     /* ================= HERO ================= */
-    .hero {
-      height: 100vh;
+    .hero{
+      min-height:100vh;
+      padding-top:var(--headerH);
       background:
-        linear-gradient(rgba(5,20,45,.88), rgba(5,20,45,.92)),
+        linear-gradient(rgba(5,20,45,0.82), rgba(5,20,45,0.90)),
         url("assets/images/hero2.png") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding-top: 76px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding-left:24px;
+      padding-right:24px;
+      position:relative;
     }
 
-    .hero-content {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 32px;
+    /* suaviza transição com a próxima seção */
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-1px;
+      height:140px;
+      background:linear-gradient(to bottom, rgba(2,6,23,0) 0%, rgba(2,6,23,1) 100%);
+      pointer-events:none;
     }
 
-    .hero h1 {
-      font-size: 64px;
-      color: #fde047;
-      font-weight: 800;
-      margin-bottom: 20px;
+    .hero-content{
+      max-width:980px;
+      text-align:center;
+      margin-top:10px;
     }
 
-    .hero p {
-      max-width: 640px;
-      font-size: 18px;
-      color: #cbd5f5;
-      line-height: 1.6;
+    .hero h1{
+      font-size:64px;
+      font-weight:800;
+      letter-spacing:1px;
+      color:var(--gold);
+      margin-bottom:18px;
+      text-shadow:0 12px 40px rgba(0,0,0,.55);
     }
 
-    .btn-demo {
-      display: inline-block;
-      margin-top: 40px;
-      background: #ff9f1a;
-      color: #000;
-      padding: 18px 44px;
-      border-radius: 14px;
-      font-weight: 800;
-      text-decoration: none;
+    .hero .subtitle{
+      font-size:22px;
+      font-weight:600;
+      color:var(--text);
+      margin-bottom:14px;
+      line-height:1.4;
+    }
+
+    .hero .description{
+      font-size:17px;
+      color:var(--muted);
+      max-width:860px;
+      margin:0 auto 36px auto;
+      line-height:1.65;
+    }
+
+    .btn-demo{
+      background:var(--cta);
+      color:#000;
+      padding:18px 44px;
+      border-radius:14px;
+      font-size:18px;
+      font-weight:900;
+      text-decoration:none;
+      display:inline-block;
+      transition:transform .22s ease, background .22s ease;
+      box-shadow:0 18px 40px rgba(255,159,26,.25);
+    }
+    .btn-demo:hover{ background:var(--cta2); transform:translateY(-2px); }
+
+    /* ================= SEÇÕES (base) ================= */
+    section{ position:relative; }
+
+    .section-wrap{
+      max-width:1320px;
+      margin:0 auto;
+      padding:110px 32px;
+    }
+
+    .section-title{
+      font-size:52px;
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:.2px;
+      line-height:1.05;
+      text-shadow:0 10px 35px rgba(0,0,0,.45);
+    }
+    .section-lead{
+      margin-top:18px;
+      max-width:720px;
+      color:var(--text);
+      opacity:.95;
+      font-size:18px;
+      line-height:1.65;
     }
 
     /* ================= SOLUÇÃO ================= */
-    .solucao {
-      position: relative;
-      padding: 140px 0;
+    #solucao{
       background:
-        linear-gradient(90deg, rgba(2,6,23,.95) 35%, rgba(2,6,23,.6) 65%, rgba(2,6,23,.2) 100%),
+        /* gradiente escuro esquerda -> claro direita (mantém) */
+        linear-gradient(90deg, rgba(2,6,23,0.94) 0%, rgba(2,6,23,0.78) 42%, rgba(2,6,23,0.35) 100%),
         url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
+      overflow:hidden;
     }
 
-    .solucao-container {
-      max-width: 1320px;
-      margin: auto;
-      padding: 0 32px;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 60px;
-      align-items: center;
+    /* topo da seção também suaviza a transição vinda do hero */
+    #solucao::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:-1px;
+      height:140px;
+      background:linear-gradient(to bottom, rgba(2,6,23,1) 0%, rgba(2,6,23,0) 100%);
+      pointer-events:none;
     }
 
-    .solucao h2 {
-      font-size: 46px;
-      color: #fde047;
-      margin-bottom: 24px;
+    .solucao-grid{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap:44px;
+      align-items:center;
+      margin-top:26px;
     }
 
-    .solucao p {
-      max-width: 520px;
-      color: #cbd5f5;
-      line-height: 1.6;
+    .solucao-left .section-title{ font-size:62px; }
+    .solucao-left .section-lead{ font-size:18px; max-width:680px; }
+
+    .solucao-right{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      padding-left:14px;
     }
 
-    .cards {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
     }
 
-    .card {
-      background: rgba(15,23,42,.75);
-      border-left: 4px solid #fde047;
-      border-radius: 16px;
-      padding: 22px 26px;
+    .feature-card{
+      position:relative;
+      background:linear-gradient(180deg, rgba(10,18,35,.92) 0%, rgba(7,13,26,.86) 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius2);
+      padding:26px 26px 26px 30px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transform:translateX(26px);
+      opacity:0;
+      transition:
+        transform .65s cubic-bezier(.22,.9,.2,1),
+        opacity .65s ease,
+        filter .25s ease,
+        border-color .25s ease;
+      will-change:transform, opacity;
     }
 
-    .card h3 {
-      color: #fde047;
-      font-size: 18px;
-      margin-bottom: 8px;
+    /* barra amarela em TODAS as caixas */
+    .feature-card::before{
+      content:"";
+      position:absolute;
+      left:0; top:18px; bottom:18px;
+      width:3px;
+      background:var(--gold);
+      border-radius:999px;
+      opacity:.95;
     }
 
-    .card p {
-      font-size: 14px;
-      color: #e5e7eb;
+    .feature-card h3{
+      color:var(--gold);
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:10px;
+      letter-spacing:.2px;
+    }
+    .feature-card p{
+      color:#e8eefc;
+      opacity:.92;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    /* animação de entrada (incremental) */
+    .reveal.in-view .feature-card{
+      opacity:1;
+      transform:translateX(0);
+    }
+    .reveal.in-view .feature-card:nth-child(1){ transition-delay:.08s; }
+    .reveal.in-view .feature-card:nth-child(2){ transition-delay:.16s; }
+    .reveal.in-view .feature-card:nth-child(3){ transition-delay:.24s; }
+    .reveal.in-view .feature-card:nth-child(4){ transition-delay:.32s; }
+
+    /* hover: ativa e apaga as outras */
+    .stack:hover .feature-card{ filter:brightness(.82) saturate(.95); }
+    .stack .feature-card:hover{
+      filter:brightness(1) saturate(1);
+      border-color:rgba(253,224,71,.28);
+      transform:translateX(0) translateY(-2px);
     }
 
     /* ================= COMO FUNCIONA ================= */
-    .como {
-      padding: 140px 0;
-      background: linear-gradient(to bottom, #020617, #030b1e);
+    #como-funciona{
+      background:radial-gradient(1200px 800px at 20% 10%, rgba(17,28,58,.35) 0%, rgba(2,6,23,1) 58%);
+      border-top:1px solid rgba(255,255,255,.06);
     }
 
-    .como-container {
-      max-width: 1320px;
-      margin: auto;
-      padding: 0 32px;
+    .como-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:26px;
+      margin-bottom:38px;
     }
 
-    .como h2 {
-      font-size: 48px;
-      color: #fde047;
-      margin-bottom: 18px;
+    .como-head .section-title{ font-size:56px; max-width:900px; }
+    .como-head .section-lead{ max-width:640px; margin-top:14px; }
+
+    /* indicador sutil de sequência */
+    .seq-indicator{
+      margin-top:18px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(229,231,235,.85);
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .seq-indicator .dots{
+      display:flex; gap:6px; align-items:center;
+    }
+    .seq-indicator .dot{
+      width:7px; height:7px; border-radius:999px;
+      background:rgba(253,224,71,.25);
+      border:1px solid rgba(253,224,71,.25);
+    }
+    .seq-indicator .dot.active{ background:rgba(253,224,71,.9); border-color:rgba(253,224,71,.6); }
+
+    .steps-row{
+      position:relative;
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap:18px;
+      align-items:stretch;
+      padding-top:14px;
     }
 
-    .como .desc {
-      max-width: 640px;
-      color: #cbd5f5;
-      margin-bottom: 60px;
+    /* linha suave conectando as caixas (sutil) */
+    .steps-row::before{
+      content:"";
+      position:absolute;
+      left:14px; right:14px;
+      top:20px;
+      height:2px;
+      background:linear-gradient(90deg, rgba(253,224,71,.18), rgba(253,224,71,.05));
+      border-radius:999px;
+      pointer-events:none;
+      opacity:.85;
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 22px;
+    .step-card{
+      position:relative;
+      background:linear-gradient(180deg, rgba(10,18,35,.92) 0%, rgba(7,13,26,.86) 100%);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:22px 20px 22px 20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+
+      transform:translateX(-22px);
+      opacity:0;
+      transition:
+        transform .65s cubic-bezier(.22,.9,.2,1),
+        opacity .65s ease,
+        filter .25s ease,
+        border-color .25s ease;
+      will-change:transform, opacity;
     }
 
-    .step {
-      background: rgba(15,23,42,.75);
-      border-radius: 18px;
-      padding: 26px;
-      border-top: 3px solid #fde047;
-      opacity: 0;
-      transform: translateX(-40px);
-      animation: enter .8s forwards;
+    /* topo amarelado sutil + número */
+    .step-card::before{
+      content:"";
+      position:absolute;
+      left:0; right:0; top:0;
+      height:3px;
+      background:linear-gradient(90deg, rgba(253,224,71,.95), rgba(253,224,71,.25));
+      opacity:.95;
     }
 
-    .step:nth-child(1){animation-delay:.1s}
-    .step:nth-child(2){animation-delay:.25s}
-    .step:nth-child(3){animation-delay:.4s}
-    .step:nth-child(4){animation-delay:.55s}
-    .step:nth-child(5){animation-delay:.7s}
-
-    .steps:hover .step {
-      opacity: .4;
+    .step-kicker{
+      color:rgba(229,231,235,.75);
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
 
-    .steps .step:hover {
-      opacity: 1;
-      transform: translateY(-6px);
+    .step-title{
+      color:var(--gold);
+      font-weight:900;
+      font-size:18px;
+      line-height:1.15;
+      margin-bottom:10px;
     }
 
-    .step h4 {
-      color: #fde047;
-      margin-bottom: 10px;
+    .step-desc{
+      color:#e8eefc;
+      opacity:.9;
+      font-size:15px;
+      line-height:1.55;
     }
 
-    .step p {
-      font-size: 14px;
-      color: #e5e7eb;
+    /* bolinha de conexão (reforça sequência) */
+    .step-node{
+      position:absolute;
+      top:16px;
+      left:16px;
+      width:10px; height:10px;
+      border-radius:999px;
+      background:rgba(253,224,71,.85);
+      box-shadow:0 0 0 4px rgba(253,224,71,.12);
+      opacity:.9;
     }
 
-    .nota {
-      margin-top: 40px;
-      font-size: 13px;
-      color: #94a3b8;
-      max-width: 900px;
+    /* entrada incremental */
+    .steps.reveal.in-view .step-card{
+      opacity:1;
+      transform:translateX(0);
+    }
+    .steps.reveal.in-view .step-card:nth-child(1){ transition-delay:.08s; }
+    .steps.reveal.in-view .step-card:nth-child(2){ transition-delay:.16s; }
+    .steps.reveal.in-view .step-card:nth-child(3){ transition-delay:.24s; }
+    .steps.reveal.in-view .step-card:nth-child(4){ transition-delay:.32s; }
+    .steps.reveal.in-view .step-card:nth-child(5){ transition-delay:.40s; }
+
+    /* hover: ativa e apaga as outras */
+    .steps-row:hover .step-card{ filter:brightness(.84) saturate(.95); }
+    .steps-row .step-card:hover{
+      filter:brightness(1) saturate(1);
+      border-color:rgba(253,224,71,.28);
+      transform:translateY(-3px);
     }
 
-    @keyframes enter {
-      to {
-        opacity: 1;
-        transform: translateX(0);
+    .footnote{
+      margin-top:20px;
+      color:rgba(229,231,235,.7);
+      font-size:13px;
+      line-height:1.55;
+      max-width:1050px;
+    }
+
+    /* ================= PLACEHOLDERS (demais seções) ================= */
+    .placeholder{
+      background:linear-gradient(180deg, rgba(2,6,23,1) 0%, rgba(3,8,28,1) 100%);
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .placeholder .section-title{ font-size:44px; }
+    .placeholder .section-lead{ max-width:860px; }
+
+    /* ================= RESPONSIVO ================= */
+    @media (max-width: 1100px){
+      .solucao-grid{ grid-template-columns: 1fr; gap:30px; }
+      .solucao-right{ padding-left:0; }
+      .solucao-left .section-title{ font-size:54px; }
+      .steps-row{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .steps-row::before{ top:18px; }
     }
 
-    @media(max-width: 1000px){
-      .solucao-container {
-        grid-template-columns: 1fr;
-      }
-      .steps {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 900px){
+      nav{ display:none; }
+      .section-wrap{ padding:92px 22px; }
+      .hero h1{ font-size:44px; }
+      .hero .subtitle{ font-size:18px; }
+      .hero .description{ font-size:15px; }
+      .section-title{ font-size:40px; }
+      .como-head .section-title{ font-size:44px; }
+      .steps-row{ grid-template-columns: 1fr; }
+      .steps-row::before{ display:none; }
     }
 
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior:auto !important; }
+      .feature-card, .step-card{ transition:none !important; transform:none !important; opacity:1 !important; }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-container">
-    <div class="logo">
-      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
-    </div>
-    <nav>
-      <a href="#solucao">Solução</a>
-      <a href="#como">Como Funciona</a>
-      <a href="#aplicacoes">Aplicações</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#tecnologia">Tecnologia</a>
-      <a href="#contato" class="btn-contato">Contato</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>OPERA GUARD</h1>
-    <p>
-      O OPERA GUARD atua como um guardião digital das operações industriais,
-      monitorando cada etapa do processo para garantir conformidade,
-      rastreabilidade e execução correta.
-    </p>
-    <a class="btn-demo" href="#contato">Solicitar Demonstração</a>
-  </div>
-</section>
-
-<section id="solucao" class="solucao">
-  <div class="solucao-container">
-    <div>
-      <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
-      <p>
-        Inteligência aplicada diretamente sobre o processo existente,
-        sem interferir no ritmo produtivo ou na dinâmica do operador.
-      </p>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Detecção de Bypass Operacional</h3>
-        <p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo-og">
+        <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="Opera Guard">
       </div>
-      <div class="card">
-        <h3>Validação da Sequência Correta</h3>
-        <p>Garante execução conforme padrão definido pela engenharia.</p>
-      </div>
-      <div class="card">
-        <h3>Rastreabilidade Inteligente</h3>
-        <p>Evidências visuais confiáveis para auditorias e análises.</p>
-      </div>
-      <div class="card">
-        <h3>Prevenção de Falhas Humanas</h3>
-        <p>Identifica desvios antes que se tornem defeitos.</p>
+
+      <div class="nav-area">
+        <nav>
+          <a href="#solucao">Solução</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#aplicacoes">Aplicações</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#tecnologia">Tecnologia</a>
+        </nav>
+
+        <a href="#contato" class="btn-contato">Contato</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="como" class="como">
-  <div class="como-container">
-    <h2>Como o OPERA GUARD funciona na prática</h2>
-    <p class="desc">
-      Uma camada de inteligência aplicada sobre o processo existente,
-      sem contato físico e sem interferir na operação.
-    </p>
+  <!-- HERO (mantém o que estava bom: centralizado) -->
+  <section class="hero" id="topo">
+    <div class="hero-content">
+      <h1>OPERA GUARD</h1>
 
-    <div class="steps">
-      <div class="step"><h4>Etapa 01</h4><p>Captura da operação em tempo real.</p></div>
-      <div class="step"><h4>Etapa 02</h4><p>Definição do padrão operacional.</p></div>
-      <div class="step"><h4>Etapa 03</h4><p>Análise por visão computacional e IA.</p></div>
-      <div class="step"><h4>Etapa 04</h4><p>Decisão e alertas preventivos.</p></div>
-      <div class="step"><h4>Etapa 05</h4><p>Registro e evidências operacionais.*</p></div>
+      <div class="subtitle">
+        Inteligência Artificial para garantir que cada operação seja executada corretamente.
+      </div>
+
+      <div class="description">
+        Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
+        validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+      </div>
+
+      <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
     </div>
+  </section>
 
-    <div class="nota">
-      * O nível de retenção, armazenamento e histórico de dados pode variar conforme a arquitetura contratada.
-      Armazenamento em nuvem, histórico estendido e dashboards analíticos podem ser contratados como módulos adicionais.
+  <!-- SOLUÇÃO (volta ao layout top: texto à esquerda e caixas empilhadas na direita + animação) -->
+  <section id="solucao">
+    <div class="section-wrap">
+      <div class="solucao-grid">
+        <div class="solucao-left">
+          <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
+          <div class="section-lead">
+            O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo
+            para garantir conformidade, rastreabilidade e execução correta.
+          </div>
+        </div>
+
+        <div class="solucao-right reveal" data-reveal>
+          <div class="stack">
+            <div class="feature-card">
+              <h3>Detecção de Bypass Operacional</h3>
+              <p>Identifica automaticamente etapas ignoradas ou fora do padrão, reduzindo riscos e retrabalho.</p>
+            </div>
+
+            <div class="feature-card">
+              <h3>Validação da Sequência Correta</h3>
+              <p>Garante execução conforme o padrão definido pela engenharia, com foco em etapas críticas.</p>
+            </div>
+
+            <div class="feature-card">
+              <h3>Rastreabilidade Inteligente</h3>
+              <p>Registra evidências visuais e eventos operacionais relevantes para auditorias e análises.</p>
+            </div>
+
+            <div class="feature-card">
+              <h3>Prevenção de Falhas Humanas</h3>
+              <p>Atua preventivamente, alertando desvios antes que se tornem defeitos e perdas de qualidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- COMO FUNCIONA (com animação sequencial + hover que apaga as outras + indicador sutil) -->
+  <section id="como-funciona">
+    <div class="section-wrap">
+      <div class="como-head">
+        <div>
+          <div class="section-title">Como o OPERA GUARD funciona na prática</div>
+          <div class="section-lead">
+            Uma camada de inteligência aplicada sobre o processo existente, sem contato físico e sem interferir no ritmo produtivo
+            ou na dinâmica do operador — a IA observa, compara e valida a execução em tempo real.
+          </div>
+
+          <div class="seq-indicator" aria-hidden="true">
+            <span>Sequência</span>
+            <span class="dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps reveal steps" data-reveal>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-node"></div>
+            <div class="step-kicker">Etapa 01</div>
+            <div class="step-title">Captura da Operação</div>
+            <div class="step-desc">
+              Câmeras monitoram a execução em tempo real, gerando o fluxo visual da atividade sem contato físico.
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-node"></div>
+            <div class="step-kicker">Etapa 02</div>
+            <div class="step-title">Padrão Operacional</div>
+            <div class="step-desc">
+              A engenharia define a sequência correta, critérios de validação e pontos críticos (marcos do processo).
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-node"></div>
+            <div class="step-kicker">Etapa 03</div>
+            <div class="step-title">Análise por IA</div>
+            <div class="step-desc">
+              Visão computacional compara a execução real versus o padrão esperado (tempo, ordem e presença de ações/objetos).
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-node"></div>
+            <div class="step-kicker">Etapa 04</div>
+            <div class="step-title">Decisão e Alerta</div>
+            <div class="step-desc">
+              Desvios são identificados imediatamente. O sistema sinaliza a ocorrência antes que o defeito se consolide.
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-node"></div>
+            <div class="step-kicker">Etapa 05</div>
+            <div class="step-title">Registro e Evidência*</div>
+            <div class="step-desc">
+              Eventos relevantes podem ser registrados para rastreabilidade e análise, conforme a arquitetura contratada.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnote">
+        * O nível de retenção, armazenamento e histórico de dados pode variar conforme a arquitetura contratada, requisitos do cliente e políticas de armazenamento.
+        Armazenamento em nuvem, histórico estendido e dashboards analíticos podem ser contratados como módulos adicionais.
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEHOLDERS (mantidos para não quebrar o menu) -->
+  <section id="aplicacoes" class="placeholder">
+    <div class="section-wrap">
+      <div class="section-title">Aplicações</div>
+      <div class="section-lead">Em breve — vamos fechar essa seção depois mantendo o mesmo nível visual.</div>
+    </div>
+  </section>
+
+  <section id="diferenciais" class="placeholder">
+    <div class="section-wrap">
+      <div class="section-title">Diferenciais</div>
+      <div class="section-lead">Em breve — mantendo consistência com o restante do site.</div>
+    </div>
+  </section>
+
+  <section id="tecnologia" class="placeholder">
+    <div class="section-wrap">
+      <div class="section-title">Tecnologia</div>
+      <div class="section-lead">Em breve — detalhamento sem expor a arquitetura sensível.</div>
+    </div>
+  </section>
+
+  <section id="contato" class="placeholder">
+    <div class="section-wrap">
+      <div class="section-title">Contato</div>
+      <div class="section-lead">Em breve — formulário e CTA final (vamos montar do jeito certo na próxima etapa).</div>
+    </div>
+  </section>
+
+  <script>
+    // Reveal on scroll (IntersectionObserver)
+    (function () {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+
+      revealEls.forEach(el => io.observe(el));
+    })();
+  </script>
 
 </body>
 </html>
