@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     /* RESET */
@@ -32,12 +32,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 20px;
+      padding: 0 24px;
 
       background:
         linear-gradient(
-          rgba(2, 6, 23, 0.70),
-          rgba(2, 6, 23, 0.70)
+          rgba(2, 6, 23, 0.80),
+          rgba(2, 6, 23, 0.80)
         ),
         url("assets/images/hero.jpg");
 
@@ -47,107 +47,49 @@
     }
 
     .hero-content {
-      max-width: 1000px;
+      max-width: 980px;
     }
 
     .hero h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 72px; /* AUMENTADO */
+      font-size: clamp(3.2rem, 6vw, 5rem);
       font-weight: 800;
-      color: #FFE45B; /* RGB(255, 228, 91) */
-      letter-spacing: 3px;
-      margin-bottom: 24px;
+      letter-spacing: 2px;
+      color: #FFE45B; /* RGB(255,228,91) */
+      margin-bottom: 28px;
     }
 
     .hero p {
-      font-size: 20px;
-      max-width: 900px;
-      margin: 0 auto 40px;
+      font-size: 1.25rem;
       color: #e5e7eb;
+      max-width: 860px;
+      margin: 0 auto 48px;
     }
 
     .btn-primary {
       display: inline-block;
-      background-color: #ff8c00;
+      background-color: #ff9f0a;
       color: #020617;
-      padding: 16px 36px;
-      font-size: 18px;
       font-weight: 600;
-      border-radius: 8px;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 10px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .btn-primary:hover {
-      background-color: #ffa733;
+      background-color: #ffb340;
       transform: translateY(-2px);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 100px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 42px;
-      color: #ff8c00;
-      margin-bottom: 24px;
-    }
-
-    section p {
-      font-size: 18px;
-      color: #d1d5db;
-      max-width: 900px;
-    }
-
-    .dark {
-      background-color: #020617;
-    }
-
-    .darker {
-      background-color: #020b1f;
-    }
-
-    /* BENEFÍCIOS */
-    .benefits ul {
-      list-style: none;
-      margin-top: 30px;
-    }
-
-    .benefits li {
-      font-size: 18px;
-      margin-bottom: 14px;
-      color: #e5e7eb;
-    }
-
-    .benefits li::before {
-      content: "✓ ";
-      color: #ff8c00;
-      font-weight: bold;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #020617;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
-      color: #9ca3af;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 48px;
+        letter-spacing: 1px;
       }
 
-      section h2 {
-        font-size: 32px;
+      .hero p {
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -155,60 +97,20 @@
 
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>OPERA GUARD</h1>
+
       <p>
         Monitoramento inteligente de operações industriais por visão computacional,
         garantindo execução correta, rastreabilidade e prevenção de falhas humanas.
       </p>
-      <a href="#contato" class="btn-primary">Solicitar Demonstração</a>
+
+      <a href="#contato" class="btn-primary">
+        Solicitar Demonstração
+      </a>
     </div>
   </section>
-
-  <!-- PROBLEMA -->
-  <section class="dark">
-    <div class="container">
-      <h2>O Problema na Indústria</h2>
-      <p>
-        Processos manuais estão sujeitos a desvios operacionais, falhas humanas,
-        ausência de rastreabilidade e perdas financeiras relevantes.
-        Auditorias tradicionais são reativas, custosas e pouco escaláveis.
-      </p>
-    </div>
-  </section>
-
-  <!-- SOLUÇÃO -->
-  <section class="darker">
-    <div class="container">
-      <h2>A Solução OPERA GUARD</h2>
-      <p>
-        O OPERA GUARD utiliza visão computacional e inteligência artificial para
-        monitorar operações em tempo real, validar a sequência correta de atividades
-        e garantir conformidade operacional sem interferir no fluxo produtivo.
-      </p>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section class="dark benefits">
-    <div class="container">
-      <h2>Benefícios para a Indústria</h2>
-      <ul>
-        <li>Redução de falhas humanas e retrabalhos</li>
-        <li>Rastreabilidade operacional automática</li>
-        <li>Padronização da execução dos processos</li>
-        <li>Aumento de qualidade e confiabilidade</li>
-        <li>Base de dados para melhoria contínua</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 OPERA GUARD — Desenvolvido por MAXPROD Soluções Empresariais
-  </footer>
 
 </body>
 </html>
