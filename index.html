@@ -1,187 +1,352 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>OPERA GUARD | Monitoramento Inteligente</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>OPERA GUARD | Monitoramento Inteligente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#020617;color:#fff}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ================= HEADER ================= */
-header{
-position:fixed;top:0;width:100%;height:76px;
-background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.75));
-backdrop-filter:blur(6px);z-index:1000}
-.header-container{
-max-width:1320px;margin:0 auto;padding:0 32px;
-display:flex;align-items:center;justify-content:space-between;height:100%}
-.logo-og img{height:46px}
-.nav-area{display:flex;align-items:center;gap:36px}
-nav{display:flex;gap:32px}
-nav a{color:#e5e7eb;text-decoration:none;font-weight:500;font-size:15px}
-nav a:hover{color:#fde047}
-.btn-contato{
-background:#ff9f1a;color:#000;padding:10px 22px;
-border-radius:10px;font-weight:800;text-decoration:none}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #020617;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
 
-/* ================= HERO ================= */
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(5,20,45,.85),rgba(5,20,45,.9)),
-url("assets/images/hero2.png") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center}
-.hero-content{text-align:center;max-width:980px;margin-top:60px}
-.hero h1{font-size:64px;font-weight:800;color:#fde047;margin-bottom:22px}
-.hero .subtitle{font-size:22px;color:#e5e7eb;margin-bottom:18px}
-.hero .description{font-size:17px;color:#cbd5f5;max-width:860px;margin:0 auto 42px}
-.btn-demo{
-background:#ff9f1a;color:#000;padding:18px 44px;
-border-radius:14px;font-size:18px;font-weight:800;text-decoration:none}
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 76px;
+      background: linear-gradient(to bottom, rgba(2,6,23,.95), rgba(2,6,23,.75));
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
 
-/* ================= SOLUÇÃO ================= */
-#solucao{
-min-height:100vh;
-background:
-linear-gradient(90deg,rgba(2,6,23,.95) 35%,rgba(2,6,23,.6) 70%,rgba(2,6,23,.25)),
-url("assets/images/OPERADOR_SEQUENCIA_OK.png") right/cover no-repeat;
-padding:140px 32px;
-display:flex;align-items:center}
-.solucao-wrap{
-max-width:1300px;margin:0 auto;
-display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.solucao-text h2{
-font-size:48px;color:#fde047;margin-bottom:20px}
-.solucao-text p{
-font-size:17px;color:#cbd5f5;line-height:1.6;max-width:520px}
+    .header-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.solucao-cards{
-display:flex;flex-direction:column;gap:22px}
-.solucao-card{
-background:rgba(15,23,42,.85);
-padding:26px;border-radius:18px;
-border-left:4px solid #fde047;
-opacity:0;transform:translateX(40px);
-transition:all .6s ease}
-.solucao-card.active{opacity:1;transform:translateX(0)}
-.solucao-cards:hover .solucao-card{opacity:.35}
-.solucao-cards:hover .solucao-card:hover{opacity:1}
-.solucao-card h3{color:#fde047;margin-bottom:8px}
+    .logo img {
+      height: 44px;
+    }
 
-/* ================= COMO FUNCIONA ================= */
-#como-funciona{background:#020617;padding:140px 32px}
-.cf-container{max-width:1200px;margin:0 auto}
-.cf-container h2{font-size:48px;color:#fde047;margin-bottom:16px}
-.cf-container p{max-width:700px;color:#cbd5f5;margin-bottom:60px}
+    nav {
+      display: flex;
+      gap: 34px;
+      margin-left: auto;
+      align-items: center;
+    }
 
-.cf-steps{
-display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
-.cf-step{
-background:rgba(15,23,42,.9);
-padding:26px;border-radius:18px;
-border-top:4px solid #fde047;
-opacity:0;transform:translateX(-40px);
-transition:all .6s ease}
-.cf-step.active{opacity:1;transform:translateX(0)}
-.cf-steps:hover .cf-step{opacity:.35}
-.cf-steps:hover .cf-step:hover{opacity:1}
-.cf-step h4{color:#fde047;margin-bottom:8px}
-.cf-step p{font-size:14px;color:#cbd5f5}
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
 
-.cf-note{margin-top:30px;font-size:13px;color:#94a3b8}
+    nav a:hover {
+      color: #fde047;
+    }
 
-/* ================= RESPONSIVO ================= */
-@media(max-width:1100px){
-.solucao-wrap{grid-template-columns:1fr}
-.cf-steps{grid-template-columns:1fr}
-}
-</style>
+    .btn-contato {
+      margin-left: 28px;
+      background: #ff9f1a;
+      color: #000;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(5,20,45,.88), rgba(5,20,45,.92)),
+        url("assets/images/hero2.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 76px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 32px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      color: #fde047;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: 18px;
+      color: #cbd5f5;
+      line-height: 1.6;
+    }
+
+    .btn-demo {
+      display: inline-block;
+      margin-top: 40px;
+      background: #ff9f1a;
+      color: #000;
+      padding: 18px 44px;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* ================= SOLUÇÃO ================= */
+    .solucao {
+      position: relative;
+      padding: 140px 0;
+      background:
+        linear-gradient(90deg, rgba(2,6,23,.95) 35%, rgba(2,6,23,.6) 65%, rgba(2,6,23,.2) 100%),
+        url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
+    }
+
+    .solucao-container {
+      max-width: 1320px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .solucao h2 {
+      font-size: 46px;
+      color: #fde047;
+      margin-bottom: 24px;
+    }
+
+    .solucao p {
+      max-width: 520px;
+      color: #cbd5f5;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(15,23,42,.75);
+      border-left: 4px solid #fde047;
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+
+    .card h3 {
+      color: #fde047;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    /* ================= COMO FUNCIONA ================= */
+    .como {
+      padding: 140px 0;
+      background: linear-gradient(to bottom, #020617, #030b1e);
+    }
+
+    .como-container {
+      max-width: 1320px;
+      margin: auto;
+      padding: 0 32px;
+    }
+
+    .como h2 {
+      font-size: 48px;
+      color: #fde047;
+      margin-bottom: 18px;
+    }
+
+    .como .desc {
+      max-width: 640px;
+      color: #cbd5f5;
+      margin-bottom: 60px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      background: rgba(15,23,42,.75);
+      border-radius: 18px;
+      padding: 26px;
+      border-top: 3px solid #fde047;
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: enter .8s forwards;
+    }
+
+    .step:nth-child(1){animation-delay:.1s}
+    .step:nth-child(2){animation-delay:.25s}
+    .step:nth-child(3){animation-delay:.4s}
+    .step:nth-child(4){animation-delay:.55s}
+    .step:nth-child(5){animation-delay:.7s}
+
+    .steps:hover .step {
+      opacity: .4;
+    }
+
+    .steps .step:hover {
+      opacity: 1;
+      transform: translateY(-6px);
+    }
+
+    .step h4 {
+      color: #fde047;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .nota {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #94a3b8;
+      max-width: 900px;
+    }
+
+    @keyframes enter {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media(max-width: 1000px){
+      .solucao-container {
+        grid-template-columns: 1fr;
+      }
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="header-container">
-<div class="logo-og">
-<img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
-</div>
-<div class="nav-area">
-<nav>
-<a href="#solucao">Solução</a>
-<a href="#como-funciona">Como Funciona</a>
-<a href="#aplicacoes">Aplicações</a>
-<a href="#diferenciais">Diferenciais</a>
-<a href="#tecnologia">Tecnologia</a>
-</nav>
-<a href="#contato" class="btn-contato">Contato</a>
-</div>
-</div>
+  <div class="header-container">
+    <div class="logo">
+      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
+    </div>
+    <nav>
+      <a href="#solucao">Solução</a>
+      <a href="#como">Como Funciona</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#contato" class="btn-contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>OPERA GUARD</h1>
-<div class="subtitle">Inteligência Artificial para garantir que cada operação seja executada corretamente.</div>
-<div class="description">
-Sistema de monitoramento inteligente por visão computacional e IA,
-capaz de detectar bypass operacional, validar a sequência correta
-das atividades e prevenir falhas humanas em tempo real.
-</div>
-<a href="#contato" class="btn-demo">Solicitar Demonstração</a>
-</div>
+  <div class="hero-content">
+    <h1>OPERA GUARD</h1>
+    <p>
+      O OPERA GUARD atua como um guardião digital das operações industriais,
+      monitorando cada etapa do processo para garantir conformidade,
+      rastreabilidade e execução correta.
+    </p>
+    <a class="btn-demo" href="#contato">Solicitar Demonstração</a>
+  </div>
 </section>
 
-<section id="solucao">
-<div class="solucao-wrap">
-<div class="solucao-text">
-<h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
-<p>
-O OPERA GUARD atua como um guardião digital das operações industriais,
-monitorando cada etapa do processo para garantir conformidade,
-rastreabilidade e execução correta.
-</p>
-</div>
+<section id="solucao" class="solucao">
+  <div class="solucao-container">
+    <div>
+      <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
+      <p>
+        Inteligência aplicada diretamente sobre o processo existente,
+        sem interferir no ritmo produtivo ou na dinâmica do operador.
+      </p>
+    </div>
 
-<div class="solucao-cards">
-<div class="solucao-card"><h3>Detecção de Bypass</h3><p>Identifica etapas ignoradas automaticamente.</p></div>
-<div class="solucao-card"><h3>Validação de Sequência</h3><p>Garante execução conforme padrão definido.</p></div>
-<div class="solucao-card"><h3>Rastreabilidade</h3><p>Evidências visuais para auditorias.</p></div>
-<div class="solucao-card"><h3>Prevenção de Falhas</h3><p>Atua antes que o defeito aconteça.</p></div>
-</div>
-</div>
+    <div class="cards">
+      <div class="card">
+        <h3>Detecção de Bypass Operacional</h3>
+        <p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p>
+      </div>
+      <div class="card">
+        <h3>Validação da Sequência Correta</h3>
+        <p>Garante execução conforme padrão definido pela engenharia.</p>
+      </div>
+      <div class="card">
+        <h3>Rastreabilidade Inteligente</h3>
+        <p>Evidências visuais confiáveis para auditorias e análises.</p>
+      </div>
+      <div class="card">
+        <h3>Prevenção de Falhas Humanas</h3>
+        <p>Identifica desvios antes que se tornem defeitos.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="como-funciona">
-<div class="cf-container">
-<h2>Como o OPERA GUARD funciona na prática</h2>
-<p>Uma camada de inteligência aplicada ao processo existente.</p>
+<section id="como" class="como">
+  <div class="como-container">
+    <h2>Como o OPERA GUARD funciona na prática</h2>
+    <p class="desc">
+      Uma camada de inteligência aplicada sobre o processo existente,
+      sem contato físico e sem interferir na operação.
+    </p>
 
-<div class="cf-steps">
-<div class="cf-step"><h4>Etapa 01</h4><p>Captura da operação.</p></div>
-<div class="cf-step"><h4>Etapa 02</h4><p>Definição do padrão.</p></div>
-<div class="cf-step"><h4>Etapa 03</h4><p>Análise por IA.</p></div>
-<div class="cf-step"><h4>Etapa 04</h4><p>Decisão e alerta.</p></div>
-<div class="cf-step"><h4>Etapa 05*</h4><p>Registro e evidências.</p></div>
-</div>
+    <div class="steps">
+      <div class="step"><h4>Etapa 01</h4><p>Captura da operação em tempo real.</p></div>
+      <div class="step"><h4>Etapa 02</h4><p>Definição do padrão operacional.</p></div>
+      <div class="step"><h4>Etapa 03</h4><p>Análise por visão computacional e IA.</p></div>
+      <div class="step"><h4>Etapa 04</h4><p>Decisão e alertas preventivos.</p></div>
+      <div class="step"><h4>Etapa 05</h4><p>Registro e evidências operacionais.*</p></div>
+    </div>
 
-<div class="cf-note">
-* Armazenamento completo e histórico em nuvem são módulos adicionais.
-</div>
-</div>
+    <div class="nota">
+      * O nível de retenção, armazenamento e histórico de dados pode variar conforme a arquitetura contratada.
+      Armazenamento em nuvem, histórico estendido e dashboards analíticos podem ser contratados como módulos adicionais.
+    </div>
+  </div>
 </section>
-
-<script>
-document.querySelectorAll('.solucao-card').forEach((c,i)=>{
-setTimeout(()=>c.classList.add('active'),i*180)
-})
-document.querySelectorAll('.cf-step').forEach((c,i)=>{
-setTimeout(()=>c.classList.add('active'),i*200)
-})
-</script>
 
 </body>
 </html>
