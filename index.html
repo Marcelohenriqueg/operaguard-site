@@ -48,12 +48,10 @@
       justify-content: space-between;
     }
 
-    /* Logo Opera Guard */
     .logo-og img {
       height: 45px;
     }
 
-    /* Menu + CTA agrupados à direita */
     .nav-area {
       display: flex;
       align-items: center;
@@ -70,14 +68,12 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 15px;
-      transition: color 0.2s ease;
     }
 
     nav a:hover {
       color: #fde047;
     }
 
-    /* CTA + Maxprod */
     .header-right {
       display: flex;
       align-items: center;
@@ -92,17 +88,10 @@
       font-weight: 700;
       font-size: 14px;
       text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .btn-contato:hover {
-      background-color: #ffb347;
-      transform: translateY(-1px);
     }
 
     .logo-maxprod img {
       height: 60px;
-      opacity: 0.95;
     }
 
     /* ================= HERO ================= */
@@ -129,17 +118,14 @@
     .hero h1 {
       font-size: 64px;
       font-weight: 800;
-      letter-spacing: 1px;
       color: #fde047;
       margin-bottom: 22px;
     }
 
     .hero .subtitle {
       font-size: 22px;
-      font-weight: 500;
       color: #e5e7eb;
       margin-bottom: 18px;
-      line-height: 1.4;
     }
 
     .hero .description {
@@ -158,16 +144,66 @@
       font-size: 18px;
       font-weight: 800;
       text-decoration: none;
-      display: inline-block;
-      transition: all 0.25s ease;
     }
 
-    .btn-demo:hover {
-      background-color: #ffb347;
-      transform: translateY(-2px);
+    /* ================= SOLUÇÃO ================= */
+    .solucao {
+      padding: 120px 24px;
+      background-color: #020617;
     }
 
-    /* ================= RESPONSIVO ================= */
+    .solucao-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .solucao h2 {
+      font-size: 40px;
+      font-weight: 800;
+      color: #fde047;
+      margin-bottom: 24px;
+    }
+
+    .solucao p {
+      font-size: 18px;
+      color: #cbd5f5;
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      line-height: 1.6;
+    }
+
+    .solucao-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: linear-gradient(
+        180deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(2, 6, 23, 0.95)
+      );
+      border-radius: 16px;
+      padding: 32px;
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fde047;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
     @media (max-width: 900px) {
       nav {
         display: none;
@@ -176,67 +212,104 @@
       .hero h1 {
         font-size: 44px;
       }
-
-      .hero .subtitle {
-        font-size: 18px;
-      }
-
-      .hero .description {
-        font-size: 15px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-container">
+<!-- HEADER -->
+<header>
+  <div class="header-container">
 
-      <!-- Logo Opera Guard -->
-      <div class="logo-og">
-        <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="Opera Guard">
-      </div>
+    <div class="logo-og">
+      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="Opera Guard">
+    </div>
 
-      <!-- Menu + CTA à direita -->
-      <div class="nav-area">
-        <nav>
-          <a href="#solucao">Solução</a>
-          <a href="#como-funciona">Como Funciona</a>
-          <a href="#aplicacoes">Aplicações</a>
-          <a href="#diferenciais">Diferenciais</a>
-          <a href="#tecnologia">Tecnologia</a>
-        </nav>
+    <div class="nav-area">
+      <nav>
+        <a href="#solucao">Solução</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#tecnologia">Tecnologia</a>
+      </nav>
 
-        <div class="header-right">
-          <a href="#contato" class="btn-contato">Contato</a>
-          <div class="logo-maxprod">
-            <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
-          </div>
+      <div class="header-right">
+        <a href="#contato" class="btn-contato">Contato</a>
+        <div class="logo-maxprod">
+          <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
         </div>
       </div>
-
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>OPERA GUARD</h1>
+  </div>
+</header>
 
-      <div class="subtitle">
-        Inteligência Artificial para garantir que cada operação seja executada corretamente.
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>OPERA GUARD</h1>
+
+    <div class="subtitle">
+      Inteligência Artificial para garantir que cada operação seja executada corretamente.
+    </div>
+
+    <div class="description">
+      Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
+      validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+    </div>
+
+    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section id="solucao" class="solucao">
+  <div class="solucao-container">
+    <h2>Uma nova camada de inteligência sobre o processo produtivo</h2>
+
+    <p>
+      O OPERA GUARD atua como um guardião digital das operações industriais,
+      monitorando em tempo real cada etapa do processo para garantir conformidade,
+      rastreabilidade e execução correta.
+    </p>
+
+    <div class="solucao-cards">
+      <div class="card">
+        <h3>Detecção de Bypass Operacional</h3>
+        <p>
+          Identifica automaticamente quando etapas críticas do processo são ignoradas,
+          reduzindo riscos de não conformidade e retrabalho.
+        </p>
       </div>
 
-      <div class="description">
-        Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
-        validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+      <div class="card">
+        <h3>Validação da Sequência Correta</h3>
+        <p>
+          Garante que cada atividade seja executada na ordem correta,
+          conforme o padrão definido pela engenharia de processo.
+        </p>
       </div>
 
-      <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
+      <div class="card">
+        <h3>Rastreabilidade Inteligente</h3>
+        <p>
+          Registra evidências visuais e eventos operacionais,
+          criando um histórico confiável para auditorias e análises.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Prevenção de Falhas Humanas</h3>
+        <p>
+          Atua de forma preventiva, alertando desvios antes que se tornem defeitos,
+          protegendo qualidade, custo e reputação da operação.
+        </p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 </body>
 </html>
