@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>OPERA GUARD | Monitoramento Inteligente de Operações</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>OPERA GUARD | Monitoramento Inteligente com IA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -18,55 +21,56 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0b1020;
-      color: #ffffff;
+      color: #e8ecf3;
+      line-height: 1.6;
     }
 
-    /* ================= HEADER ================= */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(10, 20, 45, 0.6);
-      backdrop-filter: blur(12px);
+      background: rgba(8, 14, 32, 0.85);
+      backdrop-filter: blur(8px);
     }
 
     .header-inner {
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 14px 32px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      padding: 16px 32px;
+      display: flex;
       align-items: center;
     }
 
     .logo-main img {
-      height: 36px;
+      height: 48px;
     }
 
     nav {
+      margin-left: auto;
       display: flex;
-      justify-content: center;
-      gap: 32px;
+      align-items: center;
+      gap: 36px;
+      margin-right: 40px;
     }
 
     nav a {
-      text-decoration: none;
-      color: #ffffff;
       font-size: 0.95rem;
       font-weight: 500;
-      opacity: 0.85;
-    }
-
-    nav a:hover {
-      opacity: 1;
+      opacity: 0.9;
     }
 
     .nav-cta {
-      padding: 8px 18px;
-      background: #FF9F1C;
+      padding: 10px 22px;
+      background: #ff9f1c;
       color: #0b1020;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 700;
     }
 
@@ -74,79 +78,86 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.8rem;
-      opacity: 0.75;
+      font-size: 0.75rem;
+      opacity: 0.8;
     }
 
     .logo-company img {
-      height: 22px;
+      height: 26px;
     }
 
-    /* ================= HERO ================= */
+    /* HERO */
     .hero {
       min-height: 100vh;
-      padding-top: 120px;
-      background:
-        linear-gradient(
-          rgba(6, 18, 45, 0.75),
-          rgba(6, 18, 45, 0.85)
-        ),
-        url("assets/images/hero2.png") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 120px 24px 80px;
       text-align: center;
+      background:
+        linear-gradient(
+          rgba(6, 14, 35, 0.85),
+          rgba(6, 14, 35, 0.85)
+        ),
+        url("assets/images/hero2.png") center / cover no-repeat;
     }
 
     .hero-content {
       max-width: 900px;
-      padding: 0 24px;
     }
 
     .hero h1 {
-      font-size: 3.6rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 4rem;
       font-weight: 800;
-      color: #FFE36E;
-      margin-bottom: 24px;
       letter-spacing: 1px;
+      color: #ffe45c;
+      margin-bottom: 24px;
     }
 
     .hero .subtitle {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 500;
       margin-bottom: 18px;
-      line-height: 1.5;
     }
 
     .hero .description {
       font-size: 1.05rem;
-      opacity: 0.9;
-      line-height: 1.6;
+      opacity: 0.95;
       margin-bottom: 40px;
     }
 
-    .hero button {
-      background: #FF9F1C;
+    .hero .cta {
+      display: inline-block;
+      padding: 18px 48px;
+      background: #ff9f1c;
       color: #0b1020;
-      border: none;
-      padding: 18px 46px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
+      border-radius: 14px;
     }
 
-    .hero button:hover {
-      background: #ffb84d;
-    }
-
-    /* ================= FOOTER ================= */
+    /* FOOTER */
     footer {
-      background: #070c1a;
+      background: #060b1a;
+      padding: 24px;
       text-align: center;
-      padding: 28px 16px;
       font-size: 0.85rem;
-      opacity: 0.85;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.15rem;
+      }
     }
   </style>
 </head>
@@ -158,7 +169,7 @@
     <div class="header-inner">
 
       <div class="logo-main">
-        <img src="assets/images/LOGO_OPERA_GUARD.png" alt="Opera Guard">
+        <img src="assets/images/LOGO OPERA GUARD.png" alt="Opera Guard">
       </div>
 
       <nav>
@@ -171,7 +182,7 @@
 
       <div class="logo-company">
         <span>by</span>
-        <img src="assets/images/LOGO_MAXPROD_Transparente.png" alt="Maxprod">
+        <img src="assets/images/LOGO - MAXPROD.png" alt="Maxprod">
       </div>
 
     </div>
@@ -191,7 +202,7 @@
         validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
       </p>
 
-      <button>Solicitar Demonstração</button>
+      <a href="#contato" class="cta">Solicitar Demonstração</a>
     </div>
   </section>
 
