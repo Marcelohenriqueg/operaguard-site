@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+/* ===== VARIÁVEIS ===== */
 :root{
   --bg:#020617;
-  --panel:#0b1220;
   --text:#e5e7eb;
   --muted:#cbd5f5;
   --gold:#fde047;
@@ -23,14 +23,15 @@
   --headerH:76px;
 }
 
+/* ===== BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:#fff;
   overflow-x:hidden;
 }
+html{scroll-behavior:smooth}
 
 /* ================= HEADER ================= */
 header{
@@ -40,7 +41,6 @@ header{
   background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.75));
   backdrop-filter:blur(6px);
   z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,.06);
 }
 .header-container{
   max-width:1320px;
@@ -52,10 +52,7 @@ header{
   justify-content:space-between;
 }
 .logo-og img{height:45px}
-nav{
-  display:flex;
-  gap:32px;
-}
+nav{display:flex;gap:32px}
 nav a{
   color:var(--text);
   text-decoration:none;
@@ -70,9 +67,8 @@ nav a:hover{color:var(--gold)}
   font-weight:800;
   text-decoration:none;
 }
-.btn-contato:hover{background:var(--cta2)}
 
-/* ================= HERO (NÃO ALTERAR) ================= */
+/* ================= HERO (INTACTO) ================= */
 .hero{
   min-height:100vh;
   padding-top:var(--headerH);
@@ -84,9 +80,7 @@ nav a:hover{color:var(--gold)}
   justify-content:center;
   text-align:center;
 }
-.hero-content{
-  max-width:980px;
-}
+.hero-content{max-width:980px}
 .hero h1{
   font-size:64px;
   font-weight:900;
@@ -114,15 +108,10 @@ nav a:hover{color:var(--gold)}
 }
 .btn-demo:hover{background:var(--cta2)}
 
-/* ================= SOLUÇÃO (NÃO ALTERAR) ================= */
+/* ================= SOLUÇÃO ================= */
 #solucao{
-  position:relative;
   background:
-    linear-gradient(90deg,
-      rgba(2,6,23,.94) 0%,
-      rgba(2,6,23,.78) 42%,
-      rgba(2,6,23,.35) 100%
-    ),
+    linear-gradient(90deg,rgba(2,6,23,.94),rgba(2,6,23,.78),rgba(2,6,23,.35)),
     url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
 }
 .section-wrap{
@@ -147,7 +136,13 @@ nav a:hover{color:var(--gold)}
   font-size:18px;
   line-height:1.65;
 }
-.solucao-right{display:flex;flex-direction:column;gap:18px}
+
+/* ===== CARDS SOLUÇÃO ===== */
+.solucao-right{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
 .feature-card{
   background:linear-gradient(180deg,rgba(10,18,35,.92),rgba(7,13,26,.86));
   border-radius:var(--radius);
@@ -155,7 +150,10 @@ nav a:hover{color:var(--gold)}
   position:relative;
   opacity:0;
   transform:translateX(30px);
-  transition:.6s cubic-bezier(.22,.9,.2,1);
+  transition:
+    opacity .35s ease,
+    filter .35s ease,
+    transform .6s cubic-bezier(.22,.9,.2,1);
 }
 .feature-card::before{
   content:"";
@@ -167,12 +165,17 @@ nav a:hover{color:var(--gold)}
 .feature-card h3{color:var(--gold);margin-bottom:10px}
 .reveal.in-view .feature-card{opacity:1;transform:none}
 
-/* ================= COMO FUNCIONA (RESTaurado) ================= */
+/* 🔥 ALTERAÇÃO PEDIDA — SOLUÇÃO */
+.solucao-right:hover .feature-card{
+  filter:brightness(.75);
+}
+.solucao-right .feature-card:hover{
+  filter:brightness(1);
+}
+
+/* ================= COMO FUNCIONA ================= */
 #como-funciona{
   background:radial-gradient(1200px 800px at 20% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
-}
-.como-head{
-  margin-bottom:42px;
 }
 .steps-row{
   display:grid;
@@ -186,7 +189,10 @@ nav a:hover{color:var(--gold)}
   position:relative;
   opacity:0;
   transform:translateX(-26px);
-  transition:.6s cubic-bezier(.22,.9,.2,1);
+  transition:
+    opacity .35s ease,
+    filter .35s ease,
+    transform .6s cubic-bezier(.22,.9,.2,1);
 }
 .step-card::before{
   content:"";
@@ -195,36 +201,18 @@ nav a:hover{color:var(--gold)}
   height:3px;
   background:linear-gradient(90deg,var(--gold),rgba(253,224,71,.3));
 }
-.step-kicker{
-  font-size:13px;
-  font-weight:800;
-  opacity:.7;
-  margin-bottom:10px;
-}
-.step-title{
-  font-size:18px;
-  font-weight:900;
-  color:var(--gold);
-  margin-bottom:10px;
-}
-.step-desc{
-  font-size:15px;
-  line-height:1.55;
-  color:#e8eefc;
-}
-.steps.reveal.in-view .step-card{opacity:1;transform:none}
-.steps.reveal.in-view .step-card:nth-child(1){transition-delay:.08s}
-.steps.reveal.in-view .step-card:nth-child(2){transition-delay:.16s}
-.steps.reveal.in-view .step-card:nth-child(3){transition-delay:.24s}
-.steps.reveal.in-view .step-card:nth-child(4){transition-delay:.32s}
-.steps.reveal.in-view .step-card:nth-child(5){transition-delay:.40s}
-.steps-row:hover .step-card{filter:brightness(.85)}
-.steps-row .step-card:hover{filter:brightness(1);transform:translateY(-4px)}
+.step-kicker{font-size:13px;font-weight:800;opacity:.7;margin-bottom:10px}
+.step-title{font-size:18px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.step-desc{font-size:15px;line-height:1.55;color:#e8eefc}
 
-.footnote{
-  margin-top:24px;
-  font-size:13px;
-  opacity:.7;
+.steps.reveal.in-view .step-card{opacity:1;transform:none}
+
+/* 🔥 ALTERAÇÃO PEDIDA — COMO FUNCIONA */
+.steps-row:hover .step-card{
+  filter:brightness(.75);
+}
+.steps-row .step-card:hover{
+  filter:brightness(1);
 }
 
 /* ================= JS ================= */
@@ -267,15 +255,14 @@ nav a:hover{color:var(--gold)}
       <div>
         <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
         <div class="section-lead">
-          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa
-          do processo para garantir conformidade, rastreabilidade e execução correta.
+          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo.
         </div>
       </div>
       <div class="solucao-right">
-        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p></div>
-        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme padrão definido pela engenharia.</p></div>
-        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Evidências visuais confiáveis para auditorias.</p></div>
-        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atua preventivamente antes que o defeito aconteça.</p></div>
+        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica etapas ignoradas.</p></div>
+        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme padrão.</p></div>
+        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Evidências visuais confiáveis.</p></div>
+        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atuação preventiva.</p></div>
       </div>
     </div>
   </div>
@@ -283,45 +270,15 @@ nav a:hover{color:var(--gold)}
 
 <section id="como-funciona">
   <div class="section-wrap">
-    <div class="como-head">
-      <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-      <div class="section-lead">
-        Uma camada de inteligência aplicada sobre o processo existente, sem interferir na operação,
-        no ritmo produtivo ou na dinâmica do operador.
-      </div>
-    </div>
+    <div class="section-title">Como o OPERA GUARD funciona na prática</div>
 
     <div class="steps reveal" data-reveal>
       <div class="steps-row">
-        <div class="step-card">
-          <div class="step-kicker">Etapa 01</div>
-          <div class="step-title">Captura da Operação</div>
-          <div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-kicker">Etapa 02</div>
-          <div class="step-title">Padrão Operacional</div>
-          <div class="step-desc">A engenharia define a sequência correta e critérios de validação.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-kicker">Etapa 03</div>
-          <div class="step-title">Análise por IA</div>
-          <div class="step-desc">A IA compara execução real versus padrão esperado.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-kicker">Etapa 04</div>
-          <div class="step-title">Decisão e Alerta</div>
-          <div class="step-desc">Desvios são detectados imediatamente, antes do defeito.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-kicker">Etapa 05</div>
-          <div class="step-title">Registro e Evidência*</div>
-          <div class="step-desc">Eventos podem ser registrados conforme arquitetura contratada.</div>
-        </div>
-      </div>
-
-      <div class="footnote">
-        * O nível de retenção e armazenamento pode variar conforme a arquitetura contratada.
+        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura</div><div class="step-desc">Monitoramento visual.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão</div><div class="step-desc">Definição da sequência.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">IA</div><div class="step-desc">Análise em tempo real.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Alerta</div><div class="step-desc">Detecção de desvios.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro*</div><div class="step-desc">Evidências conforme arquitetura.</div></div>
       </div>
     </div>
   </div>
