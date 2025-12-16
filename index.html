@@ -271,8 +271,15 @@ nav a:hover{color:var(--gold)}
 <section id="como-funciona">
   <div class="section-wrap">
     <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-
-    
+    /* Ajuste de espaçamento para o título da seção 'Como Funciona' */
+#como-funciona .section-title {
+  /*
+    O valor que você precisa mudar. O padrão da sua .section-wrap tem padding
+    no topo e na base. Aumente este valor para afastar mais as caixas.
+    Sugiro começar com 60px ou 80px.
+  */
+  margin-bottom: 80px; 
+}    
     <div class="steps reveal" data-reveal>
       <div class="steps-row">
         <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
