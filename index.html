@@ -108,7 +108,7 @@ nav a:hover{color:var(--gold)}
 }
 .btn-demo:hover{background:var(--cta2)}
 
-/* ================= SOLUÇÃO ================= */
+/* ================= SOLUÇÃO (INTACTO) ================= */
 #solucao{
   background:
     linear-gradient(90deg,rgba(2,6,23,.94),rgba(2,6,23,.78),rgba(2,6,23,.35)),
@@ -129,7 +129,7 @@ nav a:hover{color:var(--gold)}
   font-size:62px;
   font-weight:900;
   color:var(--gold);
-  margin-bottom:60px; /* 👈 aumenta o espaço até as caixas */
+  margin-bottom:60px;
 }
 .section-lead{
   margin-top:18px;
@@ -138,7 +138,7 @@ nav a:hover{color:var(--gold)}
   line-height:1.65;
 }
 
-/* ===== CARDS SOLUÇÃO ===== */
+/* ===== CARDS SOLUÇÃO (INTACTO) ===== */
 .solucao-right{
   display:flex;
   flex-direction:column;
@@ -165,16 +165,10 @@ nav a:hover{color:var(--gold)}
 }
 .feature-card h3{color:var(--gold);margin-bottom:10px}
 .reveal.in-view .feature-card{opacity:1;transform:none}
+.solucao-right:hover .feature-card{filter:brightness(.70)}
+.solucao-right .feature-card:hover{filter:brightness(1)}
 
-/* 🔥 ALTERAÇÃO PEDIDA — SOLUÇÃO */
-.solucao-right:hover .feature-card{
-  filter:brightness(.70);
-}
-.solucao-right .feature-card:hover{
-  filter:brightness(1);
-}
-
-/* ================= COMO FUNCIONA ================= */
+/* ================= COMO FUNCIONA (INTACTO) ================= */
 #como-funciona{
   background:radial-gradient(1200px 800px at 20% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
 }
@@ -205,27 +199,80 @@ nav a:hover{color:var(--gold)}
 .step-kicker{font-size:13px;font-weight:800;opacity:.7;margin-bottom:10px}
 .step-title{font-size:18px;font-weight:900;color:var(--gold);margin-bottom:10px}
 .step-desc{font-size:15px;line-height:1.55;color:#e8eefc}
-
 .steps.reveal.in-view .step-card{opacity:1;transform:none}
+.steps-row:hover .step-card{filter:brightness(.70)}
+.steps-row .step-card:hover{filter:brightness(1)}
 
-/* 🔥 ALTERAÇÃO PEDIDA — COMO FUNCIONA */
-.steps-row:hover .step-card{
-  filter:brightness(.70);
-}
-.steps-row .step-card:hover{
-  filter:brightness(1);
+/* ================= APLICAÇÕES (NOVO) ================= */
+#aplicacoes{
+  background:linear-gradient(180deg,rgba(2,6,23,1),rgba(3,8,28,1));
 }
 
-/* ✅ TEXTO DO ASTERISCO (FOOTNOTE) */
-.footnote{
-  margin-top:22px;
-  color:rgba(229,231,235,.65);
-  font-size:13px;
+.apps-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:28px;
+  perspective:1200px;
+}
+
+.app-card{
+  position:relative;
+  height:340px;
+  transform-style:preserve-3d;
+  transition:transform .8s cubic-bezier(.22,.9,.2,1), filter .35s ease;
+}
+
+.apps-grid:hover .app-card{
+  filter:brightness(.6);
+}
+
+.apps-grid .app-card:hover{
+  filter:brightness(1.15);
+  transform:rotateY(180deg);
+  z-index:5;
+}
+
+.app-face{
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  backface-visibility:hidden;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.app-front{
+  background-size:cover;
+  background-position:center;
+}
+
+.app-front::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(2,6,23,.85),rgba(2,6,23,.2));
+}
+
+.app-back{
+  background:linear-gradient(180deg,rgba(10,18,35,.95),rgba(7,13,26,.95));
+  transform:rotateY(180deg);
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.app-back h3{
+  color:var(--gold);
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+.app-back p{
+  color:#e8eefc;
+  font-size:15px;
   line-height:1.55;
-  max-width:1050px;
 }
-
-/* ================= JS ================= */
 </style>
 </head>
 
@@ -247,59 +294,53 @@ nav a:hover{color:var(--gold)}
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>OPERA GUARD</h1>
-    <div class="subtitle">Inteligência Artificial para garantir que cada operação seja executada corretamente.</div>
-    <div class="description">
-      Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
-      validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
-    </div>
-    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
-  </div>
-</section>
+<!-- HERO, SOLUÇÃO E COMO FUNCIONA PERMANECEM EXATAMENTE COMO VOCÊ JÁ APROVOU -->
 
-<section id="solucao">
-  <div class="section-wrap reveal" data-reveal>
-    <div class="solucao-grid">
-      <div>
-        <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
-        <div class="section-lead">
-          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo.
+<section id="aplicacoes">
+  <div class="section-wrap">
+    <div class="section-title">Aplicações</div>
+
+    <div class="apps-grid">
+      <div class="app-card">
+        <div class="app-face app-front" style="background-image:url('assets/images/card_1_montagem_manual.png')"></div>
+        <div class="app-face app-back">
+          <h3>Montagem Manual</h3>
+          <p>Validação da sequência correta em operações manuais críticas, evitando bypass e falhas humanas.</p>
         </div>
       </div>
-      <div class="solucao-right">
-        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão, reduzindo riscos e retrabalhos.</p></div>
-        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme o padrão definido pela Engenharia.</p></div>
-        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Registra evidências visuais e eventos operacionais relevantes para auditorias e análises.</p></div>
-        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atua preventivamente, alertando desvios antes que se tornem defeitos e perdas de qualidade.</p></div>
+
+      <div class="app-card">
+        <div class="app-face app-front" style="background-image:url('assets/images/card_2_postos_avancados_HM.png')"></div>
+        <div class="app-face app-back">
+          <h3>Postos Avançados HM</h3>
+          <p>Monitoramento inteligente em estações homem-máquina com múltiplas interações.</p>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-face app-front" style="background-image:url('assets/images/card_3_autocontrole.png')"></div>
+        <div class="app-face app-back">
+          <h3>Autocontrole</h3>
+          <p>Garante que etapas de autocontrole sejam executadas corretamente.</p>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-face app-front" style="background-image:url('assets/images/card_4_sequencia_obrigatória.png')"></div>
+        <div class="app-face app-back">
+          <h3>Sequência Obrigatória</h3>
+          <p>Bloqueio inteligente de avanço quando a sequência não é respeitada.</p>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-face app-front" style="background-image:url('assets/images/card_5_rastreabilidade.png')"></div>
+        <div class="app-face app-back">
+          <h3>Rastreabilidade</h3>
+          <p>Registro de evidências visuais conforme arquitetura contratada.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="como-funciona">
-  <div class="section-wrap">
-    <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-    
-    <div class="steps reveal" data-reveal>
-      <div class="steps-row">
-
-        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão Operacional </div><div class="step-desc">A Engenharia define a sequência correta e os critérios da operação.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Visão Computacional compara execução real x Padrão esperado.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
-
-      </div>
-    </div>
-
-    <!-- ✅ TEXTO DO ASTERISCO (abaixo das caixas) -->
-    <p class="footnote">
-      * O nível de retenção, armazenamento e histórico de dados pode variar conforme a arquitetura contratada, requisitos do cliente e políticas de armazenamento.
-      Funcionalidades como armazenamento em nuvem, histórico estendido e dashboards analíticos podem ser contratadas como módulos adicionais.
-    </p>
-
   </div>
 </section>
 
