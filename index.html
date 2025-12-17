@@ -205,6 +205,78 @@ nav a:hover{color:var(--gold)}
 /* hover aprovado */
 .steps-row:hover .step-card{filter:brightness(.7)}
 .steps-row .step-card:hover{filter:brightness(1)}
+
+/* ========================= */
+/* APLICAÇÕES — NOVA SEÇÃO   */
+/* ========================= */
+#aplicacoes{
+  background:radial-gradient(1000px 600px at 80% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
+}
+.aplicacoes-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:26px;
+}
+.aplicacao-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  transition:transform .45s cubic-bezier(.22,.9,.2,1),filter .35s ease;
+}
+.aplicacao-card img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  filter:brightness(.7);
+  transition:filter .45s ease,transform .6s ease;
+}
+.aplicacao-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(2,6,23,.95),rgba(2,6,23,.65),rgba(2,6,23,.15));
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.aplicacao-title{
+  font-size:20px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+.aplicacao-line{
+  font-size:14px;
+  color:#e8eefc;
+}
+.aplicacao-expand{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  margin-top:14px;
+  transition:max-height .6s cubic-bezier(.22,.9,.2,1),opacity .35s ease;
+}
+.aplicacao-expand strong{color:var(--gold)}
+.aplicacoes-grid:hover .aplicacao-card{
+  filter:brightness(.55);
+  transform:scale(.96);
+}
+.aplicacao-card:hover{
+  filter:brightness(1);
+  transform:scale(1.04);
+  z-index:2;
+}
+.aplicacao-card:hover img{
+  filter:brightness(.95);
+  transform:scale(1.05);
+}
+.aplicacao-card:hover .aplicacao-expand{
+  max-height:260px;
+  opacity:1;
+}
 </style>
 </head>
 
@@ -260,7 +332,6 @@ nav a:hover{color:var(--gold)}
 <section id="como-funciona">
   <div class="section-wrap">
     <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-
     <div class="steps reveal" data-reveal>
       <div class="steps-row">
         <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
@@ -269,6 +340,16 @@ nav a:hover{color:var(--gold)}
         <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
         <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="aplicacoes">
+  <div class="section-wrap">
+    <div class="section-title">Aplicações do OPERA GUARD</div>
+    <div class="aplicacoes-grid">
+      <!-- cards conforme definido -->
+      <!-- (imagens: apl_montagem.jpg, apl_automacao.jpg, apl_autocontrole.jpg, apl_critico.jpg, apl_rastreabilidade.jpg) -->
     </div>
   </div>
 </section>
