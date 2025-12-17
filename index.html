@@ -205,6 +205,51 @@ nav a:hover{color:var(--gold)}
 /* hover aprovado */
 .steps-row:hover .step-card{filter:brightness(.7)}
 .steps-row .step-card:hover{filter:brightness(1)}
+
+/* APLICAÇÕES — NOVA SEÇÃO */
+#aplicacoes{
+  background:radial-gradient(1000px 600px at 80% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
+}
+.aplicacoes-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.aplicacao-card{
+  background:linear-gradient(180deg,rgba(10,18,35,.92),rgba(7,13,26,.86));
+  border-radius:22px;
+  padding:34px 30px;
+  position:relative;
+  opacity:0;
+  transform:translateY(26px);
+  transition:
+    opacity .35s ease,
+    filter .35s ease,
+    transform .6s cubic-bezier(.22,.9,.2,1);
+}
+.aplicacao-card::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(253,224,71,.25));
+}
+.aplicacao-title{
+  font-size:20px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+.aplicacao-desc{
+  font-size:15px;
+  line-height:1.6;
+  color:#e8eefc;
+}
+.aplicacoes.reveal.in-view .aplicacao-card{opacity:1;transform:none}
+
+/* hover aprovado */
+.aplicacoes-grid:hover .aplicacao-card{filter:brightness(.7)}
+.aplicacoes-grid .aplicacao-card:hover{filter:brightness(1)}
 </style>
 </head>
 
@@ -260,7 +305,6 @@ nav a:hover{color:var(--gold)}
 <section id="como-funciona">
   <div class="section-wrap">
     <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-
     <div class="steps reveal" data-reveal>
       <div class="steps-row">
         <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
@@ -268,6 +312,65 @@ nav a:hover{color:var(--gold)}
         <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Visão Computacional compara execução real x Padrão esperado.</div></div>
         <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
         <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aplicacoes">
+  <div class="section-wrap">
+    <div class="section-title">Onde o OPERA GUARD gera mais valor</div>
+    <div class="aplicacoes reveal" data-reveal>
+      <div class="aplicacoes-grid">
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Linhas de Montagem Manual</div>
+          <div class="aplicacao-desc">
+            Garante que cada etapa crítica seja executada corretamente,
+            prevenindo falhas humanas e operações incompletas.
+          </div>
+        </div>
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Operações com Risco de Bypass</div>
+          <div class="aplicacao-desc">
+            Ideal para processos onde o operador pode pular etapas,
+            seja por pressão de tempo, hábito ou erro operacional.
+          </div>
+        </div>
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Autocontrole e Inspeções</div>
+          <div class="aplicacao-desc">
+            Valida se o autocontrole foi realmente executado,
+            eliminando marcações sem execução real.
+          </div>
+        </div>
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Processos Críticos de Qualidade</div>
+          <div class="aplicacao-desc">
+            Indicado para operações que impactam diretamente segurança,
+            conformidade normativa e satisfação do cliente.
+          </div>
+        </div>
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Ambientes Lean e WCM</div>
+          <div class="aplicacao-desc">
+            Atua como camada digital de padronização,
+            reforçando o trabalho padrão e a disciplina operacional.
+          </div>
+        </div>
+
+        <div class="aplicacao-card">
+          <div class="aplicacao-title">Auditorias e Rastreabilidade</div>
+          <div class="aplicacao-desc">
+            Gera evidências visuais automáticas para auditorias,
+            análises de falhas e melhoria contínua.
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
