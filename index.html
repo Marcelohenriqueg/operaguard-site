@@ -135,8 +135,6 @@ nav a:hover{color:var(--gold)}
   font-size:18px;
   line-height:1.65;
 }
-
-/* CARDS SOLUÇÃO */
 .solucao-right{
   display:flex;
   flex-direction:column;
@@ -149,10 +147,7 @@ nav a:hover{color:var(--gold)}
   position:relative;
   opacity:0;
   transform:translateX(30px);
-  transition:
-    opacity .35s ease,
-    filter .35s ease,
-    transform .6s cubic-bezier(.22,.9,.2,1);
+  transition:opacity .35s ease,filter .35s ease,transform .6s cubic-bezier(.22,.9,.2,1);
 }
 .feature-card::before{
   content:"";
@@ -163,8 +158,6 @@ nav a:hover{color:var(--gold)}
 }
 .feature-card h3{color:var(--gold);margin-bottom:10px}
 .reveal.in-view .feature-card{opacity:1;transform:none}
-
-/* hover aprovado */
 .solucao-right:hover .feature-card{filter:brightness(.7)}
 .solucao-right .feature-card:hover{filter:brightness(1)}
 
@@ -184,10 +177,7 @@ nav a:hover{color:var(--gold)}
   position:relative;
   opacity:0;
   transform:translateX(-26px);
-  transition:
-    opacity .35s ease,
-    filter .35s ease,
-    transform .6s cubic-bezier(.22,.9,.2,1);
+  transition:opacity .35s ease,filter .35s ease,transform .6s cubic-bezier(.22,.9,.2,1);
 }
 .step-card::before{
   content:"";
@@ -201,36 +191,30 @@ nav a:hover{color:var(--gold)}
 .step-desc{font-size:15px;line-height:1.55;color:#e8eefc}
 .steps.reveal.in-view .step-card{opacity:1;transform:none}
 
-/* ========================= */
-/* APLICAÇÕES — ÚNICA ALTERAÇÃO */
-/* ========================= */
+/* APLICAÇÕES — NOVA (ÚNICA ALTERAÇÃO) */
 #aplicacoes{
   background:radial-gradient(1200px 700px at 70% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
 }
-
 .aplicacoes-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:28px;
 }
-
 .aplicacao-card{
   position:relative;
   border-radius:22px;
   overflow:hidden;
   cursor:pointer;
   box-shadow:var(--shadow);
-  transition:transform .45s cubic-bezier(.22,.9,.2,1), filter .35s ease;
+  transition:transform .45s cubic-bezier(.22,.9,.2,1),filter .35s ease;
 }
-
 .aplicacao-card img{
   width:100%;
   height:360px;
   object-fit:cover;
   filter:brightness(.65);
-  transition:transform .6s ease, filter .45s ease;
+  transition:transform .6s ease,filter .45s ease;
 }
-
 .aplicacao-overlay{
   position:absolute;
   inset:0;
@@ -240,39 +224,33 @@ nav a:hover{color:var(--gold)}
   flex-direction:column;
   justify-content:flex-end;
 }
-
 .aplicacao-title{
   font-size:20px;
   font-weight:900;
   color:var(--gold);
   margin-bottom:6px;
 }
-
 .aplicacao-line{
   font-size:14px;
   color:#e8eefc;
 }
-
 .aplicacao-expand{
   margin-top:14px;
   max-height:0;
   opacity:0;
   overflow:hidden;
-  transition:max-height .6s cubic-bezier(.22,.9,.2,1), opacity .35s ease;
+  transition:max-height .6s cubic-bezier(.22,.9,.2,1),opacity .35s ease;
 }
-
 .aplicacao-expand p{
   font-size:14px;
   line-height:1.55;
   margin-bottom:10px;
 }
 .aplicacao-expand strong{color:var(--gold)}
-
 .aplicacoes-grid:hover .aplicacao-card{
   filter:brightness(.5);
   transform:scale(.95);
 }
-
 .aplicacao-card:hover{
   filter:brightness(1);
   transform:scale(1.05);
@@ -291,84 +269,134 @@ nav a:hover{color:var(--gold)}
 
 <body>
 
-<header>…</header>
+<header>
+  <div class="header-container">
+    <div class="logo-og">
+      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
+    </div>
+    <nav>
+      <a href="#solucao">Solução</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#tecnologia">Tecnologia</a>
+    </nav>
+    <a href="#contato" class="btn-contato">Contato</a>
+  </div>
+</header>
 
-<section class="hero">…</section>
-<section id="solucao">…</section>
-<section id="como-funciona">…</section>
+<section class="hero">
+  <div class="hero-content">
+    <h1>OPERA GUARD</h1>
+    <div class="subtitle">Inteligência Artificial para garantir que cada operação seja executada corretamente.</div>
+    <div class="description">
+      Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
+      validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+    </div>
+    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
+  </div>
+</section>
+
+<section id="solucao">
+  <div class="section-wrap reveal" data-reveal>
+    <div class="solucao-grid">
+      <div>
+        <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
+        <div class="section-lead">
+          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo.
+        </div>
+      </div>
+      <div class="solucao-right">
+        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão.</p></div>
+        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme padrão definido.</p></div>
+        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Registra evidências visuais para auditorias.</p></div>
+        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atua preventivamente antes do defeito.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="section-wrap">
+    <div class="section-title">Como o OPERA GUARD funciona na prática</div>
+    <div class="steps reveal" data-reveal>
+      <div class="steps-row">
+        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram em tempo real.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão Operacional</div><div class="step-desc">Engenharia define sequência correta.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Execução real x padrão.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios antes do defeito.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência</div><div class="step-desc">Rastreabilidade completa.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="aplicacoes">
   <div class="section-wrap">
     <div class="section-title">Aplicações do OPERA GUARD</div>
-
     <div class="aplicacoes-grid">
 
-      <!-- 1 -->
       <div class="aplicacao-card">
         <img src="assets/images/card_1_montagem_manual.png">
         <div class="aplicacao-overlay">
           <div class="aplicacao-title">Montagem Manual</div>
-          <div class="aplicacao-line">Operações manuais com sequência crítica de execução.</div>
+          <div class="aplicacao-line">Operações manuais com sequência crítica.</div>
           <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Postos de montagem manual com múltiplas etapas e dependência da ordem correta.</p>
-            <p><strong>Risco eliminado</strong><br>Bypass operacional e etapas fora de sequência.</p>
-            <p><strong>Ganho gerado</strong><br>Redução de retrabalho e variabilidade humana.</p>
+            <p><strong>Onde aplica</strong><br>Postos com múltiplas etapas.</p>
+            <p><strong>Risco eliminado</strong><br>Bypass operacional.</p>
+            <p><strong>Ganho gerado</strong><br>Menos retrabalho.</p>
           </div>
         </div>
       </div>
 
-      <!-- 2 -->
       <div class="aplicacao-card">
         <img src="assets/images/card_2_postos_avancados_HM.png">
         <div class="aplicacao-overlay">
           <div class="aplicacao-title">Automação com Intervenção Humana</div>
-          <div class="aplicacao-line">Onde homem e máquina compartilham o processo.</div>
+          <div class="aplicacao-line">Homem e máquina no mesmo processo.</div>
           <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Estações automatizadas com ações manuais críticas.</p>
-            <p><strong>Risco eliminado</strong><br>Intervenções fora do tempo correto.</p>
-            <p><strong>Ganho gerado</strong><br>Maior confiabilidade do processo.</p>
+            <p><strong>Onde aplica</strong><br>Estações automatizadas.</p>
+            <p><strong>Risco eliminado</strong><br>Ações fora do tempo.</p>
+            <p><strong>Ganho gerado</strong><br>Processo estável.</p>
           </div>
         </div>
       </div>
 
-      <!-- 3 -->
       <div class="aplicacao-card">
         <img src="assets/images/card_3_autocontrole.png">
         <div class="aplicacao-overlay">
           <div class="aplicacao-title">Autocontrole do Operador</div>
-          <div class="aplicacao-line">Garantia de que o controle foi realmente executado.</div>
+          <div class="aplicacao-line">Controle realmente executado.</div>
           <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Etapas de inspeção, marcação e checklist.</p>
-            <p><strong>Risco eliminado</strong><br>Autocontrole apenas declarado.</p>
-            <p><strong>Ganho gerado</strong><br>Evidência real para auditorias.</p>
+            <p><strong>Onde aplica</strong><br>Inspeções e marcações.</p>
+            <p><strong>Risco eliminado</strong><br>Controle fictício.</p>
+            <p><strong>Ganho gerado</strong><br>Evidência real.</p>
           </div>
         </div>
       </div>
 
-      <!-- 4 -->
       <div class="aplicacao-card">
         <img src="assets/images/card_4_sequencia_obrigatória.png">
         <div class="aplicacao-overlay">
           <div class="aplicacao-title">Processos Críticos</div>
-          <div class="aplicacao-line">Onde a ordem define a qualidade final.</div>
+          <div class="aplicacao-line">Sequência define a qualidade.</div>
           <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Processos com sequência obrigatória.</p>
+            <p><strong>Onde aplica</strong><br>Processos obrigatórios.</p>
             <p><strong>Risco eliminado</strong><br>Falhas ocultas.</p>
             <p><strong>Ganho gerado</strong><br>Proteção da marca.</p>
           </div>
         </div>
       </div>
 
-      <!-- 5 -->
       <div class="aplicacao-card">
         <img src="assets/images/card_5_rastreabilidade.png">
         <div class="aplicacao-overlay">
           <div class="aplicacao-title">Rastreabilidade Operacional</div>
-          <div class="aplicacao-line">Evidência visual confiável da execução.</div>
+          <div class="aplicacao-line">Evidência visual confiável.</div>
           <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Ambientes auditáveis e regulados.</p>
-            <p><strong>Risco eliminado</strong><br>Falta de evidência confiável.</p>
-            <p><strong>Ganho gerado</strong><br>Suporte à auditoria e melhoria contínua.</p>
+            <p><strong>Onde aplica</strong><br>Ambientes auditáveis.</p>
+            <p><strong>Risco eliminado</strong><br>Falta de evidência.</p>
+            <p><strong>Ganho gerado</strong><br>Auditoria segura.</p>
           </div>
         </div>
       </div>
@@ -376,6 +404,18 @@ nav a:hover{color:var(--gold)}
     </div>
   </div>
 </section>
+
+<script>
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("in-view");
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
+</script>
 
 </body>
 </html>
