@@ -267,6 +267,48 @@ nav a:hover{color:var(--gold)}
   max-height:260px;
   opacity:1;
 }
+  /* ================= DIFERENCIAIS — PATCH INCREMENTAL ================= */
+#diferenciais{
+  position:relative;
+  background:url("assets/images/bg_diferenciais_industrial.png") center/cover no-repeat;
+  overflow:hidden;
+}
+
+#diferenciais::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(2,6,23,.88);
+  z-index:0;
+}
+
+#diferenciais .section-wrap{
+  position:relative;
+  z-index:1;
+}
+
+.diferenciais-track{
+  will-change:transform;
+}
+
+.diferencial-item{
+  max-width:820px;
+  margin-bottom:72px;
+}
+
+.diferencial-title{
+  font-size:28px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.diferencial-desc{
+  font-size:17px;
+  line-height:1.7;
+  color:#e8eefc;
+}
+
 </style>
 </head>
 
@@ -414,6 +456,68 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:.2});
 document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
+</script>
+<section id="diferenciais">
+  <div class="section-wrap">
+    <div class="section-title">Diferenciais do OPERA GUARD</div>
+
+    <div class="diferenciais-track" id="diferenciaisTrack">
+
+      <div class="diferencial-item">
+        <div class="diferencial-title">Validação Real da Execução</div>
+        <div class="diferencial-desc">
+          Garante que a operação foi executada conforme o padrão definido,
+          sem depender de registros manuais ou inspeções tardias.
+        </div>
+      </div>
+
+      <div class="diferencial-item">
+        <div class="diferencial-title">Atuação Preventiva no Ponto de Origem</div>
+        <div class="diferencial-desc">
+          Atua durante a execução da atividade,
+          reduzindo retrabalhos e custos ocultos antes que ocorram.
+        </div>
+      </div>
+
+      <div class="diferencial-item">
+        <div class="diferencial-title">Engenharia no Controle</div>
+        <div class="diferencial-desc">
+          O padrão operacional é definido e ajustado pela Engenharia,
+          sem dependência de soluções complexas ou onerosas.
+        </div>
+      </div>
+
+      <div class="diferencial-item">
+        <div class="diferencial-title">Evidência Visual Auditável</div>
+        <div class="diferencial-desc">
+          Evidência real para auditorias, análises de falha
+          e melhoria contínua do processo.
+        </div>
+      </div>
+
+      <div class="diferencial-item">
+        <div class="diferencial-title">Arquitetura Enxuta e Escalável</div>
+        <div class="diferencial-desc">
+          Infraestrutura simples e progressiva,
+          posicionando-se como alternativa financeiramente eficiente
+          frente a soluções tradicionais do mercado.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  const track = document.getElementById("diferenciaisTrack");
+  if(!track) return;
+
+  window.addEventListener("scroll", function(){
+    const rect = track.getBoundingClientRect();
+    const deslocamento = Math.max(-120, Math.min(120, -rect.top * 0.15));
+    track.style.transform = "translateY(" + deslocamento + "px)";
+  });
+})();
 </script>
 
 </body>
