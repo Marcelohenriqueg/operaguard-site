@@ -267,7 +267,7 @@ nav a:hover{color:var(--gold)}
   max-height:260px;
   opacity:1;
 }
- /* ================= DIFERENCIAIS — ENTERPRISE CLEAN ================= */
+ /* ================= DIFERENCIAIS — ENTERPRISE COM LINHAS ================= */
 
 #diferenciais{
   background:
@@ -280,18 +280,39 @@ nav a:hover{color:var(--gold)}
 }
 
 .diferenciais-doc{
-  max-width:980px;
+  max-width:1000px;
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:34px;
+  gap:42px;
 }
 
 .dif-row{
   display:grid;
   grid-template-columns:320px 1fr;
-  align-items:start;
   gap:28px;
+  padding-bottom:26px;
+  position:relative;
+}
+
+/* linha elegante */
+.dif-row::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    rgba(253,224,71,.45),
+    rgba(253,224,71,.15),
+    rgba(253,224,71,0)
+  );
+}
+
+.dif-row:last-child::after{
+  display:none;
 }
 
 .dif-left{
@@ -306,6 +327,8 @@ nav a:hover{color:var(--gold)}
   line-height:1.55;
   color:#d6def8;
   max-width:620px;
+}
+
 }
 
 /* ================= TECNOLOGIA ================= */
