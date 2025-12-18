@@ -311,6 +311,42 @@ nav a:hover{color:var(--gold)}
   line-height:1.7;
   color:#e8eefc;
 }
+/* ================= DIFERENCIAIS — COLUNA TÉCNICA ================= */
+
+#diferenciais{
+  background:
+    linear-gradient(rgba(2,6,23,.96),rgba(2,6,23,.96)),
+    url("assets/images/bg_diferenciais_industrial.png") center/cover no-repeat;
+}
+
+.diferenciais-doc{
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+  margin-top:40px;
+}
+
+.dif-row{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap:40px;
+  padding-bottom:32px;
+  border-bottom:1px solid rgba(253,224,71,.25);
+}
+
+.dif-left{
+  font-size:24px;
+  font-weight:900;
+  color:var(--gold);
+  letter-spacing:-0.02em;
+}
+
+.dif-right{
+  font-size:17px;
+  line-height:1.7;
+  color:#e8eefc;
+  max-width:720px;
+}
 
 </style>
 </head>
@@ -462,54 +498,58 @@ const io=new IntersectionObserver(entries=>{
 document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
 </script>
 <section id="diferenciais">
+  <section id="diferenciais">
   <div class="section-wrap">
+
     <div class="section-title">Diferenciais do OPERA GUARD</div>
 
-    <div class="diferenciais-track" id="diferenciaisTrack">
+    <div class="diferenciais-doc">
 
-      <div class="diferencial-item">
-        <div class="diferencial-title">Validação Real da Execução</div>
-        <div class="diferencial-desc">
+      <div class="dif-row">
+        <div class="dif-left">Validação Real da Execução</div>
+        <div class="dif-right">
           Garante que a operação foi executada conforme o padrão definido,
-          sem depender de registros manuais ou inspeções tardias.
+          eliminando dependência de registros manuais ou inspeções tardias.
         </div>
       </div>
 
-      <div class="diferencial-item">
-        <div class="diferencial-title">Atuação Preventiva no Ponto de Origem</div>
-        <div class="diferencial-desc">
-          Atua durante a execução da atividade,
-          reduzindo retrabalhos e custos ocultos antes que ocorram.
+      <div class="dif-row">
+        <div class="dif-left">Atuação Preventiva no Ponto de Origem</div>
+        <div class="dif-right">
+          Atua durante a execução da atividade, reduzindo retrabalhos,
+          perdas de qualidade e custos ocultos antes que ocorram.
         </div>
       </div>
 
-      <div class="diferencial-item">
-        <div class="diferencial-title">Engenharia no Controle</div>
-        <div class="diferencial-desc">
-          O padrão operacional é definido e ajustado pela Engenharia,
-          sem dependência de soluções complexas ou onerosas.
+      <div class="dif-row">
+        <div class="dif-left">Engenharia no Controle</div>
+        <div class="dif-right">
+          O padrão operacional é definido, validado e ajustado pela Engenharia,
+          sem dependência de soluções complexas, fechadas ou onerosas.
         </div>
       </div>
 
-      <div class="diferencial-item">
-        <div class="diferencial-title">Evidência Visual Auditável</div>
-        <div class="diferencial-desc">
-          Evidência real para auditorias, análises de falha
-          e melhoria contínua do processo.
+      <div class="dif-row">
+        <div class="dif-left">Evidência Visual Auditável</div>
+        <div class="dif-right">
+          Cada evento relevante gera evidência visual real,
+          garantindo rastreabilidade confiável para auditorias e análises.
         </div>
       </div>
 
-      <div class="diferencial-item">
-        <div class="diferencial-title">Arquitetura Enxuta e Escalável</div>
-        <div class="diferencial-desc">
-          Infraestrutura simples e progressiva,
-          posicionando-se como alternativa financeiramente eficiente
-          frente a soluções tradicionais do mercado.
+      <div class="dif-row">
+        <div class="dif-left">Arquitetura Enxuta e Escalável</div>
+        <div class="dif-right">
+          Infraestrutura simples, progressiva e financeiramente eficiente,
+          posicionando o OPERA GUARD como alternativa mais acessível
+          às soluções tradicionais do mercado.
         </div>
       </div>
 
     </div>
   </div>
+</section>
+
 </section>
   
 <script>
