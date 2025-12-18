@@ -511,18 +511,7 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
     </div>
   </div>
 </section>
+  
 <script>
-(function(){
-  const track = document.getElementById("diferenciaisTrack");
-  if(!track) return;
-
-  window.addEventListener("scroll", function(){
-    const rect = track.getBoundingClientRect();
-    const deslocamento = Math.max(-120, Math.min(120, -rect.top * 0.15));
-    track.style.transform = "translateY(" + deslocamento + "px)";
-  });
-})();
-</script>
-
 </body>
 </html>
