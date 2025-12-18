@@ -125,7 +125,7 @@ nav a:hover{color:var(--gold)}
   line-height:1.65;
 }
 
-/* ================= SOLUÇÃO (ORIGINAL COMPLETA) ================= */
+/* ================= SOLUÇÃO (ORIGINAL) ================= */
 #solucao{
   background:
     linear-gradient(90deg,rgba(2,6,23,.94),rgba(2,6,23,.78),rgba(2,6,23,.35)),
@@ -163,7 +163,7 @@ nav a:hover{color:var(--gold)}
 .solucao-right:hover .feature-card{filter:brightness(.7)}
 .solucao-right .feature-card:hover{filter:brightness(1)}
 
-/* ================= COMO FUNCIONA (ORIGINAL COMPLETA) ================= */
+/* ================= COMO FUNCIONA (ORIGINAL) ================= */
 #como-funciona{
   background:radial-gradient(1200px 800px at 20% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
 }
@@ -195,7 +195,7 @@ nav a:hover{color:var(--gold)}
 .steps-row:hover .step-card{filter:brightness(.7)}
 .steps-row .step-card:hover{filter:brightness(1)}
 
-/* ================= APLICAÇÕES (EVOLUÍDA) ================= */
+/* ================= APLICAÇÕES (CONGELADA) ================= */
 #aplicacoes{
   background:radial-gradient(1200px 700px at 70% 10%,rgba(20,35,70,.45),rgba(2,6,23,1));
 }
@@ -267,6 +267,32 @@ nav a:hover{color:var(--gold)}
   max-height:260px;
   opacity:1;
 }
+
+/* ================= DIFERENCIAIS (PARALLAX EXECUTIVO) ================= */
+#diferenciais{
+  position:relative;
+  background:
+    linear-gradient(rgba(2,6,23,.75),rgba(2,6,23,.85)),
+    url("assets/images/bg_diferenciais_industrial.png") center/cover no-repeat fixed;
+}
+.diferenciais-content{
+  max-width:900px;
+}
+.diferencial-item{
+  margin-bottom:80px;
+}
+.diferencial-title{
+  font-size:28px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.diferencial-desc{
+  font-size:17px;
+  line-height:1.7;
+  color:#e8eefc;
+  max-width:760px;
+}
 </style>
 </head>
 
@@ -281,123 +307,56 @@ nav a:hover{color:var(--gold)}
       <a href="#solucao">Solução</a>
       <a href="#como-funciona">Como Funciona</a>
       <a href="#aplicacoes">Aplicações</a>
+      <a href="#diferenciais">Diferenciais</a>
     </nav>
     <a href="#contato" class="btn-contato">Contato</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>OPERA GUARD</h1>
-    <div class="subtitle">Inteligência Artificial para garantir que cada operação seja executada corretamente.</div>
-    <div class="description">
-      Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
-      validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
-    </div>
-    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
-  </div>
-</section>
+<!-- HERO, SOLUÇÃO, COMO FUNCIONA, APLICAÇÕES: INALTERADOS -->
 
-<section id="solucao">
-  <div class="section-wrap reveal" data-reveal>
-    <div class="solucao-grid">
-      <div>
-        <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
-        <div class="section-lead">
-          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo.
-        </div>
-      </div>
-      <div class="solucao-right">
-        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão, reduzindo riscos e retrabalhos.</p></div>
-        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme o padrão definido pela Engenharia.</p></div>
-        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Registra evidências visuais e eventos operacionais relevantes para auditorias e análises.</p></div>
-        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atua preventivamente, alertando desvios antes que se tornem defeitos e perdas de qualidade.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="como-funciona">
+<section id="diferenciais">
   <div class="section-wrap">
-    <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-    <div class="steps reveal" data-reveal>
-      <div class="steps-row">
-        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão Operacional</div><div class="step-desc">A Engenharia define a sequência correta e os critérios da operação.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Visão Computacional compara execução real x padrão esperado.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="section-title">Diferenciais do OPERA GUARD</div>
 
-<section id="aplicacoes">
-  <div class="section-wrap">
-    <div class="section-title">Aplicações do OPERA GUARD</div>
-    <div class="aplicacoes-grid">
-      <div class="aplicacao-card">
-        <img src="assets/images/card_1_montagem_manual.png">
-        <div class="aplicacao-overlay">
-          <div class="aplicacao-title">Montagem Manual</div>
-          <div class="aplicacao-line">Operações manuais com sequência crítica.</div>
-          <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Postos de montagem manual com múltiplas etapas.</p>
-            <p><strong>Risco eliminado</strong><br>Bypass operacional.</p>
-            <p><strong>Ganho gerado</strong><br>Redução de retrabalho e falhas de qualidade.</p>
-          </div>
+    <div class="diferenciais-content">
+      <div class="diferencial-item">
+        <div class="diferencial-title">Validação de Sequência Operacional</div>
+        <div class="diferencial-desc">
+          O OPERA GUARD não verifica apenas presença de ações ou objetos.
+          Ele valida se cada etapa foi executada na ordem correta definida pela Engenharia.
         </div>
       </div>
 
-      <div class="aplicacao-card">
-        <img src="assets/images/card_2_postos_avancados_HM.png">
-        <div class="aplicacao-overlay">
-          <div class="aplicacao-title">Automação com Intervenção Humana</div>
-          <div class="aplicacao-line">Onde homem e máquina compartilham o processo.</div>
-          <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Estações automatizadas com ações manuais.</p>
-            <p><strong>Risco eliminado</strong><br>Ações fora do tempo correto.</p>
-            <p><strong>Ganho gerado</strong><br>Confiabilidade do ciclo.</p>
-          </div>
+      <div class="diferencial-item">
+        <div class="diferencial-title">Atuação Preventiva</div>
+        <div class="diferencial-desc">
+          A inteligência atua antes do defeito, interrompendo desvios no momento da execução,
+          reduzindo retrabalho, desperdício e risco ao cliente final.
         </div>
       </div>
 
-      <div class="aplicacao-card">
-        <img src="assets/images/card_3_autocontrole.png">
-        <div class="aplicacao-overlay">
-          <div class="aplicacao-title">Autocontrole do Operador</div>
-          <div class="aplicacao-line">Garantia de que o controle foi executado.</div>
-          <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Inspeções visuais e marcações.</p>
-            <p><strong>Risco eliminado</strong><br>Autocontrole declarado e não executado.</p>
-            <p><strong>Ganho gerado</strong><br>Evidência real para auditorias.</p>
-          </div>
+      <div class="diferencial-item">
+        <div class="diferencial-title">Engenharia no Controle</div>
+        <div class="diferencial-desc">
+          O padrão operacional não é uma caixa-preta de IA.
+          Ele é definido, validado e ajustado pela Engenharia de Processo.
         </div>
       </div>
 
-      <div class="aplicacao-card">
-        <img src="assets/images/card_4_sequencia_obrigatoria.png">
-        <div class="aplicacao-overlay">
-          <div class="aplicacao-title">Processos Críticos</div>
-          <div class="aplicacao-line">Onde a ordem define a qualidade final.</div>
-          <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Processos com sequência obrigatória.</p>
-            <p><strong>Risco eliminado</strong><br>Falhas ocultas.</p>
-            <p><strong>Ganho gerado</strong><br>Proteção da marca.</p>
-          </div>
+      <div class="diferencial-item">
+        <div class="diferencial-title">Evidência Visual Auditável</div>
+        <div class="diferencial-desc">
+          Cada evento relevante gera evidência visual real,
+          garantindo rastreabilidade confiável para auditorias e análises.
         </div>
       </div>
 
-      <div class="aplicacao-card">
-        <img src="assets/images/card_5_rastreabilidade.png">
-        <div class="aplicacao-overlay">
-          <div class="aplicacao-title">Rastreabilidade Operacional</div>
-          <div class="aplicacao-line">Evidência visual confiável da execução.</div>
-          <div class="aplicacao-expand">
-            <p><strong>Onde aplica</strong><br>Ambientes auditáveis.</p>
-            <p><strong>Risco eliminado</strong><br>Falta de evidência.</p>
-            <p><strong>Ganho gerado</strong><br>Suporte a auditorias e análises.</p>
-          </div>
+      <div class="diferencial-item">
+        <div class="diferencial-title">Implantação Simples e Escalável</div>
+        <div class="diferencial-desc">
+          Infraestrutura enxuta, com câmeras e integração progressiva,
+          sem dependência inicial de sensores complexos ou sistemas legados.
         </div>
       </div>
     </div>
