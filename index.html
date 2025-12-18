@@ -483,6 +483,53 @@ nav a:hover{color:var(--gold)}
     grid-template-columns:1fr;
   }
 }
+/* ================= CASES — AJUSTES DE HARMONIA ================= */
+
+/* aproxima subtítulo do grid */
+.cases-header{
+  margin-bottom: 40px; /* antes estava grande demais */
+}
+
+/* garante que o vídeo nunca "corte" conteúdo */
+.case-video{
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* placeholder mais elegante e central */
+.case-placeholder{
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* legenda colada ao vídeo */
+.case-desc{
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #dbe4ff;
+}
+
+/* título do card mais próximo do vídeo */
+.case-title{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* cards mais leves visualmente */
+.case-card{
+  padding: 20px;
+}
+
+/* efeito enterprise clean */
+.case-card:hover{
+  transform: translateY(-4px);
+  transition: transform .35s ease;
+}
 
 </style>
 </head>
