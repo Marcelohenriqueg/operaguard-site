@@ -441,6 +441,52 @@ nav a:hover{color:var(--gold)}
 .dif-row::after{
   display:none;
 }
+/* ================= TECNOLOGIA ================= */
+#tecnologia{
+  position:relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2,6,23,0.96) 0%,
+      rgba(2,6,23,0.9) 38%,
+      rgba(2,6,23,0.65) 58%,
+      rgba(2,6,23,0.25) 75%,
+      rgba(2,6,23,0) 100%
+    ),
+    url("assets/images/bg_tecnologia.png") right center / cover no-repeat;
+}
+
+#tecnologia .section-wrap{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+}
+
+.tecnologia-lead{
+  max-width:680px;
+  font-size:19px;
+  line-height:1.7;
+  color:#e8eefc;
+  margin-bottom:56px;
+}
+
+.tecnologia-item{
+  max-width:680px;
+  margin-bottom:42px;
+}
+
+.tecnologia-item h3{
+  font-size:22px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.tecnologia-item p{
+  font-size:16px;
+  line-height:1.65;
+  color:#e5e7eb;
+}
 
 </style>
 </head>
@@ -647,5 +693,55 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
 </section>
   
 <script>
+  <section id="tecnologia">
+  <div class="section-wrap">
+
+    <div class="section-title">Tecnologia do OPERA GUARD</div>
+
+    <div class="tecnologia-lead">
+      O OPERA GUARD utiliza visão computacional e inteligência artificial aplicada
+      à execução operacional, com uma arquitetura enxuta, robusta e pensada para
+      ambientes industriais reais.
+    </div>
+
+    <div class="tecnologia-item">
+      <h3>Visão Computacional Orientada à Execução</h3>
+      <p>
+        O sistema interpreta movimentos, presença e sequência das ações,
+        validando a execução da operação conforme o padrão definido,
+        sem interferir no ritmo produtivo.
+      </p>
+    </div>
+
+    <div class="tecnologia-item">
+      <h3>Inteligência Artificial sem Caixa-Preta</h3>
+      <p>
+        A lógica operacional é definida pela Engenharia.
+        A IA atua como mecanismo de comparação e validação,
+        sem decisões opacas ou dependência de modelos fechados.
+      </p>
+    </div>
+
+    <div class="tecnologia-item">
+      <h3>Arquitetura Enxuta e Financeiramente Eficiente</h3>
+      <p>
+        Baseado em câmeras e processamento inteligente,
+        o OPERA GUARD elimina a necessidade de sensores complexos,
+        tornando a solução mais acessível que sistemas tradicionais.
+      </p>
+    </div>
+
+    <div class="tecnologia-item">
+      <h3>Escalável e Integrável</h3>
+      <p>
+        A implantação é progressiva,
+        permitindo expansão por posto, linha ou processo,
+        sem impacto estrutural ou dependência de sistemas legados.
+      </p>
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>
