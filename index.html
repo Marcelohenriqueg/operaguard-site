@@ -668,6 +668,77 @@ nav a:hover{color:var(--gold)}
     grid-template-columns:1fr;
   }
 }
+/* ================= FOOTER / CONTATO ================= */
+
+footer{
+  background:
+    linear-gradient(
+      to top,
+      rgba(2,6,23,1),
+      rgba(2,6,23,.92)
+    );
+  border-top:1px solid rgba(253,224,71,.15);
+}
+
+.footer-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:80px 32px 40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:48px;
+  margin-bottom:48px;
+}
+
+.footer-col h4{
+  font-size:16px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.footer-col p{
+  font-size:15px;
+  line-height:1.6;
+  color:#dbe4ff;
+  max-width:420px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  font-size:15px;
+  line-height:1.6;
+  color:#e5e7eb;
+  margin-bottom:8px;
+}
+
+.footer-bottom{
+  padding-top:28px;
+  border-top:1px solid rgba(253,224,71,.12);
+  text-align:center;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+.footer-bottom span{
+  display:block;
+  margin-top:6px;
+  color:#94a3b8;
+}
+
+/* RESPONSIVO */
+@media(max-width:960px){
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+}
 
 </style>
 </head>
@@ -980,6 +1051,47 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
 
   </div>
 </section>
+<footer id="contato">
+  <div class="footer-wrap">
+
+    <div class="footer-grid">
+
+      <!-- BLOCO EMPRESA -->
+      <div class="footer-col">
+        <h4>OPERA GUARD</h4>
+        <p>
+          Sistema de monitoramento inteligente por visão computacional e IA,
+          garantindo a execução correta das operações industriais.
+        </p>
+      </div>
+
+      <!-- BLOCO CONTATO -->
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><strong>Telefone:</strong> (31) 99279-3411</li>
+          <li><strong>E-mail:</strong> maxprodsolucoes@gmail.com</li>
+        </ul>
+      </div>
+
+      <!-- BLOCO LEGAL -->
+      <div class="footer-col">
+        <h4>Informações Legais</h4>
+        <ul>
+          <li><strong>Empresa:</strong> MaxProd Soluções Empresariais</li>
+          <li><strong>CNPJ:</strong> 58.892.549/0001-39</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      Desenvolvido por <strong>MaxProd Soluções Empresariais</strong> © 2025  
+      <span>• Qualidade garantida por IA, nascida da experiência em manufatura</span>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
