@@ -563,6 +563,111 @@ nav a:hover{color:var(--gold)}
   font-size: 14px;
   line-height: 1.45;
 }
+/* ================= SOBRE NÓS ================= */
+
+#sobre-nos{
+  background:
+    radial-gradient(
+      1200px 700px at 80% 10%,
+      rgba(20,35,70,.35),
+      rgba(2,6,23,1)
+    );
+}
+
+.sobre-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:120px 32px;
+}
+
+.sobre-header{
+  max-width:720px;
+  margin-bottom:64px;
+}
+
+.sobre-header h2{
+  font-size:56px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+
+.sobre-header p{
+  font-size:18px;
+  line-height:1.65;
+  color:#dbe4ff;
+}
+
+.sobre-grid{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:48px;
+  align-items:center;
+}
+
+.sobre-card{
+  background:linear-gradient(
+    180deg,
+    rgba(10,18,35,.92),
+    rgba(7,13,26,.88)
+  );
+  border-radius:22px;
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+
+/* LOGO */
+.sobre-brand{
+  text-align:center;
+}
+
+.sobre-brand img{
+  max-width:220px;
+  margin-bottom:18px;
+}
+
+.sobre-brand span{
+  display:block;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+/* TEXTO */
+.sobre-text h3{
+  font-size:24px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.sobre-text p{
+  font-size:16px;
+  line-height:1.65;
+  color:#e5e7eb;
+  margin-bottom:16px;
+}
+
+.sobre-text ul{
+  margin:18px 0 18px 18px;
+  color:#e5e7eb;
+}
+
+.sobre-text li{
+  margin-bottom:8px;
+}
+
+.sobre-highlight{
+  margin-top:18px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+/* RESPONSIVO */
+@media(max-width:960px){
+  .sobre-grid{
+    grid-template-columns:1fr;
+  }
+}
 
 </style>
 </head>
@@ -825,6 +930,54 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
       </div>
 
     </div>
+  </div>
+</section>
+<section id="sobre-nos">
+  <div class="sobre-wrap">
+
+    <div class="sobre-header">
+      <h2>Quem Somos</h2>
+      <p>
+        O OPERA GUARD nasce da indústria real, criado por quem viveu
+        a dor da execução no chão de fábrica — não de um laboratório.
+      </p>
+    </div>
+
+    <div class="sobre-grid">
+
+      <!-- LOGO / EMPRESA -->
+      <div class="sobre-card sobre-brand">
+        <img src="assets/images/LOGO_MAXPROD.png" alt="MaxProd Soluções Empresariais">
+        <span>Empresa responsável pelo desenvolvimento do OPERA GUARD</span>
+      </div>
+
+      <!-- TEXTO PRINCIPAL -->
+      <div class="sobre-card sobre-text">
+
+        <h3>Da Fábrica para a Inteligência Artificial</h3>
+
+        <p>
+          O OPERA GUARD foi criado por <strong>Marcelo Gonçalves</strong>,
+          engenheiro com mais de <strong>15 anos de experiência</strong>
+          em melhoria contínua, qualidade, supply chain e produção.
+        </p>
+
+        <ul>
+          <li>Vivência real em chão de fábrica</li>
+          <li>Atuação direta com Engenharia de Qualidade</li>
+          <li>Auditorias, fornecedores e processos críticos</li>
+          <li>Foco em resultado, eficiência e redução de perdas</li>
+        </ul>
+
+        <p class="sobre-highlight">
+          Não é uma solução genérica de IA.  
+          É engenharia aplicada à execução operacional.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
 
