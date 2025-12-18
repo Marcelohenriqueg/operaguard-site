@@ -377,6 +377,112 @@ nav a:hover{color:var(--gold)}
   line-height:1.65;
   color:#e5e7eb;
 }
+/* ================= CASES DE SUCESSO ================= */
+
+#cases{
+  background: radial-gradient(
+    1200px 600px at 20% 10%,
+    rgba(20,35,70,.35),
+    rgba(2,6,23,1)
+  );
+}
+
+.cases-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:120px 32px;
+}
+
+.cases-header{
+  max-width:720px;
+  margin-bottom:64px;
+}
+
+.cases-header h2{
+  font-size:56px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.cases-header p{
+  font-size:18px;
+  line-height:1.65;
+  color:#dbe4ff;
+}
+
+/* grid dos vídeos */
+.cases-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+}
+
+/* card de vídeo */
+.case-card{
+  background:linear-gradient(
+    180deg,
+    rgba(10,18,35,.92),
+    rgba(7,13,26,.88)
+  );
+  border-radius:22px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+/* título do card */
+.case-title{
+  font-size:18px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+/* wrapper do vídeo */
+.case-video{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:16px;
+  overflow:hidden;
+  background:#020617;
+  border:1px solid rgba(253,224,71,.15);
+}
+
+/* placeholder (enquanto não tem vídeo real) */
+.case-placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  font-size:15px;
+  line-height:1.5;
+  color:#cbd5f5;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2,6,23,.85),
+      rgba(2,6,23,.95)
+    );
+}
+
+/* descrição abaixo */
+.case-desc{
+  margin-top:16px;
+  font-size:15px;
+  line-height:1.6;
+  color:#e5e7eb;
+}
+
+/* responsivo */
+@media(max-width:960px){
+  .cases-grid{
+    grid-template-columns:1fr;
+  }
+}
 
 </style>
 </head>
@@ -448,6 +554,63 @@ nav a:hover{color:var(--gold)}
 </section>
 
 <section id="aplicacoes">
+  <section id="cases">
+  <div class="cases-wrap">
+
+    <div class="cases-header">
+      <h2>Cases de Sucesso</h2>
+      <p>
+        Comparação real entre a execução conforme o padrão operacional
+        e cenários de desvio, demonstrando a atuação do OPERA GUARD
+        diretamente no ponto de origem da falha.
+      </p>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- EXECUÇÃO PADRÃO -->
+      <div class="case-card">
+        <div class="case-title">Execução Padrão Validada</div>
+
+        <div class="case-video">
+          <div class="case-placeholder">
+            Vídeo da operação executando todas as etapas conforme
+            o padrão definido pela Engenharia.
+            <br><br>
+            (Execução correta, sem desvios)
+          </div>
+        </div>
+
+        <div class="case-desc">
+          O operador segue a sequência correta de atividades,
+          validando a execução conforme o padrão esperado.
+        </div>
+      </div>
+
+      <!-- DESVIO / BYPASS -->
+      <div class="case-card">
+        <div class="case-title">Desvio Operacional Detectado</div>
+
+        <div class="case-video">
+          <div class="case-placeholder">
+            Vídeo da operação com etapa ignorada
+            (bypass operacional),
+            evidenciando a falha de execução.
+            <br><br>
+            Sistema identifica o desvio em tempo real.
+          </div>
+        </div>
+
+        <div class="case-desc">
+          O OPERA GUARD identifica a quebra de sequência
+          e atua preventivamente antes que o defeito avance.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
   <div class="section-wrap">
     <div class="section-title">Aplicações do OPERA GUARD</div>
     <div class="aplicacoes-grid">
