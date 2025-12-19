@@ -1,1 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>OPERA GUARD | Monitoramento Inteligente</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#020617;
+  --text:#e5e7eb;
+  --muted:#cbd5f5;
+  --gold:#fde047;
+  --cta:#ff9f1a;
+  --cta2:#ffb347;
+  --shadow:0 20px 50px rgba(0,0,0,.45);
+  --radius:22px;
+  --headerH:76px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:var(--headerH);
+  background:linear-gradient(to bottom,rgba(2,6,23,.95),rgba(2,6,23,.75));
+  backdrop-filter:blur(6px);
+  z-index:1000;
+}
+.header-container{
+  max-width:1320px;
+  height:100%;
+  margin:0 auto;
+  padding:0 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo-og img{height:45px}
+nav{display:flex;gap:32px}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{color:var(--gold)}
+.btn-contato{
+  background:var(--cta);
+  color:#000;
+  padding:10px 22px;
+  border-radius:12px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+/* ================= HERO (ORIGINAL) ================= */
+.hero{
+  min-height:100vh;
+  padding-top:var(--headerH);
+  background:
+    linear-gradient(rgba(5,20,45,.85),rgba(5,20,45,.9)),
+    url("assets/images/hero3.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-content{max-width:980px}
+.hero h1{
+  font-size:64px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.hero .subtitle{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.hero .description{
+  font-size:17px;
+  color:var(--muted);
+  line-height:1.65;
+  margin-bottom:36px;
+}
+.btn-demo{
+  background:var(--cta);
+  color:#000;
+  padding:18px 44px;
+  border-radius:14px;
+  font-weight:900;
+  text-decoration:none;
+}
+.btn-demo:hover{background:var(--cta2)}
+
+/* ================= BASE ================= */
+.section-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:120px 32px;
+}
+.section-title{
+  font-size:62px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:60px;
+}
+.section-lead{
+  margin-top:18px;
+  max-width:680px;
+  font-size:18px;
+  line-height:1.65;
+}
+
+/* ================= SOLUÇÃO (ORIGINAL COMPLETA) ================= */
+#solucao{
+  background:
+    linear-gradient(90deg,rgba(2,6,23,.94),rgba(2,6,23,.78),rgba(2,6,23,.35)),
+    url("assets/images/OPERADOR_SEQUENCIA_OK.png") center/cover no-repeat;
+}
+.solucao-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:center;
+}
+.solucao-right{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.feature-card{
+  background:linear-gradient(180deg,rgba(10,18,35,.92),rgba(7,13,26,.86));
+  border-radius:22px;
+  padding:28px 30px;
+  position:relative;
+  opacity:0;
+  transform:translateX(30px);
+  transition:opacity .35s ease,filter .35s ease,transform .6s cubic-bezier(.22,.9,.2,1);
+}
+.feature-card::before{
+  content:"";
+  position:absolute;
+  left:0;top:18px;bottom:18px;
+  width:3px;
+  background:var(--gold);
+}
+.feature-card h3{color:var(--gold);margin-bottom:10px}
+.reveal.in-view .feature-card{opacity:1;transform:none}
+.solucao-right:hover .feature-card{filter:brightness(.7)}
+.solucao-right .feature-card:hover{filter:brightness(1)}
+
+/* ================= COMO FUNCIONA (ORIGINAL COMPLETA) ================= */
+#como-funciona{
+  background:radial-gradient(1200px 800px at 20% 10%,rgba(17,28,58,.35),rgba(2,6,23,1));
+}
+.steps-row{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:22px;
+}
+.step-card{
+  background:linear-gradient(180deg,rgba(10,18,35,.92),rgba(7,13,26,.86));
+  border-radius:22px;
+  padding:26px 22px;
+  position:relative;
+  opacity:0;
+  transform:translateX(-26px);
+  transition:opacity .35s ease,filter .35s ease,transform .6s cubic-bezier(.22,.9,.2,1);
+}
+.step-card::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(253,224,71,.3));
+}
+.step-kicker{font-size:13px;font-weight:800;opacity:.7;margin-bottom:10px}
+.step-title{font-size:18px;font-weight:900;color:var(--gold);margin-bottom:10px}
+.step-desc{font-size:15px;line-height:1.55;color:#e8eefc}
+.steps.reveal.in-view .step-card{opacity:1;transform:none}
+.steps-row:hover .step-card{filter:brightness(.7)}
+.steps-row .step-card:hover{filter:brightness(1)}
+
+/* ================= APLICAÇÕES (EVOLUÍDA) ================= */
+#aplicacoes{
+  background:radial-gradient(1200px 700px at 70% 10%,rgba(20,35,70,.45),rgba(2,6,23,1));
+}
+.aplicacoes-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:28px;
+}
+.aplicacao-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:transform .45s cubic-bezier(.22,.9,.2,1),filter .35s ease;
+}
+.aplicacao-card img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  filter:brightness(.9);
+  transition:transform .6s ease,filter .45s ease;
+}
+.aplicacao-overlay{
+  position:absolute;
+  inset:0;
+  padding:26px;
+  background:linear-gradient(to top,rgba(2,6,23,.85),rgba(2,6,23,.35));
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.aplicacao-title{
+  font-size:20px;
+  font-weight:900;
+  color:var(--gold);
+}
+.aplicacao-line{
+  font-size:14px;
+  color:#f1f5ff;
+}
+.aplicacao-expand{
+  margin-top:14px;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:max-height .6s cubic-bezier(.22,.9,.2,1),opacity .35s ease;
+}
+.aplicacao-expand p{
+  font-size:14px;
+  line-height:1.55;
+  margin-bottom:10px;
+}
+.aplicacao-expand strong{color:var(--gold)}
+.aplicacoes-grid:hover .aplicacao-card{
+  filter:brightness(.75);
+  transform:scale(.96);
+}
+.aplicacao-card:hover{
+  filter:brightness(1);
+  transform:scale(1.05);
+  z-index:2;
+}
+.aplicacao-card:hover img{
+  filter:brightness(1);
+  transform:scale(1.06);
+}
+.aplicacao-card:hover .aplicacao-expand{
+  max-height:260px;
+  opacity:1;
+}
+ /* ================= DIFERENCIAIS — ENTERPRISE COM LINHAS ================= */
+
+#diferenciais{
+  background:
+    linear-gradient(rgba(2,6,23,.78), rgba(2,6,23,.90)),
+    url("assets/images/bg_diferenciais_industrial.png") center/cover no-repeat;
+}
+
+#diferenciais .section-wrap{
+  padding:110px 32px;
+}
+
+.diferenciais-doc{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.dif-row{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:28px;
+  padding-bottom:14px;
+  position:relative;
+}
+
+/* linha elegante */
+.dif-row::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    rgba(253,224,71,.45),
+    rgba(253,224,71,.15),
+    rgba(253,224,71,0)
+  );
+}
+
+.dif-row:last-child::after{
+  display:none;
+}
+
+.dif-left{
+  font-size:20px;
+  font-weight:800;
+  color:var(--gold);
+  line-height:1.25;
+}
+
+.dif-right{
+  font-size:15px;
+  line-height:1.55;
+  color:#d6def8;
+  max-width:620px;
+}
+
+}
+
+/* ================= TECNOLOGIA ================= */
+#tecnologia{
+  position:relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2,6,23,0.96) 0%,
+      rgba(2,6,23,0.9) 38%,
+      rgba(2,6,23,0.65) 58%,
+      rgba(2,6,23,0.25) 75%,
+      rgba(2,6,23,0) 100%
+    ),
+    url("assets/images/bg_tecnologia.png") right center / cover no-repeat;
+}
+
+#tecnologia .section-wrap{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+}
+
+.tecnologia-lead{
+  max-width:680px;
+  font-size:19px;
+  line-height:1.7;
+  color:#e8eefc;
+  margin-bottom:56px;
+}
+
+.tecnologia-item{
+  max-width:680px;
+  margin-bottom:42px;
+}
+
+.tecnologia-item h3{
+  font-size:22px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.tecnologia-item p{
+  font-size:16px;
+  line-height:1.65;
+  color:#e5e7eb;
+}
+/* ================= CASES DE SUCESSO ================= */
+
+#cases{
+  background: radial-gradient(
+    1200px 600px at 20% 10%,
+    rgba(20,35,70,.35),
+    rgba(2,6,23,1)
+  );
+}
+
+.cases-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:120px 32px;
+}
+
+.cases-header{
+  max-width:720px;
+  margin-bottom:64px;
+}
+
+.cases-header h2{
+  font-size:56px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.cases-header p{
+  font-size:18px;
+  line-height:1.65;
+  color:#dbe4ff;
+}
+
+/* grid dos vídeos */
+.cases-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+}
+
+/* card de vídeo */
+.case-card{
+  background:linear-gradient(
+    180deg,
+    rgba(10,18,35,.92),
+    rgba(7,13,26,.88)
+  );
+  border-radius:22px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+/* título do card */
+.case-title{
+  font-size:18px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+/* wrapper do vídeo */
+.case-video{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:16px;
+  overflow:hidden;
+  background:#020617;
+  border:1px solid rgba(253,224,71,.15);
+}
+
+/* placeholder (enquanto não tem vídeo real) */
+.case-placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+  font-size:15px;
+  line-height:1.5;
+  color:#cbd5f5;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(2,6,23,.85),
+      rgba(2,6,23,.95)
+    );
+}
+
+/* descrição abaixo */
+.case-desc{
+  margin-top:16px;
+  font-size:15px;
+  line-height:1.6;
+  color:#e5e7eb;
+}
+
+/* responsivo */
+@media(max-width:960px){
+  .cases-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* ================= CASES — AJUSTES DE HARMONIA ================= */
+
+/* aproxima subtítulo do grid */
+.cases-header{
+  margin-bottom: 40px; /* antes estava grande demais */
+}
+
+/* garante que o vídeo nunca "corte" conteúdo */
+.case-video{
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* placeholder mais elegante e central */
+.case-placeholder{
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* legenda colada ao vídeo */
+.case-desc{
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #dbe4ff;
+}
+
+/* título do card mais próximo do vídeo */
+.case-title{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* cards mais leves visualmente */
+.case-card{
+  padding: 20px;
+}
+
+/* efeito enterprise clean */
+.case-card:hover{
+  transform: translateY(-4px);
+  transition: transform .35s ease;
+}
+/* ================= CASES — AJUSTE TOPO ================= */
+
+/* aproxima o título do header */
+#cases .cases-wrap{
+  padding-top: 80px; /* antes 120px */
+}
+/* ================= CASES — AJUSTE VÍDEO ================= */
+
+/* reduz levemente o tamanho do vídeo */
+.case-video{
+  aspect-ratio: 16 / 9;
+  max-height: 280px; /* limita altura */
+}
+
+/* deixa o card mais compacto */
+.case-card{
+  padding: 18px;
+}
+
+/* aproxima legenda do vídeo */
+.case-desc{
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* reduz espaço interno do placeholder */
+.case-placeholder{
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+/* ================= SOBRE NÓS ================= */
+
+#sobre-nos{
+  background:
+    radial-gradient(
+      1200px 700px at 80% 10%,
+      rgba(20,35,70,.35),
+      rgba(2,6,23,1)
+    );
+}
+
+.sobre-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:120px 32px;
+}
+
+.sobre-header{
+  max-width:720px;
+  margin-bottom:64px;
+}
+
+.sobre-header h2{
+  font-size:56px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+
+.sobre-header p{
+  font-size:18px;
+  line-height:1.65;
+  color:#dbe4ff;
+}
+
+.sobre-grid{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:48px;
+  align-items:center;
+}
+
+.sobre-card{
+  background:linear-gradient(
+    180deg,
+    rgba(10,18,35,.92),
+    rgba(7,13,26,.88)
+  );
+  border-radius:22px;
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+
+/* LOGO */
+.sobre-brand{
+  text-align:center;
+}
+
+.sobre-brand img{
+  max-width:220px;
+  margin-bottom:18px;
+}
+
+.sobre-brand span{
+  display:block;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+/* TEXTO */
+.sobre-text h3{
+  font-size:24px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.sobre-text p{
+  font-size:16px;
+  line-height:1.65;
+  color:#e5e7eb;
+  margin-bottom:16px;
+}
+
+.sobre-text ul{
+  margin:18px 0 18px 18px;
+  color:#e5e7eb;
+}
+
+.sobre-text li{
+  margin-bottom:8px;
+}
+
+.sobre-highlight{
+  margin-top:18px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+/* RESPONSIVO */
+@media(max-width:960px){
+  .sobre-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* ================= FOOTER / CONTATO ================= */
+
+footer{
+  background:
+    linear-gradient(
+      to top,
+      rgba(2,6,23,1),
+      rgba(2,6,23,.92)
+    );
+  border-top:1px solid rgba(253,224,71,.15);
+}
+
+.footer-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:80px 32px 40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:48px;
+  margin-bottom:48px;
+}
+
+.footer-col h4{
+  font-size:16px;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+
+.footer-col p{
+  font-size:15px;
+  line-height:1.6;
+  color:#dbe4ff;
+  max-width:420px;
+}
+
+.footer-col ul{
+  list-style:none;
+}
+
+.footer-col li{
+  font-size:15px;
+  line-height:1.6;
+  color:#e5e7eb;
+  margin-bottom:8px;
+}
+
+.footer-bottom{
+  padding-top:28px;
+  border-top:1px solid rgba(253,224,71,.12);
+  text-align:center;
+  font-size:14px;
+  color:#cbd5f5;
+}
+
+.footer-bottom span{
+  display:block;
+  margin-top:6px;
+  color:#94a3b8;
+}
+
+/* RESPONSIVO */
+@media(max-width:960px){
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+}
+/* ================= MOBILE VERSION ================= */
+@media (max-width: 900px){
+
+  /* ===== HEADER ===== */
+  header{
+    height:64px;
+  }
+
+  .header-container{
+    padding:0 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .logo-og img{
+    height:38px;
+  }
+
+  .btn-contato{
+    padding:8px 16px;
+    font-size:14px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:calc(var(--headerH) + 40px) 16px 60px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero .subtitle{
+    font-size:18px;
+  }
+
+  .hero .description{
+    font-size:15px;
+  }
+
+  .btn-demo{
+    padding:14px 28px;
+    font-size:15px;
+  }
+
+  /* ===== SECTIONS BASE ===== */
+  .section-wrap{
+    padding:80px 20px;
+  }
+
+  .section-title{
+    font-size:36px;
+    margin-bottom:36px;
+  }
+
+  .section-lead{
+    font-size:16px;
+  }
+
+  /* ===== SOLUÇÃO ===== */
+  .solucao-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  /* ===== COMO FUNCIONA ===== */
+  .steps-row{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .step-card{
+    opacity:1;
+    transform:none;
+  }
+
+  /* ===== APLICAÇÕES ===== */
+  .aplicacoes-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .aplicacao-card{
+    transform:none !important;
+    filter:none !important;
+  }
+
+  .aplicacao-overlay{
+    background:linear-gradient(
+      to top,
+      rgba(2,6,23,.92),
+      rgba(2,6,23,.65)
+    );
+  }
+
+  .aplicacao-expand{
+    max-height:280px;
+    opacity:1;
+    padding:14px;
+  }
+
+  /* ===== DIFERENCIAIS ===== */
+  .dif-row{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .dif-left{
+    font-size:18px;
+  }
+
+  /* ===== CASES ===== */
+  .cases-wrap{
+    padding:80px 20px;
+  }
+
+  .cases-header h2{
+    font-size:36px;
+  }
+
+  .cases-header p{
+    font-size:16px;
+  }
+
+  .cases-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  /* ===== SOBRE NÓS ===== */
+  .sobre-wrap{
+    padding:80px 20px;
+  }
+
+  .sobre-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .sobre-header h2{
+    font-size:36px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-wrap{
+    padding:60px 20px 32px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo-og">
+      <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png">
+    </div>
+    <nav>
+  <a href="#inicio">Início</a>
+  <a href="#solucao">Solução</a>
+  <a href="#como-funciona">Como Funciona</a>
+  <a href="#aplicacoes">Aplicações</a>
+  <a href="#diferenciais">Diferenciais</a>
+  <a href="#cases">Cases de sucesso</a>
+  <a href="#sobre-nos">Sobre Nós</a>
+    </nav>
+    <a href="#contato" class="btn-contato">Contato</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>EXECUÇÃO PERFEITA NO CHÃO DE FÁBRICA</h1>
+    <div class="subtitle">Inteligência Artificial para garantir que cada operação seja executada corretamente.</div>
+    <div class="description">
+      Sistema de monitoramento inteligente por visão computacional e IA, capaz de detectar bypass operacional,
+      validar a sequência correta das atividades e prevenir falhas humanas em tempo real.
+    </div>
+    <a href="#contato" class="btn-demo">Solicitar Demonstração</a>
+  </div>
+</section>
+
+<section id="solucao">
+  <div class="section-wrap reveal" data-reveal>
+    <div class="solucao-grid">
+      <div>
+        <div class="section-title">Uma nova camada de inteligência sobre o processo produtivo</div>
+        <div class="section-lead">
+          O OPERA GUARD atua como um guardião digital das operações industriais, monitorando em tempo real cada etapa do processo.
+        </div>
+      </div>
+      <div class="solucao-right">
+        <div class="feature-card"><h3>Detecção de Bypass Operacional</h3><p>Identifica automaticamente etapas ignoradas ou fora do padrão, reduzindo riscos e retrabalhos.</p></div>
+        <div class="feature-card"><h3>Validação da Sequência Correta</h3><p>Garante execução conforme o padrão definido pela Engenharia.</p></div>
+        <div class="feature-card"><h3>Rastreabilidade Inteligente</h3><p>Registra evidências visuais e eventos operacionais relevantes para auditorias e análises.</p></div>
+        <div class="feature-card"><h3>Prevenção de Falhas Humanas</h3><p>Atua preventivamente, alertando desvios antes que se tornem defeitos e perdas de qualidade.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="section-wrap">
+    <div class="section-title">Como o OPERA GUARD funciona na prática</div>
+    <div class="steps reveal" data-reveal>
+      <div class="steps-row">
+        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão Operacional</div><div class="step-desc">A Engenharia define a sequência correta e os critérios da operação.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Visão Computacional compara execução real x padrão esperado.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
+        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aplicacoes">
+  <div class="section-wrap">
+    <div class="section-title">Aplicações do OPERA GUARD</div>
+    <div class="aplicacoes-grid">
+      <div class="aplicacao-card">
+        <img src="assets/images/card_1_montagem_manual.png">
+        <div class="aplicacao-overlay">
+          <div class="aplicacao-title">Montagem Manual</div>
+          <div class="aplicacao-line">Operações manuais com sequência crítica.</div>
+          <div class="aplicacao-expand">
+            <p><strong>Onde aplica</strong><br>Postos de montagem manual com múltiplas etapas.</p>
+            <p><strong>Risco eliminado</strong><br>Bypass operacional.</p>
+            <p><strong>Ganho gerado</strong><br>Redução de retrabalho e falhas de qualidade.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aplicacao-card">
+        <img src="assets/images/card_2_postos_avancados_HM.png">
+        <div class="aplicacao-overlay">
+          <div class="aplicacao-title">Automação com Intervenção Humana</div>
+          <div class="aplicacao-line">Onde homem e máquina compartilham o processo.</div>
+          <div class="aplicacao-expand">
+            <p><strong>Onde aplica</strong><br>Estações automatizadas com ações manuais.</p>
+            <p><strong>Risco eliminado</strong><br>Ações fora do tempo correto.</p>
+            <p><strong>Ganho gerado</strong><br>Confiabilidade do ciclo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aplicacao-card">
+        <img src="assets/images/card_3_autocontrole.png">
+        <div class="aplicacao-overlay">
+          <div class="aplicacao-title">Autocontrole do Operador</div>
+          <div class="aplicacao-line">Garantia de que o controle foi executado.</div>
+          <div class="aplicacao-expand">
+            <p><strong>Onde aplica</strong><br>Inspeções visuais e marcações.</p>
+            <p><strong>Risco eliminado</strong><br>Autocontrole declarado e não executado.</p>
+            <p><strong>Ganho gerado</strong><br>Evidência real para auditorias.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aplicacao-card">
+        <img src="assets/images/card_4_sequencia_obrigatoria.png">
+        <div class="aplicacao-overlay">
+          <div class="aplicacao-title">Processos Críticos</div>
+          <div class="aplicacao-line">Onde a ordem define a qualidade final.</div>
+          <div class="aplicacao-expand">
+            <p><strong>Onde aplica</strong><br>Processos com sequência obrigatória.</p>
+            <p><strong>Risco eliminado</strong><br>Falhas ocultas.</p>
+            <p><strong>Ganho gerado</strong><br>Proteção da marca.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aplicacao-card">
+        <img src="assets/images/card_5_rastreabilidade.png">
+        <div class="aplicacao-overlay">
+          <div class="aplicacao-title">Rastreabilidade Operacional</div>
+          <div class="aplicacao-line">Evidência visual confiável da execução.</div>
+          <div class="aplicacao-expand">
+            <p><strong>Onde aplica</strong><br>Ambientes auditáveis.</p>
+            <p><strong>Risco eliminado</strong><br>Falta de evidência.</p>
+            <p><strong>Ganho gerado</strong><br>Suporte a auditorias e análises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("in-view");
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
+</script>
+<section id="diferenciais">
+  <section id="diferenciais">
+  <div class="section-wrap">
+
+    <div class="section-title">Diferenciais do OPERA GUARD</div>
+
+    <div class="diferenciais-doc">
+
+      <div class="dif-row">
+        <div class="dif-left">Validação Real da Execução</div>
+        <div class="dif-right">
+          Garante que a operação foi executada conforme o padrão definido,
+          eliminando dependência de registros manuais ou inspeções tardias.
+        </div>
+      </div>
+
+      <div class="dif-row">
+        <div class="dif-left">Atuação Preventiva no Ponto de Origem</div>
+        <div class="dif-right">
+          Atua durante a execução da atividade, reduzindo retrabalhos,
+          perdas de qualidade e custos ocultos antes que ocorram.
+        </div>
+      </div>
+
+      <div class="dif-row">
+        <div class="dif-left">Engenharia no Controle</div>
+        <div class="dif-right">
+          O padrão operacional é definido, validado e ajustado pela Engenharia,
+          sem dependência de soluções complexas, fechadas ou onerosas.
+        </div>
+      </div>
+
+      <div class="dif-row">
+        <div class="dif-left">Evidência Visual Auditável</div>
+        <div class="dif-right">
+          Cada evento relevante gera evidência visual real,
+          garantindo rastreabilidade confiável para auditorias e análises.
+        </div>
+      </div>
+
+      <div class="dif-row">
+        <div class="dif-left">Arquitetura Enxuta e Escalável</div>
+        <div class="dif-right">
+          Infraestrutura simples, progressiva e financeiramente eficiente,
+          posicionando o OPERA GUARD como alternativa mais acessível
+          às soluções tradicionais do mercado.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</section>
+  
+<section id="cases">
+  <div class="cases-wrap">
+
+    <div class="cases-header">
+      <h2>Cases de Sucesso</h2>
+      <p>
+        Comparação real entre a execução conforme o padrão operacional
+        e cenários de desvio, demonstrando a atuação do OPERA GUARD
+        diretamente no ponto de origem da falha.
+      </p>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- EXECUÇÃO PADRÃO -->
+      <div class="case-card">
+        <div class="case-title">Execução Padrão Validada</div>
+
+        <div class="case-video">
+          <div class="case-placeholder">
+            Vídeo da operação executando todas as etapas conforme
+            o padrão definido pela Engenharia.
+            <br><br>
+            (Execução correta, sem desvios)
+          </div>
+        </div>
+
+        <div class="case-desc">
+          O operador segue a sequência correta de atividades,
+          validando a execução conforme o padrão esperado.
+        </div>
+      </div>
+
+      <!-- DESVIO / BYPASS -->
+      <div class="case-card">
+        <div class="case-title">Desvio Operacional Detectado</div>
+
+        <div class="case-video">
+          <div class="case-placeholder">
+            Vídeo da operação com etapa ignorada
+            (bypass operacional),
+            evidenciando a falha de execução.
+            <br><br>
+            Sistema identifica o desvio em tempo real.
+          </div>
+        </div>
+
+        <div class="case-desc">
+          O OPERA GUARD identifica a quebra de sequência
+          e atua preventivamente antes que o defeito avance.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="sobre-nos">
+  <div class="sobre-wrap">
+
+    <div class="sobre-header">
+      <h2>Quem Somos</h2>
+      <p>
+        O OPERA GUARD nasce da indústria real, criado por quem viveu
+        a dor da execução no chão de fábrica — não de um laboratório.
+      </p>
+    </div>
+
+    <div class="sobre-grid">
+
+      <!-- LOGO / EMPRESA -->
+      <div class="sobre-card sobre-brand">
+        <img src="assets/images/LOGO - MAXPROD.png" alt="MaxProd Soluções Empresariais">
+        <span>Empresa responsável pelo desenvolvimento do OPERA GUARD</span>
+      </div>
+
+      <!-- TEXTO PRINCIPAL -->
+      <div class="sobre-card sobre-text">
+
+        <h3>Da Fábrica para a Inteligência Artificial</h3>
+
+        <p>
+          O OPERA GUARD foi criado por <strong>Marcelo Gonçalves</strong>,
+          engenheiro com mais de <strong>15 anos de experiência</strong>
+          em melhoria contínua, qualidade, supply chain e produção.
+        </p>
+
+        <ul>
+          <li>Vivência real em chão de fábrica</li>
+          <li>Atuação direta com Engenharia de Qualidade</li>
+          <li>Auditorias, fornecedores e processos críticos</li>
+          <li>Foco em resultado, eficiência e redução de perdas</li>
+        </ul>
+
+        <p class="sobre-highlight">
+          Não é uma solução genérica de IA.  
+          É engenharia aplicada à execução operacional.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<footer id="contato">
+  <div class="footer-wrap">
+
+    <div class="footer-grid">
+
+      <!-- BLOCO EMPRESA -->
+      <div class="footer-col">
+        <h4>OPERA GUARD</h4>
+        <p>
+          Sistema de monitoramento inteligente por visão computacional e IA,
+          garantindo a execução correta das operações industriais.
+        </p>
+      </div>
+
+      <!-- BLOCO CONTATO -->
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><strong>Telefone:</strong> (31) 99279-3411</li>
+          <li><strong>E-mail:</strong> maxprodsolucoes@gmail.com</li>
+        </ul>
+      </div>
+
+      <!-- BLOCO LEGAL -->
+      <div class="footer-col">
+        <h4>Informações Legais</h4>
+        <ul>
+          <li><strong>Empresa:</strong> MaxProd Soluções Empresariais</li>
+          <li><strong>CNPJ:</strong> 58.892.549/0001-39</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      Desenvolvido por <strong>MaxProd Soluções Empresariais</strong> © 2025  
+      <span>• Qualidade garantida por IA, nascida da experiência em manufatura</span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
