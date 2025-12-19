@@ -739,6 +739,161 @@ footer{
     gap:36px;
   }
 }
+/* ================= MOBILE VERSION ================= */
+@media (max-width: 900px){
+
+  /* ===== HEADER ===== */
+  header{
+    height:64px;
+  }
+
+  .header-container{
+    padding:0 20px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .logo-og img{
+    height:38px;
+  }
+
+  .btn-contato{
+    padding:8px 16px;
+    font-size:14px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:calc(var(--headerH) + 40px) 16px 60px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero .subtitle{
+    font-size:18px;
+  }
+
+  .hero .description{
+    font-size:15px;
+  }
+
+  .btn-demo{
+    padding:14px 28px;
+    font-size:15px;
+  }
+
+  /* ===== SECTIONS BASE ===== */
+  .section-wrap{
+    padding:80px 20px;
+  }
+
+  .section-title{
+    font-size:36px;
+    margin-bottom:36px;
+  }
+
+  .section-lead{
+    font-size:16px;
+  }
+
+  /* ===== SOLUÇÃO ===== */
+  .solucao-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  /* ===== COMO FUNCIONA ===== */
+  .steps-row{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .step-card{
+    opacity:1;
+    transform:none;
+  }
+
+  /* ===== APLICAÇÕES ===== */
+  .aplicacoes-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .aplicacao-card{
+    transform:none !important;
+    filter:none !important;
+  }
+
+  .aplicacao-overlay{
+    background:linear-gradient(
+      to top,
+      rgba(2,6,23,.92),
+      rgba(2,6,23,.65)
+    );
+  }
+
+  .aplicacao-expand{
+    max-height:280px;
+    opacity:1;
+    padding:14px;
+  }
+
+  /* ===== DIFERENCIAIS ===== */
+  .dif-row{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .dif-left{
+    font-size:18px;
+  }
+
+  /* ===== CASES ===== */
+  .cases-wrap{
+    padding:80px 20px;
+  }
+
+  .cases-header h2{
+    font-size:36px;
+  }
+
+  .cases-header p{
+    font-size:16px;
+  }
+
+  .cases-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  /* ===== SOBRE NÓS ===== */
+  .sobre-wrap{
+    padding:80px 20px;
+  }
+
+  .sobre-grid{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+
+  .sobre-header h2{
+    font-size:36px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-wrap{
+    padding:60px 20px 32px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+}
 
 </style>
 </head>
