@@ -752,9 +752,8 @@ footer{
     padding:0 20px;
   }
 
-  nav{
-    display:none;
-  }
+  .main-nav{ display:none; } /* hide only desktop nav */
+
 
   .logo-og img{
     height:38px;
@@ -957,6 +956,16 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
   max-width: none;     /* remove limite de largura */
   white-space: normal; /* garante fluxo natural */
 }
+
+  /* ===== FINAL FIX (EN) — keep it at the VERY END of CSS ===== */
+@media (max-width: 900px){
+  .main-nav{ display:none !important; }
+  .mobile-menu-btn{ display:inline-flex !important; }
+  .header-container > a.btn-contato{ display:none !important; } /* hide header Contact button (goes inside overlay) */
+  .mobile-menu-nav{ display:flex !important; } /* ensure overlay nav shows */
+}
+
+  
 </style>
 </head>
 
@@ -982,11 +991,54 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
         <a href="/en/" title="English">US</a>
       </span>
     </nav>
+<!-- MOBILE MENU BUTTON (EN) -->
+<button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="ogMobileMenu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
 
     <a href="#contato" class="btn-contato">Contato</a>
   </div>
 </header>
 
+<!-- MOBILE MENU OVERLAY (EN) -->
+<div id="ogMobileMenu" class="mobile-menu-overlay" aria-hidden="true">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-top">
+      <div class="mobile-menu-brand">
+        <img src="../assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="OPERA GUARD">
+      </div>
+
+      <button class="mobile-menu-close" type="button" aria-label="Close menu">
+        ✕
+      </button>
+    </div>
+
+    <nav class="mobile-menu-nav">
+      <a href="#inicio">Home</a>
+      <a href="#solucao">Solution</a>
+      <a href="#como-funciona">How it Works</a>
+      <a href="#aplicacoes">Applications</a>
+      <a href="#diferenciais">Differentials</a>
+      <a href="#cases">Success Cases</a>
+      <a href="#sobre-nos">About Us</a>
+      <a href="#contato">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-divider"></div>
+
+    <div class="mobile-menu-row">
+      <a class="mobile-pill" href="/" title="Portuguese">BR</a>
+      <a class="mobile-pill" href="/en/" title="English">US</a>
+    </div>
+
+    <div class="mobile-menu-ctas">
+      <a href="https://maxprod.com.br" class="mobile-cta secondary">MaxProd</a>
+      <a href="#contato" class="mobile-cta primary">Contact</a>
+    </div>
+  </div>
+</div>
+
+  
 <section class="hero" id="inicio">
   <div class="hero-content">
     <h1>PERFECT EXECUTION ON THE SHOP FLOOR</h1>
@@ -1314,5 +1366,40 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
   </div>
 </footer>
 
+<script>
+(() => {
+  const overlay = document.getElementById("ogMobileMenu");
+  const openBtn = document.querySelector(".mobile-menu-btn");
+  const closeBtn = document.querySelector(".mobile-menu-close");
+
+  if (!overlay || !openBtn || !closeBtn) return;
+
+  const setState = (open) => {
+    overlay.classList.toggle("is-open", open);
+    overlay.setAttribute("aria-hidden", String(!open));
+    openBtn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  openBtn.addEventListener("click", () => setState(true));
+  closeBtn.addEventListener("click", () => setState(false));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) setState(false);
+  });
+
+  overlay.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => setState(false));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setState(false);
+  });
+})();
+</script>
+
+
+
+  
 </body>
 </html>
