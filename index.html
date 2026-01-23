@@ -1128,6 +1128,12 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   .header-container > a.btn-contato{display:none;}
 }
 
+/* ===== FIX DEFINITIVO MENU MOBILE (colocar no FINAL do CSS) ===== */
+@media (max-width: 900px){
+  .main-nav{ display:none !important; }            /* mata o menu desktop */
+  .mobile-menu-btn{ display:inline-flex !important; } /* mostra o ☰ */
+  .header-container > a.btn-contato{ display:none !important; } /* esconde MaxProd/Contato do header */
+}
 
   
 </style>
