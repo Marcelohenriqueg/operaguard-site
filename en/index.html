@@ -330,7 +330,7 @@ nav a:hover{color:var(--gold)}
   max-width:620px;
 }
 
-}
+
 
 /* ================= TECNOLOGIA ================= */
 #tecnologia{
@@ -963,6 +963,140 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
   .mobile-menu-btn{ display:inline-flex !important; }
   .header-container > a.btn-contato{ display:none !important; } /* hide header Contact button (goes inside overlay) */
   .mobile-menu-nav{ display:flex !important; } /* ensure overlay nav shows */
+}
+
+/* ================= MOBILE MENU (OVERLAY) ================= */
+.mobile-menu-btn{
+  display:none;
+  width:44px;height:44px;
+  border:1px solid rgba(253,224,71,.22);
+  background:rgba(2,6,23,.35);
+  border-radius:12px;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+}
+.mobile-menu-btn span{
+  display:block;
+  width:18px;height:2px;
+  background:rgba(253,224,71,.95);
+  border-radius:2px;
+}
+
+.mobile-menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.72);
+  backdrop-filter:blur(8px);
+  z-index:2000;
+  display:none;
+  padding:18px;
+}
+.mobile-menu-overlay.is-open{ display:block; }
+
+.mobile-menu-panel{
+  width:min(520px, 100%);
+  margin:0 auto;
+  background:linear-gradient(180deg,rgba(10,18,35,.96),rgba(7,13,26,.92));
+  border:1px solid rgba(253,224,71,.18);
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+  padding:16px 16px 18px;
+}
+
+.mobile-menu-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:6px 6px 10px;
+}
+.mobile-menu-brand img{
+  height:34px;
+  width:auto;
+}
+
+.mobile-menu-close{
+  width:40px;height:40px;
+  border-radius:12px;
+  border:1px solid rgba(253,224,71,.22);
+  background:rgba(2,6,23,.35);
+  color:rgba(253,224,71,.95);
+  font-weight:900;
+  cursor:pointer;
+}
+
+.mobile-menu-nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:10px 6px 6px;
+}
+.mobile-menu-nav a{
+  text-decoration:none;
+  color:#e5e7eb;
+  font-weight:800;
+  padding:12px 12px;
+  border-radius:12px;
+  background:rgba(253,224,71,.06);
+  border:1px solid rgba(253,224,71,.10);
+}
+.mobile-menu-nav a:active{ transform:scale(.99); }
+
+.mobile-menu-divider{
+  height:1px;
+  background:linear-gradient(90deg,rgba(253,224,71,.35),rgba(253,224,71,.08),rgba(253,224,71,0));
+  margin:14px 6px;
+}
+
+.mobile-menu-row{
+  display:flex;
+  gap:10px;
+  padding:0 6px 10px;
+}
+.mobile-pill{
+  flex:0 0 auto;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(253,224,71,.18);
+  background:rgba(2,6,23,.35);
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.02em;
+}
+
+.mobile-menu-ctas{
+  display:flex;
+  gap:12px;
+  padding:0 6px;
+}
+.mobile-cta{
+  flex:1;
+  text-align:center;
+  padding:12px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+}
+.mobile-cta.primary{
+  background:var(--cta);
+  color:#000;
+}
+.mobile-cta.secondary{
+  background:rgba(253,224,71,.10);
+  border:1px solid rgba(253,224,71,.18);
+  color:#e5e7eb;
+}
+
+/* mostra o hamburger no mobile e esconde o menu desktop */
+@media (max-width: 900px){
+  .mobile-menu-btn{ display:inline-flex; }
+  .main-nav{ display:none !important; }
+  .header-container > a.btn-contato{ display:none !important; }
 }
 
   
