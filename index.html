@@ -964,6 +964,172 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
   max-width:900px;
 }
 
+/* ================= MENU MOBILE (OVERLAY) — OPERA GUARD ================= */
+
+.mobile-menu-btn{
+  display:none; /* só aparece no mobile */
+  margin-left:auto;
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid rgba(253,224,71,.25);
+  background:rgba(2,6,23,.35);
+  backdrop-filter: blur(8px);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:10px;
+}
+
+.mobile-menu-btn span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--gold);
+  border-radius:2px;
+  opacity:.95;
+}
+
+.mobile-menu-overlay{
+  position:fixed;
+  inset:0;
+  z-index:2000; /* acima do header */
+  display:none;
+  background:rgba(2,6,23,.92);
+  backdrop-filter: blur(10px);
+}
+
+.mobile-menu-overlay.is-open{
+  display:block;
+}
+
+.mobile-menu-panel{
+  height:100%;
+  max-width:520px;
+  width:100%;
+  margin-left:auto;
+  padding:18px 18px 24px;
+  background:linear-gradient(180deg, rgba(2,6,23,.98), rgba(2,6,23,.92));
+  border-left:1px solid rgba(253,224,71,.18);
+  box-shadow: 0 40px 120px rgba(0,0,0,.65);
+  display:flex;
+  flex-direction:column;
+}
+
+.mobile-menu-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:6px 4px 14px;
+  border-bottom:1px solid rgba(253,224,71,.14);
+}
+
+.mobile-menu-brand img{
+  height:34px;
+  width:auto;
+  display:block;
+}
+
+.mobile-menu-close{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  border:1px solid rgba(253,224,71,.22);
+  background:rgba(2,6,23,.35);
+  color:var(--gold);
+  font-weight:900;
+  cursor:pointer;
+}
+
+.mobile-menu-nav{
+  display:flex;
+  flex-direction:column;
+  padding:18px 6px 6px;
+  gap:10px;
+}
+
+.mobile-menu-nav a{
+  text-decoration:none;
+  color:#eaf0ff;
+  font-weight:800;
+  font-size:18px;
+  padding:12px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.05);
+}
+
+.mobile-menu-nav a:hover{
+  border-color: rgba(253,224,71,.28);
+  color: var(--gold);
+}
+
+.mobile-menu-divider{
+  margin:14px 6px;
+  height:1px;
+  background:linear-gradient(90deg, rgba(253,224,71,.35), rgba(253,224,71,.12), rgba(253,224,71,0));
+}
+
+.mobile-menu-row{
+  display:flex;
+  gap:10px;
+  padding:0 6px;
+}
+
+.mobile-pill{
+  text-decoration:none;
+  color:#eaf0ff;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.02em;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(253,224,71,.22);
+  background:rgba(2,6,23,.35);
+}
+
+html[lang="pt-BR"] .mobile-pill[href="/"]{color:#000;background:var(--gold);border-color:rgba(253,224,71,.9)}
+html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);border-color:rgba(253,224,71,.9)}
+
+.mobile-menu-ctas{
+  margin-top:auto;
+  padding:18px 6px 0;
+  display:grid;
+  gap:12px;
+}
+
+.mobile-cta{
+  text-decoration:none;
+  text-align:center;
+  font-weight:900;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid rgba(253,224,71,.22);
+}
+
+.mobile-cta.primary{
+  background:var(--cta);
+  color:#000;
+  border-color: rgba(255,159,26,.6);
+}
+
+.mobile-cta.secondary{
+  background:#111827;
+  color:var(--gold);
+}
+
+/* ===== MOBILE: mostra botão e esconde CTAs do header (CTAs vão para o overlay) ===== */
+@media (max-width: 900px){
+  .mobile-menu-btn{display:inline-flex;}
+
+  /* mantém teu desktop intacto; isso só vale no mobile */
+  .header-container > a.btn-contato{display:none;}
+}
+
+
+  
 </style>
 </head>
 
@@ -989,7 +1155,10 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
         <a href="/en/" title="English">US</a>
       </span>
     </nav>
-
+    <!-- BOTÃO MENU MOBILE (apenas mobile via CSS) -->
+    <button class="mobile-menu-btn" type="button" aria-label="Abrir menu" aria-controls="ogMobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 <a href="https://maxprod.com.br" class="btn-contato" style="background:#111827;color:#fde047;">
   MaxProd
 </a>
@@ -997,6 +1166,43 @@ html[lang="en-US"] .lang-switch a[href="/en/"]{opacity:1}
 <a href="#contato" class="btn-contato">Contato</a>
   </div>
 </header>
+<!-- MENU MOBILE OVERLAY -->
+<div id="ogMobileMenu" class="mobile-menu-overlay" aria-hidden="true">
+  <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-menu-top">
+      <div class="mobile-menu-brand">
+        <img src="assets/images/nova_logo_OG_v2_sem_sub-removebg-preview.png" alt="OPERA GUARD">
+      </div>
+
+      <button class="mobile-menu-close" type="button" aria-label="Fechar menu">
+        ✕
+      </button>
+    </div>
+
+    <nav class="mobile-menu-nav">
+      <a href="#inicio">Início</a>
+      <a href="#solucao">Solução</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#cases">Cases de sucesso</a>
+      <a href="#sobre-nos">Sobre Nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="mobile-menu-divider"></div>
+
+    <div class="mobile-menu-row">
+      <a class="mobile-pill" href="/" title="Português">BR</a>
+      <a class="mobile-pill" href="/en/" title="English">US</a>
+    </div>
+
+    <div class="mobile-menu-ctas">
+      <a href="https://maxprod.com.br" class="mobile-cta secondary">MaxProd</a>
+      <a href="#contato" class="mobile-cta primary">Contato</a>
+    </div>
+  </div>
+</div>
 
 <section class="hero" id="inicio">
   <div class="hero-content">
@@ -1354,5 +1560,43 @@ document.querySelectorAll("[data-reveal]").forEach(el=>io.observe(el));
   </div>
 </footer>
 
+<script>
+(() => {
+  const overlay = document.getElementById("ogMobileMenu");
+  const openBtn = document.querySelector(".mobile-menu-btn");
+  const closeBtn = document.querySelector(".mobile-menu-close");
+
+  if (!overlay || !openBtn || !closeBtn) return;
+
+  const setState = (open) => {
+    overlay.classList.toggle("is-open", open);
+    overlay.setAttribute("aria-hidden", String(!open));
+    openBtn.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+
+  openBtn.addEventListener("click", () => setState(true));
+  closeBtn.addEventListener("click", () => setState(false));
+
+  // Fecha clicando fora do painel (na área escura)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) setState(false);
+  });
+
+  // Fecha ao clicar em qualquer link do menu
+  overlay.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => setState(false));
+  });
+
+  // Fecha no ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setState(false);
+  });
+})();
+</script>
+
+  
+
+  
 </body>
 </html>
