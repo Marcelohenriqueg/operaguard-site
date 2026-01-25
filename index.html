@@ -1163,7 +1163,7 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   position:absolute;
   left: 24px;
   right: 24px;
-  top: 70px;                    /* altura alinhada ao centro dos círculos */
+  top: 96px;                    /* altura alinhada ao centro dos círculos */
   height: 2px;
   background: repeating-linear-gradient(
     to right,
@@ -1298,7 +1298,17 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   padding-top: calc(var(--headerH) + 52px);
 }
 
+/* ===== FIX FINAL (ÍCONES + LINHA + HERO) ===== */
+.og-icon img{
+  display:block;
+  margin:0 auto;
+  object-position:center;
+  transform: translateX(-6px); /* compensa PNGs desalinhados */
+}
 
+
+
+  
   
 </style>
 </head>
