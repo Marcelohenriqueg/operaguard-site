@@ -1274,6 +1274,32 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   padding-top: 60px;   /* antes herdava 120px */
 }
 
+/* Linha tracejada fica atrás dos círculos */
+.og-infographic::before{
+  z-index: 1;
+}
+
+/* Círculos ficam acima da linha */
+.og-icon{
+  position: relative;
+  z-index: 2;
+  background: #020617; /* MESMO FUNDO DA PÁGINA */
+}
+
+/* Garante que o conteúdo interno também fique acima */
+.og-icon img,
+.og-step-num{
+  position: relative;
+  z-index: 3;
+}
+
+/* Corrige hero sendo cortado pelo header */
+.hero{
+  padding-top: calc(var(--headerH) + 32px);
+}
+
+
+  
 </style>
 </head>
 
