@@ -1312,7 +1312,31 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   align-items: flex-start !important;                 /* para de “colar” no topo */
 }
 
-  
+  /* ===== NÚMERO DA ETAPA: volta pro topo do círculo ===== */
+.og-icon{ position: relative !important; }
+
+.og-step-num{
+  position: absolute !important;
+  top: -12px !important;      /* topo, fora do círculo */
+  left: 50% !important;       /* centralizado */
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+  display: inline-block !important;
+}
+/* ===== ÍCONE: centro do círculo (base) ===== */
+.og-icon{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.og-icon img{
+  display: block !important;
+  margin: 0 !important;
+  transform: none !important;         /* IMPORTANTÍSSIMO: não empurra o número */
+  object-fit: contain !important;
+}
+
   
 </style>
 </head>
