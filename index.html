@@ -1135,6 +1135,140 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
   .header-container > a.btn-contato{ display:none !important; } /* esconde MaxProd/Contato do header */
 }
 
+
+/* ================= COMO FUNCIONA — LAYOUT IGUAL AO PDF ================= */
+#como-funciona{
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(17,28,58,.35), rgba(2,6,23,1));
+}
+
+#como-funciona .section-title{
+  margin-bottom: 16px;
+}
+
+#como-funciona .section-lead{
+  max-width: 860px;
+  margin-top: 0;
+  color: rgba(229,231,235,.92);
+}
+
+.og-infographic{
+  position: relative;
+  margin-top: 54px;
+  padding-top: 26px;
+}
+
+/* linha pontilhada horizontal (igual ao PDF) */
+.og-infographic::before{
+  content:"";
+  position:absolute;
+  left: 24px;
+  right: 24px;
+  top: 74px;                    /* altura alinhada ao centro dos círculos */
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--gold) 0,
+    var(--gold) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+  opacity: .95;
+  pointer-events:none;
+}
+
+/* grid dos 5 passos */
+.og-steps{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+  align-items:start;
+}
+
+.og-step{
+  text-align:center;
+}
+
+/* círculo do ícone */
+.og-icon{
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.03);
+  border: 2px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+  box-shadow: 0 0 24px rgba(253,224,71,.10);
+}
+
+.og-icon img{
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
+}
+
+/* tag numérica em cima do círculo */
+.og-step-num{
+  position:absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #020617;
+  font-weight: 900;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: .02em;
+}
+
+/* título e descrição */
+.og-step-title{
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  margin-bottom: 10px;
+  min-height: 48px;  /* mantém alturas iguais */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.og-step-desc{
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(229,231,235,.92);
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* footer interno da seção (linha fina + texto igual ao PDF) */
+.og-pdf-footer{
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  text-align:center;
+  font-size: 13px;
+  color: rgba(229,231,235,.55);
+}
+
+/* Responsivo: no mobile vira 1 coluna e remove a linha pontilhada */
+@media (max-width: 900px){
+  .og-infographic{ margin-top: 28px; padding-top: 0; }
+  .og-infographic::before{ display:none; }
+  .og-steps{ grid-template-columns: 1fr; gap: 18px; }
+  .og-step-title{ min-height: auto; }
+  .og-step-desc{ max-width: 520px; }
+  .og-icon{ width: 122px; height: 122px; }
+  .og-icon img{ width: 70px; height: 70px; }
+}
+
+
   
 </style>
 </head>
@@ -1244,22 +1378,91 @@ html[lang="en-US"] .mobile-pill[href="/en/"]{color:#000;background:var(--gold);b
 <section id="como-funciona">
   <div class="section-wrap">
     <div class="section-title">Como o OPERA GUARD funciona na prática</div>
-    <div class="steps reveal" data-reveal>
-      <div class="steps-row">
-        <div class="step-card"><div class="step-kicker">Etapa 01</div><div class="step-title">Captura da Operação</div><div class="step-desc">Câmeras monitoram a execução da atividade em tempo real, sem contato físico.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 02</div><div class="step-title">Padrão Operacional</div><div class="step-desc">A Engenharia define a sequência correta e os critérios da operação.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 03</div><div class="step-title">Análise por IA</div><div class="step-desc">Visão Computacional compara execução real x padrão esperado.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 04</div><div class="step-title">Decisão e Alerta</div><div class="step-desc">Desvios são identificados imediatamente, antes do defeito.</div></div>
-        <div class="step-card"><div class="step-kicker">Etapa 05</div><div class="step-title">Registro e Evidência*</div><div class="step-desc">Eventos relevantes são registrados para rastreabilidade e análise.</div></div>
+    <p class="section-lead">
+      Inteligência Artificial e Visão Computacional garantindo a execução perfeita no chão de fábrica em tempo real.
+    </p>
+
+    <div class="og-infographic">
+      <div class="og-steps">
+
+        <!-- 01 -->
+        <div class="og-step">
+          <div class="og-icon">
+            <span class="og-step-num">01</span>
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/rT2ia5yHv3WrGxSvxYDWxD/sandbox/slides_resource_iy8fcesbnpqrh9hcu2scm-46bfc99c-e2b-prod-us1_1769296297147_na1fn_L2hvbWUvdWJ1bnR1L2ljb25fY2FwdHVyZQ.png?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvclQyaWE1eUh2M1dyR3hTdnhZRFd4RC9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9peThmY2VzYm5wcXJoOWhjdTJzY20tNDZiZmM5OWMtZTJiLXByb2QtdXMxXzE3NjkyOTYyOTcxNDdfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwybGpiMjVmWTJGd2RIVnlaUS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xNTYwLGhfMTU2MC9mb3JtYXQsd2VicCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ZZqoaz~Cea4e8dhKTWTmLlIXe-8~iWhI3oGYbP18BblLw7RbbdZzHZgiFDCuwTCde2HFGIbdaKI7ElG3iJ-4KWJ2OPgYaOHW6bIiGsMcgz9TjCQ9YWcP2EQCK56sDIWFzMfz4VVg6F3a8jgg5gJ-rc59v1eum0zEc0b30XirUW7w9qS3q3TwBviCwXZzT72TkneBRxhdOoS8wmGZLPmWhR-6IaNBoTtE8CeFR7OLfWmRMaG5c9pbG2H3vZVBplEIu-TGzqkGvyNlKyCWtXCVhBDp6rtZzQ4sDwEuMl2elZ5n1MTJM50W-71uyM4xY2~m0L2UepFEMUklVwNH8ILm6Q__"
+                 alt="Captura Inteligente">
+          </div>
+          <div class="og-step-title">Captura<br>Inteligente</div>
+          <div class="og-step-desc">
+            Câmeras monitoram a execução em tempo real, sem contato físico ou interrupções.
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="og-step">
+          <div class="og-icon">
+            <span class="og-step-num">02</span>
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/rT2ia5yHv3WrGxSvxYDWxD/sandbox/slides_resource_iy8fcesbnpqrh9hcu2scm-46bfc99c-e2b-prod-us1_1769296297147_na1fn_L2hvbWUvdWJ1bnR1L2ljb25fZW5naW5lZXJpbmc.png?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvclQyaWE1eUh2M1dyR3hTdnhZRFd4RC9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9peThmY2VzYm5wcXJoOWhjdTJzY20tNDZiZmM5OWMtZTJiLXByb2QtdXMxXzE3NjkyOTYyOTcxNDdfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwybGpiMjVmWlc1bmFXNWxaWEpwYm1jLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE1NjAsaF8xNTYwL2Zvcm1hdCx3ZWJwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Ev9STgKJOfGg3R~BvXDXwmefcvGB5f547yC0Hse2Zn6PUZDOK8AihQ42wpDb3k8apRwvMw-un5Xuhu9iAHpiWO6aO7olV8MzRe0NuvZWtQ2ieOMwEV6DNG6ppJSM8XInpUFn1~Y0kS9FJDgAR8LWKQfLxLnIjj5Rb5oLXNu8NpD6Tp2ZWokQso~OANSnRNoERYkdg0ddPZXTA~uqEmYEePcv88HJkojoHWHt-9hLrIg488WfOEPnmj2hTd-CU~bY2C3ngyXG3N-jT1tlHYObBCcbgvXv~Aw9LG0UKzzkfViVtG0RTUBedq2AJIkhE4D0nqo1nAX2bGbqbZTZO9mSsA__"
+                 alt="DNA Operacional">
+          </div>
+          <div class="og-step-title">DNA<br>Operacional</div>
+          <div class="og-step-desc">
+            A Engenharia define a sequência correta e os critérios de sucesso do processo.
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="og-step">
+          <div class="og-icon">
+            <span class="og-step-num">03</span>
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/rT2ia5yHv3WrGxSvxYDWxD/sandbox/slides_resource_iy8fcesbnpqrh9hcu2scm-46bfc99c-e2b-prod-us1_1769296297147_na1fn_L2hvbWUvdWJ1bnR1L2ljb25fYWk.png?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvclQyaWE1eUh2M1dyR3hTdnhZRFd4RC9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9peThmY2VzYm5wcXJoOWhjdTJzY20tNDZiZmM5OWMtZTJiLXByb2QtdXMxXzE3NjkyOTYyOTcxNDdfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwybGpiMjVmWVdrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE1NjAsaF8xNTYwL2Zvcm1hdCx3ZWJwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dnmKOFW6eIHl1nyM5B3~sAXYGoPHgV1KaZA8L-KovxpJZ0-StjbE9pXY05ljO1BzTw27QBGLjOLDB~tSEMDkF03CSil2My2VFzqlWtGTIjrIgQ2JiEmvijnAKm-JXijdYybqyrO9DoYIgYipeJH0m9rdky5ek4hm0jB-1FP~TWnn0Ijem5vVevalar3iE9RFa-RyCNgV9283eiGZ0J2JlHk4fkklqwmd8JD6CVIrTnxISxNg9gxCwmG9cgiPmX6nwZHnEJmmEsyenKcIEHbLFMXyxDa3lTRawYcXfm~S7kAkgu6fG4actMub4V4LpLa0J0WW87fP1YEBr-ZSE8Aryw__"
+                 alt="Cérebro de IA">
+          </div>
+          <div class="og-step-title">Cérebro de IA</div>
+          <div class="og-step-desc">
+            Visão Computacional compara a execução real com o padrão esperado instantaneamente.
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="og-step">
+          <div class="og-icon">
+            <span class="og-step-num">04</span>
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/rT2ia5yHv3WrGxSvxYDWxD/sandbox/slides_resource_iy8fcesbnpqrh9hcu2scm-46bfc99c-e2b-prod-us1_1769296297147_na1fn_L2hvbWUvdWJ1bnR1L2ljb25fYWxlcnQ.png?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvclQyaWE1eUh2M1dyR3hTdnhZRFd4RC9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9peThmY2VzYm5wcXJoOWhjdTJzY20tNDZiZmM5OWMtZTJiLXByb2QtdXMxXzE3NjkyOTYyOTcxNDdfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwybGpiMjVmWVd4bGNuUS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xNTYwLGhfMTU2MC9mb3JtYXQsd2VicCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=KrqThhp8fp8NmbuEhTifzHy2uqOaYTTsE4GecUmcpf8UTjq6LpoBptNqJB0NnJPquCjO6GMeprz~bOiemy~VWN66lNn-a0mFbbAfvklAB6Dwpmu4-HXwBIOA-LkB6j73URSCSI5n00q8wv1lyn-rCOULoCK2uZwkc66F7hOT3PwpHT4kZUXNrEmweyNTUp5WXCbTBYQ5KM~Ook3XJNwPGJH4V7hXwFUXLLJXG3uwZFH074Xq969WcTztBZbeYUaikKJmIH1QJp55PfQcrZASWhSBxel5ydbIc5vskCj9ZTCKh3VhP79qWr3qnNkzA19RYgSCZAdxyCfGDv03-uWxFg__"
+                 alt="Alerta Preventivo">
+          </div>
+          <div class="og-step-title">Alerta<br>Preventivo</div>
+          <div class="og-step-desc">
+            Desvios são identificados imediatamente, gerando alertas antes que o defeito ocorra.
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="og-step">
+          <div class="og-icon">
+            <span class="og-step-num">05</span>
+            <img src="https://private-us-east-1.manuscdn.com/sessionFile/rT2ia5yHv3WrGxSvxYDWxD/sandbox/slides_resource_iy8fcesbnpqrh9hcu2scm-46bfc99c-e2b-prod-us1_1769296297147_na1fn_L2hvbWUvdWJ1bnR1L2ljb25fZXZpZGVuY2U.png?x-oss-process=image/resize,w_1560,h_1560/format,webp&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvclQyaWE1eUh2M1dyR3hTdnhZRFd4RC9zYW5kYm94L3NsaWRlc19yZXNvdXJjZV9peThmY2VzYm5wcXJoOWhjdTJzY20tNDZiZmM5OWMtZTJiLXByb2QtdXMxXzE3NjkyOTYyOTcxNDdfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwybGpiMjVmWlhacFpHVnVZMlUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTU2MCxoXzE1NjAvZm9ybWF0LHdlYnAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=kIgDtxlLq2cZXzyr5P2cn3ecqWg1iCECh1UNhOJKrBu6UERbEbXjj8SrEs~TBSQ7INEQvkUHEOE3BDBIfod5qixAq9tjTeeOumtxRApvXcDflb2hR67905BBpg7GocC1KzH9AznP-SvrnyCErHsX293TLj2eoPr0xJUNUOmP00Q0xEbftwWOCegZnCRdOm8v69~2s7Rftw17RCWI8M6GjpkyJe7GxDBQWWYvs3ALt40g6P9h~BXYGI71SxhuWwUlsANxi7viXXeNlBpUm1FvelSr23MO43K-nB1xWCmzaeyix21gmlhTFPsamlDiyXqXbzZPzYtZ8Jd-RHFKqrNECQ__"
+                 alt="Evidência e Dados">
+          </div>
+          <div class="og-step-title">Evidência e<br>Dados</div>
+          <div class="og-step-desc">
+            Eventos registrados para rastreabilidade total e análise de melhoria contínua.
+          </div>
+        </div>
+
       </div>
+    </div>
+
+    <div class="og-pdf-footer">
+      OPERA GUARD | Monitoramento Inteligente Industrial • operaguard.com.br
     </div>
   </div>
 </section>
+
+
   
 <p class="etapas-nota">
-  * O escopo de Registro e Evidência pode variar conforme a arquitetura definida, infraestrutura disponível e modelo comercial acordado para o projeto.
-</p>
-
+ 
 <section id="aplicacoes">
   <div class="section-wrap">
     <div class="section-title">Aplicações do OPERA GUARD</div>
